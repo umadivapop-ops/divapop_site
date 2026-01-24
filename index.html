@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diva Pop - Banda Oficial</title>
+  <meta name="description" content="Site oficial da banda Diva Pop — vinil retrô + neon moderno, encartes imersivos com áudio faixa a faixa." />
+  <meta property="og:title" content="Diva Pop - Banda Oficial" />
+  <meta property="og:description" content="Entre a inocência que nasce e a experiência que pulsa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Diva Pop" />
+  <meta property="og:image" content="assets/og_divapop.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    :root{ --neon:#e63946; --cream:#f5f5dc; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0b0b;
+      color: #fdf2f2;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      height: 85vh;
+      background: url('background_index.png') no-repeat center 20% / cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(230,57,70,0.2));
+      animation: pulseLight 6s ease-in-out infinite;
+    }
+
+    @keyframes pulseLight {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    /* LOGO — 40% maior + centralizado verticalmente */
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      width: 196px; /* 140px * 1.4 */
+      transform: translateY(-50%);
+      filter: drop-shadow(0 0 6px rgba(230, 57, 70, 0.8));
+      transition: transform 0.4s ease;
+      z-index: 3;
+    }
+
+    .logo:hover { transform: translateY(-50%) scale(1.05); }
+
+    /* Texto + botão mais embaixo (altura “canela”) */
+    .hero-content {
+      position: absolute;
+      left: 50%;
+      bottom: 12%;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: min(920px, 92vw);
+    }
+
+    .hero h1 {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #e63946;
+      margin-bottom: 18px;
+      text-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+    }
+
+    .hero .btn {
+      padding: 14px 30px;
+      background-color: #e63946;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero .btn:hover { background-color: #ff4d5a; transform: scale(1.05); }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.85);
+      text-align: center;
+      padding: 12px 0;
+      border-top: 2px solid #e63946;
+      border-bottom: 2px solid #e63946;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #e63946; }
+
+    main {
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    h2 { color: #e63946; margin-bottom: 20px; font-size: 2rem; }
+
+    .band-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    /* cards viram PORTAIS */
+    .member {
+      position: relative;
+      width: 22%;
+      min-width: 200px;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid rgba(230,57,70,.20);
+      box-shadow: 0 0 18px rgba(230,57,70,.12);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color .35s ease;
+      background: rgba(0,0,0,.25);
+    }
+
+    .member img {
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      filter: brightness(0.9);
+      transition: transform 0.5s ease, filter .5s ease;
+      display:block;
+    }
+
+    .member:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 0 32px rgba(230,57,70,.28);
+      border-color: rgba(230,57,70,.55);
+    }
+
+    .member:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.12) drop-shadow(0 0 15px rgba(230, 57, 70, 0.55));
+    }
+
+    .overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 0;
+      background: rgba(0, 0, 0, 0.72);
+      transition: height 0.5s ease;
+    }
+
+    .member:hover .overlay { height: 42%; }
+
+    .info {
+      position: absolute;
+      bottom: 14px;
+      width: 100%;
+      text-align: center;
+      color: #e63946;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      padding: 0 10px;
+      line-height: 1.25;
+    }
+
+    .info .sub{
+      display:block;
+      margin-top:6px;
+      font-size:.9rem;
+      color:#fff;
+      opacity:.92;
+      text-shadow: 0 0 12px rgba(230,57,70,.25);
+    }
+
+    .member:hover .info { opacity: 1; transform: translateY(0); }
+
+    footer {
+      background-color: #0d0d0d;
+      border-top: 3px solid #e63946;
+      padding: 40px 0;
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    .social-icons img {
+      width: 35px;
+      margin: 0 10px;
+      filter: brightness(0) saturate(100%) invert(34%) sepia(93%) saturate(6822%) hue-rotate(346deg) brightness(92%) contrast(91%);
+      transition: transform 0.3s;
+    }
+
+    .social-icons img:hover { transform: scale(1.2); }
+
+    .qr-code img { width: 100px; margin-top: 20px; }
+
+    /* scroll reveal (leve, sem pesar) */
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
+    .reveal.is-visible{ opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+    /* portal modal (com scroll interno) */
+    .portal-modal{ position:fixed; inset:0; background: rgba(0,0,0,.82); display:none; align-items:center; justify-content:center; padding: 18px; z-index: 9999; }
+    .portal-modal.open{ display:flex; }
+
+    .portal-box{
+      width:min(1200px, 96vw);
+      max-height: 92vh;
+      background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%);
+      border:1px solid rgba(230,57,70,.35);
+      border-radius:22px;
+      box-shadow:0 0 42px rgba(230,57,70,.35);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .portal-bar{ flex:0 0 auto; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 14px; flex-wrap:wrap; }
+    .portal-title{ color:#fff; font-weight:700; }
+    .portal-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .portal-input{ width:min(360px, 88vw); border-radius:16px; border:1px solid rgba(245,245,220,.28); background: rgba(0,0,0,.55); color:#fff; padding:10px 12px; font-family:inherit; outline:none; }
+    .portal-btn{ border:none; border-radius:999px; padding:10px 14px; cursor:pointer; font-weight:700; background: rgba(0,0,0,.55); border:1px solid rgba(230,57,70,.75); color:#fff; }
+    .portal-btn:hover{ background: rgba(230,57,70,.18); box-shadow:0 0 18px rgba(230,57,70,.25); }
+
+    .portal-view{ flex:0 0 auto; background: rgba(0,0,0,.45); border-top:1px solid rgba(230,57,70,.22); border-bottom:1px solid rgba(230,57,70,.22); }
+    .portal-view img{ width:100%; height:min(42vh, 420px); object-fit:contain; display:block; }
+
+    .portal-thumbs{ flex:1 1 auto; overflow:auto; -webkit-overflow-scrolling: touch; padding:14px; }
+    .thumb-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+    .thumb{ border-radius:16px; overflow:hidden; border:1px solid rgba(230,57,70,.22); background: rgba(0,0,0,.35); box-shadow: 0 0 18px rgba(230,57,70,.12); cursor:pointer; transition: transform .25s ease, box-shadow .25s ease; }
+    .thumb:hover{ transform: translateY(-2px); box-shadow:0 0 26px rgba(230,57,70,.26); }
+    .thumb img{ width:100%; height: 150px; object-fit:cover; display:block; filter: brightness(.95); }
+    .thumb .cap{ padding:10px 10px 12px; color:#fff; font-weight:600; font-size:.95rem; }
+
+    .portal-empty{ display:none; opacity:.9; border:1px dashed rgba(245,245,220,.28); padding:16px; border-radius:18px; background: rgba(0,0,0,.35); text-align:center; margin: 0 14px 14px; }
+
+    @media (max-width: 720px){
+      .logo{ left: 18px; width: 170px; }
+      .hero-content{ bottom: 10%; }
+      .hero h1{ font-size: 1.15rem; }
+      .thumb img{ height: 130px; }
+      .portal-view img{ height:min(38vh, 360px); }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <img src="logo_diva_pop.png" alt="Logo Diva Pop" class="logo">
+    <div class="hero-content">
+      <h1>“Entre a inocência que nasce e a experiência que pulsa”</h1>
+      <button class="btn" onclick="location.href='arquivo1.html'">Ouça Agora</button>
+    </div>
+  </section>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="posters_page.html">Posters</a>
+    <a href="mural_fas.html">Mural dos Fãs</a>
+    <a href="discografia_completa.html">Discografia</a>
+    <a href="blog_noticias_diva_pop.html">Blog</a>
+    <a href="arquivo2.html">Nossa História</a>
+    <a href="presskit_oficial.html">Press Kit</a>
+    <a href="contato_contrate_diva_pop.html">Contato</a>
+    <a href="area_restrita.html">Área Restrita</a>
+  </nav>
+
+  <main>
+    <section class="reveal">
+      <h2>Quem Somos</h2>
+      <p>
+        A Diva Pop é uma banda brasileira que nasceu do encontro entre gerações, referências e emoções.
+        Nosso som mistura influências clássicas do pop e do rock do século passado com a linguagem, a estética e a intensidade do presente,
+        criando uma identidade musical própria, acessível e ao mesmo tempo cheia de personalidade.
+      </p>
+      <p>
+        Mais do que seguir rótulos, buscamos contar histórias. Cada música é construída a partir de vivências reais,
+        sentimentos genuínos e da vontade de criar conexão — com quem escuta, com quem canta junto e com quem se reconhece nas letras.
+        Nossa proposta é simples e poderosa: fazer música que emociona, aproxima e permanece.
+      </p>
+    </section>
+
+    <div class="band-members">
+      <div class="member reveal" role="button" tabindex="0" data-member="Karine" data-role="Vocal">
+        <img src="DSC_8379.jpg" alt="Karine - Vocal">
+        <div class="overlay"></div>
+        <div class="info">Karine — Vocal <span class="sub">Ver fotos</span></div>
+      </div>
+      <div class="member reveal" role="button" tabindex="0" data-member="Diogo" data-role="Guitarra">
+        <img src="DSC_8371.jpg" alt="Diogo - Guitarra">
+        <div class="overlay"></div>
+        <div class="info">Diogo — Guitarra <span class="sub">Ver fotos</span></div>
+      </div>
+      <div class="member reveal" role="button" tabindex="0" data-member="Dal" data-role="Bateria">
+        <img src="DSC_8448.jpg" alt="Dal - Bateria">
+        <div class="overlay"></div>
+        <div class="info">Dal — Bateria <span class="sub">Ver fotos</span></div>
+      </div>
+      <div class="member reveal" role="button" tabindex="0" data-member="Ramos" data-role="Baixo">
+        <img src="DSC_8316.jpg" alt="Ramos - Baixo">
+        <div class="overlay"></div>
+        <div class="info">Ramos — Baixo <span class="sub">Ver fotos</span></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL PORTAL (galeria por integrante) -->
+  <div id="portalModal" class="portal-modal" aria-hidden="true">
+    <div class="portal-box">
+      <div class="portal-bar">
+        <div class="portal-title" id="portalTitle">Fotos</div>
+        <div class="portal-actions">
+          <input id="portalQ" class="portal-input" placeholder="Buscar (ex.: 8269)" />
+          <button class="portal-btn" id="portalClose" type="button">✕</button>
+        </div>
+      </div>
+
+      <div class="portal-view" id="portalView" style="display:none;">
+        <img id="portalImg" src="" alt="Foto" />
+      </div>
+
+      <div id="portalEmpty" class="portal-empty">Nenhuma foto encontrada com esse filtro.</div>
+
+      <div class="portal-thumbs">
+        <div id="thumbGrid" class="thumb-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="reveal">
+    <div class="social-icons">
+      <img src="icon_instagram.png" alt="Instagram">
+      <img src="icon_facebook.png" alt="Facebook">
+      <img src="icon_tiktok.png" alt="TikTok">
+      <img src="icon_whatsapp.png" alt="WhatsApp">
+    </div>
+    <div class="qr-code">
+      <img src="qr_instagram.png" alt="QR Code Instagram">
+    </div>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // ===== Analytics local (para área_restrita.html) =====
+    const DP_STATS_KEY = 'divapop_stats_v1';
+
+    function dpLoad(){
+      try{
+        const raw = localStorage.getItem(DP_STATS_KEY);
+        if(!raw) return { v:1, pages:{}, plays:{}, downloads:{}, updatedAt:null };
+        const s = JSON.parse(raw);
+        return { v:1, pages: s.pages||{}, plays: s.plays||{}, downloads: s.downloads||{}, updatedAt: s.updatedAt||null };
+      }catch(e){
+        return { v:1, pages:{}, plays:{}, downloads:{}, updatedAt:null };
+      }
+    }
+
+    function dpSave(s){
+      try{ s.updatedAt = new Date().toISOString(); }catch(e){}
+      localStorage.setItem(DP_STATS_KEY, JSON.stringify(s));
+    }
+
+    function dpInc(kind, key){
+      if(!key) return;
+      const s = dpLoad();
+      const bucket = (kind === 'plays') ? s.plays : (kind === 'downloads') ? s.downloads : s.pages;
+      bucket[key] = (Number(bucket[key])||0) + 1;
+      dpSave(s);
+    }
+
+    function dpPageName(){
+      const last = (location.pathname || '').split('/').pop();
+      return last || 'index.html';
+    }
+
+    // registra acesso
+    dpInc('pages', dpPageName());
+
+    // scroll reveal (auto-aplica em blocos principais)
+    (function(){
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce){ document.querySelectorAll('.reveal').forEach(el=> el.classList.add('is-visible')); return; }
+      const targets = [];
+      document.querySelectorAll('main section, .band-members, .member, footer').forEach(el=>{
+        if(!el.classList.contains('reveal')) return;
+        targets.push(el);
+      });
+      const io = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        }
+      }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
+      targets.forEach(t=>io.observe(t));
+    })();
+
+    // PORTAIS — galerias hardcoded (site estático)
+    const GALLERIES = {
+      'Dal': [
+        'DSC_8140.jpg','DSC_8210.jpg','DSC_8220.jpg','DSC_8258.jpg','DSC_8269.jpg','DSC_8270.jpg','DSC_8301.jpg','DSC_8309.jpg',
+        'DSC_8313.jpg','DSC_8320.jpg','DSC_8448.jpg','DSC_8450.jpg','DSC_8455.jpg','DSC_8475.jpg','DSC_8478.jpg'
+      ],
+      'Diogo': [
+        'DSC_8261.jpg','DSC_8262.jpg','DSC_8274.jpg','DSC_8275.jpg','DSC_8276.jpg','DSC_8317.jpg','DSC_8353.jpg','DSC_8355.jpg','DSC_8359.jpg','DSC_8369.jpg','DSC_8371.jpg'
+      ],
+      'Karine': [
+        'DSC_8224.jpg','DSC_8235.jpg','DSC_8240.jpg','DSC_8248.jpg','DSC_8257.jpg','DSC_8310.jpg','DSC_8379.jpg','DSC_8392.jpg','DSC_8398.jpg'
+      ],
+      'Ramos': [
+        'DSC_8144.jpg','DSC_8145.jpg','DSC_8260.jpg','DSC_8286.jpg','DSC_8412.jpg','DSC_8416.jpg'
+      ]
+    };
+
+    const $ = (id)=>document.getElementById(id);
+    const modal = $('portalModal');
+    const titleEl = $('portalTitle');
+    const qEl = $('portalQ');
+    const gridEl = $('thumbGrid');
+    const emptyEl = $('portalEmpty');
+    const viewWrap = $('portalView');
+    const viewImg = $('portalImg');
+
+    let activeMember = null;
+    let activeItems = [];
+    let activeCurrent = null;
+
+    function buildItems(member){
+      const files = (GALLERIES[member] || []);
+      return files.map(f => ({
+        title: f.replace('.jpg',''),
+        file: `${member}/${f}`
+      }));
+    }
+
+    function openPortal(member, role){
+      activeMember = member;
+      activeItems = buildItems(member);
+      activeCurrent = null;
+
+      titleEl.textContent = `${member} — ${role || 'Fotos'}`;
+      qEl.value = '';
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      renderThumbs();
+
+      // foco acessível
+      setTimeout(()=> qEl.focus(), 20);
+    }
+
+    function closePortal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+      gridEl.innerHTML = '';
+      emptyEl.style.display = 'none';
+      viewWrap.style.display = 'none';
+      viewImg.src = '';
+      activeMember = null;
+      activeItems = [];
+      activeCurrent = null;
+    }
+
+    function setCurrent(item){
+      activeCurrent = item;
+      viewWrap.style.display = 'block';
+      viewImg.src = item.file;
+      viewImg.alt = item.title;
+    }
+
+    function renderThumbs(){
+      const q = (qEl.value || '').trim().toLowerCase();
+      gridEl.innerHTML = '';
+
+      const filtered = activeItems.filter(it => !q || (it.title || '').toLowerCase().includes(q));
+      if(!filtered.length){
+        emptyEl.style.display = 'block';
+        viewWrap.style.display = 'none';
+        return;
+      }
+      emptyEl.style.display = 'none';
+
+      for(const it of filtered){
+        const div = document.createElement('div');
+        div.className = 'thumb';
+        div.tabIndex = 0;
+        div.setAttribute('role','button');
+        div.innerHTML = `
+          <img src="${it.file}" alt="${it.title}" onerror="this.style.display='none'; this.parentElement.style.padding='14px'; this.parentElement.innerHTML = '<div style=\"color:#fff; font-weight:700;\">${it.title}</div><div style=\"opacity:.85; margin-top:6px;\">Arquivo não encontrado: <span style=\\\"color:var(--neon);\\\">${it.file}</span></div>';" />
+          <div class="cap">${it.title}</div>
+        `;
+        div.addEventListener('click', ()=> setCurrent(it));
+        div.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); setCurrent(it); } });
+        gridEl.appendChild(div);
+      }
+
+      // define uma foto inicial (primeira do filtro) se ainda não há
+      if(!activeCurrent) setCurrent(filtered[0]);
+    }
+
+    // bind nos cards
+    document.querySelectorAll('.member[data-member]').forEach(card => {
+      const member = card.getAttribute('data-member');
+      const role = card.getAttribute('data-role');
+      const go = ()=> openPortal(member, role);
+      card.addEventListener('click', go);
+      card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); } });
+    });
+
+    // modal events
+    $('portalClose').addEventListener('click', closePortal);
+    qEl.addEventListener('input', renderThumbs);
+    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.classList.contains('open')) closePortal(); });
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closePortal(); });
+  </script>
+</body>
+</html>

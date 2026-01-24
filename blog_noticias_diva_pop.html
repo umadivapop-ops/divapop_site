@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Notícias | Diva Pop</title>
+  <meta name="description" content="Blog oficial da Diva Pop — novidades, bastidores e lançamentos." />
+  <meta property="og:title" content="Blog & Notícias | Diva Pop" />
+  <meta property="og:description" content="Novidades, bastidores e lançamentos da Diva Pop." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Diva Pop" />
+  <meta property="og:image" content="assets/og_divapop.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    :root{ --neon:#e63946; --cream:#f5f5dc; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:'Poppins',sans-serif; background:#000; color:var(--cream); min-height:100vh; display:flex; flex-direction:column; }
+
+    nav{
+      background:rgba(0,0,0,.85);
+      text-align:center;
+      padding:12px 0;
+      border-top:2px solid var(--neon);
+      border-bottom:2px solid var(--neon);
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(6px);
+    }
+    nav a{ color:#fff; text-decoration:none; margin:0 14px; font-weight:600; transition:color .3s; display:inline-block; padding:6px 2px; }
+    nav a:hover{ color:var(--neon); }
+
+    header{ padding:54px 18px 10px; text-align:center; }
+    header h1{ margin:0; font-size:2.2rem; color:var(--neon); text-shadow:0 0 16px rgba(230,57,70,.75); letter-spacing:1px; }
+    header p{ margin:12px auto 0; max-width:920px; line-height:1.7; }
+
+    .wrap{ width:min(1100px, 92vw); margin: 16px auto 44px; display:grid; grid-template-columns: 320px 1fr; gap:18px; align-items:start; }
+
+    .card{ background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%); border:1px solid rgba(230,57,70,.35); border-radius:22px; box-shadow:0 0 28px rgba(230,57,70,.25); padding:18px; overflow:hidden; }
+    .card h2{ margin:0 0 10px; color:#fff; font-size:1.15rem; }
+
+    .controls{ display:flex; flex-direction:column; gap:10px; }
+    input, select{
+      width:100%;
+      border-radius:16px;
+      border:1px solid rgba(245,245,220,.28);
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      padding: 10px 12px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:14px; }
+
+    .post{
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid rgba(230,57,70,.25);
+      background: rgba(0,0,0,.35);
+      box-shadow: 0 0 18px rgba(230,57,70,.14);
+      position: relative;
+      overflow:hidden;
+    }
+    .post::before{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(230,57,70,.10), rgba(0,0,0,.55)); opacity:0; transition: opacity .35s ease; }
+    .post:hover::before{ opacity:1; }
+    .post > *{ position:relative; z-index:1; }
+
+    .tag{ display:inline-block; padding:6px 10px; border-radius:999px; border:1px solid rgba(230,57,70,.45); background: rgba(0,0,0,.45); font-size:.8rem; color:#fff; }
+    .title{ margin:10px 0 6px; font-size:1.05rem; color:#fff; }
+    .meta{ font-size:.85rem; opacity:.85; }
+    .excerpt{ margin:10px 0 0; line-height:1.6; opacity:.95; }
+
+    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+    a.btn, button.btn{
+      border:none;
+      border-radius:999px;
+      padding:10px 16px;
+      cursor:pointer;
+      font-weight:600;
+      background:var(--neon);
+      color:#fff;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition: transform .25s ease, box-shadow .35s, background-color .35s;
+      min-width: 170px;
+    }
+    a.btn:hover, button.btn:hover{ background:#ff4757; box-shadow:0 0 22px var(--neon); transform: translateY(-1px); }
+    a.btn.secondary, button.btn.secondary{ background: rgba(0,0,0,.55); border: 1px solid rgba(230,57,70,.75); }
+    a.btn.secondary:hover, button.btn.secondary:hover{ background: rgba(230,57,70,.18); }
+
+    footer{ margin-top:auto; text-align:center; padding:30px; font-size:.9rem; color:#aaa; background:#111; box-shadow:0 -5px 15px rgba(230,57,70,.2); }
+
+    /* scroll reveal */
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
+    .reveal.is-visible{ opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+    @media (max-width: 980px){ .wrap{ grid-template-columns:1fr; } header{ padding-top:34px; } header h1{ font-size:1.9rem; } nav a{ margin:0 10px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="posters_page.html">Posters</a>
+    <a href="agenda_shows.html">Agenda</a>
+    <a href="discografia_completa.html">Discografia</a>
+    <a href="mural_fas.html">Mural</a>
+    <a href="arquivo2.html">Nossa História</a>
+    <a href="presskit_oficial.html">Press Kit</a>
+    <a href="contato_contrate_diva_pop.html">Contato</a>
+    <a href="area_restrita.html">Área Restrita</a>
+  </nav>
+
+  <header>
+    <h1>Blog & Notícias</h1>
+    <p>Novidades, bastidores e lançamentos — com a estética <i>vinil retrô + neon moderno</i> da Diva Pop.</p>
+  </header>
+
+  <main class="wrap">
+    <aside class="card">
+      <h2>Filtrar</h2>
+      <div class="controls">
+        <input id="q" placeholder="Buscar por título ou texto..." />
+        <select id="cat">
+          <option value="">Todas as categorias</option>
+          <option value="Lançamento">Lançamento</option>
+          <option value="Bastidores">Bastidores</option>
+          <option value="Show">Show</option>
+          <option value="Imprensa">Imprensa</option>
+        </select>
+        <div class="btnrow">
+          <button class="btn" onclick="resetFilters()">🔎 Aplicar</button>
+          <a class="btn secondary" href="discografia_completa.html">🎧 Ouvir agora</a>
+        </div>
+        <p style="margin:10px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">Versão estática: os posts abaixo são placeholders. Dá para editar o array <b>POSTS</b> no final do arquivo.</p>
+      </div>
+    </aside>
+
+    <section class="card">
+      <h2>Posts</h2>
+      <div id="grid" class="grid"></div>
+      <div id="empty" style="display:none; opacity:.9; border:1px dashed rgba(245,245,220,.28); padding:18px; border-radius:18px; background: rgba(0,0,0,.35); text-align:center;">
+        Nenhum post encontrado com esse filtro.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Edite aqui para sincronizar posts reais
+    const POSTS = [
+      { id:'p1', cat:'Lançamento', date:'2026-01-10', title:'Carnaval — encarte imersivo no ar', excerpt:'O EP Carnaval ganhou encarte premium com fotos + arte + áudio faixa a faixa. Clique, vire páginas e sinta o palco.' },
+      { id:'p2', cat:'Bastidores', date:'2025-12-18', title:'No estúdio: entre o vinil e o neon', excerpt:'Um pouco do processo criativo — referências, arranjos e a energia que guia a Diva Pop.' },
+      { id:'p3', cat:'Show', date:'2025-11-02', title:'Agenda 2026: primeiros anúncios', excerpt:'Estamos organizando as datas e abrindo conversas para novos palcos. Quer a Diva Pop no seu evento? Fale conosco.' },
+    ];
+
+    const $ = (id)=>document.getElementById(id);
+
+    function fmtDate(iso){
+      try{ return new Date(iso + 'T12:00:00').toLocaleDateString('pt-BR'); }catch(e){ return iso; }
+    }
+
+    function render(){
+      const q = ($('q').value || '').trim().toLowerCase();
+      const cat = $('cat').value;
+      const grid = $('grid');
+      const empty = $('empty');
+      grid.innerHTML = '';
+
+      const filtered = POSTS.filter(p=>{
+        const matchCat = !cat || p.cat === cat;
+        const hay = (p.title + ' ' + p.excerpt).toLowerCase();
+        const matchQ = !q || hay.includes(q);
+        return matchCat && matchQ;
+      }).sort((a,b)=> (a.date < b.date ? 1 : -1));
+
+      if(!filtered.length){
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+
+      for(const p of filtered){
+        const div = document.createElement('article');
+        div.className = 'post';
+        div.innerHTML = `
+          <span class="tag">${p.cat}</span>
+          <div class="title">${p.title}</div>
+          <div class="meta">${fmtDate(p.date)}</div>
+          <p class="excerpt">${p.excerpt}</p>
+          <div class="btnrow" style="margin-top:14px;">
+            <a class="btn" href="discografia_completa.html">🎧 Discografia</a>
+            <a class="btn secondary" href="contato_contrate_diva_pop.html">✉️ Contato</a>
+          </div>
+        `;
+        grid.appendChild(div);
+      }
+    }
+
+    function resetFilters(){ render(); }
+
+    window.addEventListener('load', () => {
+      render();
+
+      // scroll reveal
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(!reduce){
+        const targets = [];
+        document.querySelectorAll('header, .card, .post, footer').forEach(el=>{
+          if(!el.classList.contains('reveal')){ el.classList.add('reveal'); targets.push(el); }
+        });
+        const io = new IntersectionObserver((entries)=>{
+          for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } }
+        }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
+        targets.forEach(t=>io.observe(t));
+      }
+
+      $('q').addEventListener('input', render);
+      $('cat').addEventListener('change', render);
+    });
+  </script>
+</body>
+</html>

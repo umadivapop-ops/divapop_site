@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mural dos Fãs | Diva Pop</title>
+  <meta name="description" content="Mural dos fãs da Diva Pop — deixe sua mensagem e mantenha o palco aceso." />
+  <meta property="og:title" content="Mural dos Fãs | Diva Pop" />
+  <meta property="og:description" content="Deixe sua mensagem para a Diva Pop e para a comunidade de fãs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Diva Pop" />
+  <meta property="og:image" content="assets/og_divapop.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    :root{ --neon:#e63946; --cream:#f5f5dc; }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#000;
+      color:var(--cream);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    nav{
+      background:rgba(0,0,0,.85);
+      text-align:center;
+      padding:12px 0;
+      border-top:2px solid var(--neon);
+      border-bottom:2px solid var(--neon);
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(6px);
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin:0 14px;
+      font-weight:600;
+      transition:color .3s;
+      display:inline-block;
+      padding:6px 2px;
+    }
+    nav a:hover{ color:var(--neon); }
+
+    header{
+      padding:54px 18px 10px;
+      text-align:center;
+    }
+    header h1{
+      margin:0;
+      font-size:2.2rem;
+      color:var(--neon);
+      text-shadow:0 0 16px rgba(230,57,70,.75);
+      letter-spacing:1px;
+    }
+    header p{ margin:12px auto 0; max-width:880px; line-height:1.7; }
+
+    .wrap{
+      width:min(1100px, 92vw);
+      margin: 16px auto 40px;
+      display:grid;
+      grid-template-columns: 380px 1fr;
+      gap: 18px;
+      align-items:start;
+    }
+
+    .card{
+      background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%);
+      border:1px solid rgba(230,57,70,.35);
+      border-radius:22px;
+      box-shadow:0 0 28px rgba(230,57,70,.25);
+      padding:18px;
+      overflow:hidden;
+    }
+
+    .card h2{ margin:0 0 10px; color:#fff; font-size:1.15rem; }
+
+    label{ display:block; font-size:.9rem; opacity:.95; margin: 10px 0 6px; }
+    input, textarea{
+      width:100%;
+      border-radius:16px;
+      border:1px solid rgba(245,245,220,.28);
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      padding: 10px 12px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(230,57,70,.85);
+      box-shadow: 0 0 16px rgba(230,57,70,.25);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
+    button{
+      border:none;
+      border-radius:999px;
+      padding:10px 16px;
+      cursor:pointer;
+      font-weight:600;
+      background:var(--neon);
+      color:#fff;
+      transition: transform .25s ease, box-shadow .35s, background-color .35s;
+      min-width: 150px;
+    }
+    button:hover{ background:#ff4757; box-shadow:0 0 22px var(--neon); transform: translateY(-1px); }
+    button.secondary{
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(230,57,70,.75);
+    }
+    button.secondary:hover{ background: rgba(230,57,70,.18); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .msg{
+      border-radius: 18px;
+      padding: 14px;
+      border: 1px solid rgba(230,57,70,.25);
+      background: rgba(0,0,0,.35);
+      box-shadow: 0 0 18px rgba(230,57,70,.14);
+      position: relative;
+      overflow:hidden;
+    }
+    .msg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(230,57,70,.10), rgba(0,0,0,.55));
+      opacity:0;
+      transition: opacity .35s ease;
+    }
+    .msg:hover::before{ opacity:1; }
+    .msg > *{ position:relative; z-index:1; }
+
+    .meta{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .name{ font-weight:600; color:#fff; }
+    .date{ font-size:.85rem; opacity:.8; }
+    .text{ margin: 0; line-height:1.6; }
+
+    .empty{
+      opacity:.9;
+      border:1px dashed rgba(245,245,220,.28);
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(0,0,0,.35);
+      text-align:center;
+    }
+
+    footer{
+      margin-top:auto;
+      text-align:center;
+      padding:30px;
+      font-size:.9rem;
+      color:#aaa;
+      background:#111;
+      box-shadow:0 -5px 15px rgba(230,57,70,.2);
+    }
+
+    /* scroll reveal (leve, sem pesar) */
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
+    .reveal.is-visible{ opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+    @media (max-width: 980px){
+      .wrap{ grid-template-columns: 1fr; }
+      header{ padding-top: 34px; }
+      header h1{ font-size: 1.9rem; }
+      nav a{ margin: 0 10px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="discografia_completa.html">Discografia</a>
+    <a href="mural_fas.html">Mural</a>
+    <a href="pix_apoiar.html">Apoiar (PIX)</a>
+    <a href="contato_contrate_diva_pop.html">Contato</a>
+    <a href="area_restrita.html">Área Restrita</a>
+  </nav>
+
+  <header>
+    <h1>Mural dos Fãs</h1>
+    <p>Deixe sua mensagem, compartilhe sua história com a Diva Pop e mantenha o palco aceso.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Enviar mensagem</h2>
+      <label for="nome">Seu nome</label>
+      <input id="nome" maxlength="40" placeholder="Ex.: Ana" />
+
+      <label for="msg">Sua mensagem</label>
+      <textarea id="msg" maxlength="320" placeholder="Escreva aqui... (até 320 caracteres)"></textarea>
+
+      <div class="btnrow">
+        <button onclick="addMessage()">✨ Publicar</button>
+        <button class="secondary" onclick="clearAll()">🗑️ Limpar mural</button>
+      </div>
+
+      <p style="margin:12px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">
+        Obs.: este mural salva as mensagens no seu próprio navegador (localStorage). Ideal para versão estática.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Mensagens</h2>
+      <div id="list" class="grid"></div>
+      <div id="empty" class="empty" style="display:none;">Ainda não tem mensagem aqui. Seja o primeiro! 💬</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const KEY = 'divapop_mural_v1';
+
+    function load(){
+      try{ return JSON.parse(localStorage.getItem(KEY) || '[]'); }catch(e){ return []; }
+    }
+    function save(arr){ localStorage.setItem(KEY, JSON.stringify(arr)); }
+
+    function render(){
+      const data = load();
+      const list = document.getElementById('list');
+      const empty = document.getElementById('empty');
+      list.innerHTML = '';
+      if(!data.length){
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      for(const item of data){
+        const div = document.createElement('div');
+        div.className = 'msg';
+        div.innerHTML = `
+          <div class="meta">
+            <div class="name">${escapeHtml(item.name || 'Fã')}</div>
+            <div class="date">${new Date(item.ts).toLocaleDateString('pt-BR')}</div>
+          </div>
+          <p class="text">${escapeHtml(item.text)}</p>
+        `;
+        list.appendChild(div);
+      }
+    }
+
+    function addMessage(){
+      const name = document.getElementById('nome').value.trim();
+      const text = document.getElementById('msg').value.trim();
+      if(!text) return;
+      const data = load();
+      data.unshift({ name: name.slice(0,40), text: text.slice(0,320), ts: Date.now() });
+      save(data.slice(0, 60));
+      document.getElementById('msg').value = '';
+      render();
+    }
+
+    function clearAll(){
+      localStorage.removeItem(KEY);
+      render();
+    }
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s]));
+    }
+
+    window.addEventListener('load', render);
+
+    // scroll reveal (auto)
+    (function(){
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce) return;
+      const targets = [];
+      document.querySelectorAll('header, .card, .msg, footer').forEach(el=>{
+        if(!el.classList.contains('reveal')){ el.classList.add('reveal'); targets.push(el); }
+      });
+      const io = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        }
+      }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
+      targets.forEach(t=>io.observe(t));
+    })();
+  </script>
+</body>
+</html>

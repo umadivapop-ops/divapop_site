@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nossa História em Fotos | Diva Pop</title>
+  <meta name="description" content="Nossa história em fotos — bastidores, ensaios e palcos da Diva Pop em uma galeria imersiva." />
+  <meta property="og:title" content="Nossa História em Fotos | Diva Pop" />
+  <meta property="og:description" content="Linha do tempo visual da Diva Pop — clique e abra em tela cheia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Diva Pop" />
+  <meta property="og:image" content="assets/og_divapop.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+
+  <style>
+    :root{ --neon:#e63946; --cream:#f5f5dc; }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(230,57,70,.18) 0%, rgba(0,0,0,0) 55%),
+        radial-gradient(900px 600px at 80% 15%, rgba(230,57,70,.10) 0%, rgba(0,0,0,0) 60%),
+        #000;
+      color: var(--cream);
+      overflow-x:hidden;
+    }
+
+    nav{
+      background: rgba(0,0,0,.86);
+      text-align:center;
+      padding:12px 0;
+      border-top:2px solid var(--neon);
+      border-bottom:2px solid var(--neon);
+      position:sticky;
+      top:0;
+      z-index:20;
+      backdrop-filter: blur(8px);
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin:0 14px;
+      font-weight:700;
+      transition: color .3s;
+      display:inline-block;
+      padding:6px 2px;
+    }
+    nav a:hover{ color: var(--neon); }
+
+    .hero{
+      width:min(1150px, 92vw);
+      margin: 22px auto 0;
+      border-radius: 24px;
+      padding: 20px 18px;
+      background:
+        linear-gradient(135deg, rgba(230,57,70,.26), rgba(0,0,0,.70) 55%),
+        radial-gradient(900px 520px at 12% 12%, rgba(230,57,70,.22), rgba(0,0,0,0) 60%);
+      border:1px solid rgba(230,57,70,.28);
+      box-shadow:0 0 30px rgba(230,57,70,.14);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::after{
+      content:'';
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(230,57,70,.25), rgba(0,0,0,0) 45%),
+        radial-gradient(circle at 80% 20%, rgba(230,57,70,.16), rgba(0,0,0,0) 55%);
+      opacity:.55;
+      pointer-events:none;
+    }
+    .heroInner{ position:relative; z-index:2; display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .hero h1{ margin:0; color:#fff; font-size:2.25rem; text-shadow:0 0 16px rgba(230,57,70,.35); }
+    .hero p{ margin:8px 0 0; line-height:1.65; color: rgba(245,245,220,.92); max-width: 780px; }
+
+    .chips{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .chip{
+      border:none;
+      cursor:pointer;
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:800;
+      color:#fff;
+      background: rgba(0,0,0,.55);
+      border:1px solid rgba(245,245,220,.14);
+      box-shadow:0 0 18px rgba(230,57,70,.06);
+      transition: transform .18s ease, box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+      user-select:none;
+    }
+    .chip:hover{ transform: translateY(-1px); border-color: rgba(230,57,70,.55); box-shadow:0 0 18px rgba(230,57,70,.22); background: rgba(230,57,70,.10); }
+    .chip.active{ border-color: rgba(230,57,70,.85); box-shadow:0 0 22px rgba(230,57,70,.28); background: rgba(230,57,70,.16); }
+
+    .toolbar{
+      width:min(1150px, 92vw);
+      margin: 14px auto 0;
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .search{
+      flex: 1 1 320px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 10px 14px;
+      border-radius:999px;
+      background: rgba(18,18,18,.75);
+      border: 1px solid rgba(245,245,220,.10);
+      box-shadow:0 0 18px rgba(230,57,70,.06);
+    }
+    .search input{
+      width:100%;
+      border:none;
+      outline:none;
+      background: transparent;
+      color:#fff;
+      font-size: .95rem;
+    }
+    .search input::placeholder{ color: rgba(245,245,220,.55); }
+
+    .count{ font-weight:700; color: rgba(245,245,220,.85); }
+
+    .wrap{
+      width:min(1150px, 92vw);
+      margin: 14px auto 90px;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .card{
+      border-radius: 18px;
+      background: rgba(14,14,14,.92);
+      border: 1px solid rgba(245,245,220,.10);
+      box-shadow:0 0 18px rgba(230,57,70,.07);
+      overflow:hidden;
+      cursor:pointer;
+      transition: transform .18s ease, box-shadow .35s ease, border-color .35s ease;
+      display:flex;
+      flex-direction:column;
+      min-height: 240px;
+      position:relative;
+    }
+    .card:hover{ transform: translateY(-2px); border-color: rgba(230,57,70,.45); box-shadow:0 0 22px rgba(230,57,70,.22); }
+
+    .thumb{
+      width:100%;
+      height: 170px;
+      object-fit: cover;
+      background: rgba(0,0,0,.35);
+      border-bottom: 1px solid rgba(245,245,220,.08);
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .meta{ padding: 12px 12px 14px; }
+    .meta .title{ font-weight:800; color:#fff; line-height:1.2; word-break: break-word; }
+    .meta .sub{ margin-top:6px; font-size:.9rem; color: rgba(245,245,220,.80); line-height:1.5; word-break: break-word; }
+
+    .tag{
+      position:absolute;
+      top:10px;
+      left:10px;
+      padding: 7px 10px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:.82rem;
+      background: rgba(0,0,0,.60);
+      border: 1px solid rgba(230,57,70,.55);
+      box-shadow: 0 0 16px rgba(230,57,70,.16);
+      color:#fff;
+    }
+
+    .notice{
+      width:min(1150px, 92vw);
+      margin: 14px auto 0;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: radial-gradient(ellipse at top, rgba(230,57,70,.12), rgba(0,0,0,.55));
+      border: 1px solid rgba(230,57,70,.30);
+      box-shadow: 0 0 22px rgba(230,57,70,.12);
+      color: rgba(245,245,220,.92);
+      line-height: 1.65;
+      display:none;
+    }
+    .notice b{ color:#fff; }
+    .notice code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; color:#fff; }
+
+    /* lightbox */
+    .lb{ position:fixed; inset:0; background: rgba(0,0,0,.82); display:none; align-items:center; justify-content:center; z-index: 60; padding: 18px; }
+    .lb.open{ display:flex; }
+
+    .lbPanel{ width: min(1050px, 96vw); border-radius: 22px; background: rgba(10,10,10,.92); border: 1px solid rgba(230,57,70,.35); box-shadow: 0 0 32px rgba(230,57,70,.22); overflow:hidden; position:relative; }
+
+    .lbTop{ display:flex; align-items:center; justify-content:space-between; gap: 12px; padding: 12px 14px; background: linear-gradient(180deg, rgba(18,18,18,.92), rgba(18,18,18,.55)); border-bottom: 1px solid rgba(245,245,220,.08); }
+    .lbTop .tt{ min-width: 0; color:#fff; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+    .lbBtns{ display:flex; gap:10px; }
+    .lbBtn{ border:none; cursor:pointer; border-radius:999px; padding: 10px 12px; font-weight:900; background: rgba(0,0,0,.55); border: 1px solid rgba(230,57,70,.75); color:#fff; transition: transform .18s ease, box-shadow .35s ease, background-color .35s ease; }
+    .lbBtn:hover{ transform: translateY(-1px); background: rgba(230,57,70,.16); box-shadow:0 0 18px rgba(230,57,70,.30); }
+
+    .lbBody{ display:grid; grid-template-columns: 1.4fr 1fr; gap: 0; align-items:stretch; min-height: 420px; }
+    .lbImgWrap{ background: rgba(0,0,0,.45); display:flex; align-items:center; justify-content:center; padding: 12px; }
+    .lbImg{ width:100%; height:100%; max-height: 74vh; object-fit: contain; border-radius: 18px; box-shadow: 0 0 26px rgba(230,57,70,.22); border: 1px solid rgba(245,245,220,.10); background: rgba(0,0,0,.35); }
+
+    .lbText{ padding: 14px 14px 18px; }
+    .lbText .line{ height:1px; background: linear-gradient(90deg, transparent, rgba(230,57,70,.75), transparent); margin: 12px 0; }
+    .lbText .p{ color: rgba(245,245,220,.88); line-height:1.65; }
+    .lbText .pill{ display:inline-flex; align-items:center; justify-content:center; padding:8px 12px; border-radius:999px; background: rgba(0,0,0,.55); border: 1px solid rgba(245,245,220,.16); color:#fff; font-weight:800; margin-top: 10px; word-break: break-word; }
+
+    @media (max-width: 900px){ .lbBody{ grid-template-columns: 1fr; } }
+    @media (max-width: 520px){ nav a{ margin: 0 10px; } .hero h1{ font-size: 1.85rem; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="arquivo1.html">Ouça Agora</a>
+    <a href="discografia_completa.html">Discografia</a>
+    <a href="blog_noticias_diva_pop.html">Blog</a>
+    <a href="pix_apoiar.html">PIX</a>
+    <a href="presskit_oficial.html">Press Kit</a>
+    <a href="contato_contrate_diva_pop.html">Contato</a>
+    <a href="area_restrita.html">Área Restrita</a>
+  </nav>
+
+  <header class="hero">
+    <div class="heroInner">
+      <div>
+        <h1>Nossa história em fotos</h1>
+        <p>Galeria automática via <b>manifest.json</b> (ordem cronológica). Clique em uma foto para abrir em tela cheia.</p>
+      </div>
+      <div class="chips" aria-label="Filtros">
+        <button class="chip active" data-filter="all">Tudo</button>
+        <button class="chip" data-filter="ensaio">Ensaio</button>
+        <button class="chip" data-filter="bastidores">Bastidores</button>
+        <button class="chip" data-filter="palco">Palco</button>
+        <button class="chip" data-filter="estudio">Estúdio</button>
+        <button class="chip" data-filter="carnaval">Carnaval</button>
+        <button class="chip" data-filter="qtt">Quanto Tempo Temos?</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <div class="search" role="search">
+      <span aria-hidden="true">🔎</span>
+      <input id="q" type="search" placeholder="Buscar por título/legenda/data…" autocomplete="off" />
+    </div>
+    <div class="count" id="count">—</div>
+  </section>
+
+  <section class="notice" id="notice">
+    <b>Não consegui carregar o manifest.</b>
+    <div style="margin-top:8px; opacity:.92;" id="diag"></div>
+    <div style="margin-top:10px; opacity:.92;">
+      Dica: abra via <code>http://</code> (servidor local/NGROK), não por <code>file://</code>.
+    </div>
+  </section>
+
+  <main class="wrap" id="grid" aria-label="Galeria"></main>
+
+  <div class="lb" id="lb" aria-hidden="true">
+    <div class="lbPanel" role="dialog" aria-modal="true" aria-label="Visualizar foto">
+      <div class="lbTop">
+        <div class="tt" id="lbTitle">—</div>
+        <div class="lbBtns">
+          <button class="lbBtn" id="prevBtn" title="Anterior">⟵</button>
+          <button class="lbBtn" id="nextBtn" title="Próxima">⟶</button>
+          <button class="lbBtn" id="closeBtn" title="Fechar">✕</button>
+        </div>
+      </div>
+      <div class="lbBody">
+        <div class="lbImgWrap"><img id="lbImg" class="lbImg" src="" alt="" /></div>
+        <div class="lbText">
+          <div class="p" id="lbText">—</div>
+          <div class="line"></div>
+          <div class="pill" id="lbTag">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ✅ Tentamos dois nomes de pasta:
+    // 1) o seu atual com espaço (precisa de %20)
+    // 2) o padrão recomendado (sem espaço)
+    const BASES = [
+      'nossa_hitoria_em%20fotos',
+      'nossa_historia_em_fotos'
+    ];
+
+    const grid = document.getElementById('grid');
+    const q = document.getElementById('q');
+    const count = document.getElementById('count');
+    const notice = document.getElementById('notice');
+    const diag = document.getElementById('diag');
+
+    const lb = document.getElementById('lb');
+    const lbImg = document.getElementById('lbImg');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbText = document.getElementById('lbText');
+    const lbTag = document.getElementById('lbTag');
+    const closeBtn = document.getElementById('closeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    let PHOTOS = [];
+    let filter = 'all';
+    let filtered = [];
+    let activeIndex = -1;
+
+    function niceTag(t){
+      const map = { ensaio:'Ensaio', bastidores:'Bastidores', palco:'Palco', estudio:'Estúdio', carnaval:'Carnaval', qtt:'Quanto Tempo Temos?' };
+      return map[t] || t || 'Foto';
+    }
+
+    function guessTag(path){
+      const p = (path || '').toLowerCase();
+      if(p.includes('ensaio')) return 'ensaio';
+      if(p.includes('bastidor')) return 'bastidores';
+      if(p.includes('palco') || p.includes('show')) return 'palco';
+      if(p.includes('estudio') || p.includes('studio') || p.includes('grav')) return 'estudio';
+      if(p.includes('carnaval')) return 'carnaval';
+      if(p.includes('quanto') || p.includes('qtt')) return 'qtt';
+      return 'bastidores';
+    }
+
+    function normalize(data, base){
+      const arr = Array.isArray(data) ? data : [];
+      const norm = arr.map((it, i)=>{
+        const src = typeof it === 'string' ? it : (it.src || '');
+        const file = src ? src.split('/').pop() : `foto_${i+1}`;
+        return {
+          src: src ? `${base}/${src}` : '',
+          date: (typeof it === 'object' && it.date) ? String(it.date) : '',
+          tag: (typeof it === 'object' && it.tag) ? String(it.tag) : guessTag(src),
+          title: (typeof it === 'object' && it.title) ? String(it.title) : (file || `Foto ${i+1}`),
+          text: (typeof it === 'object' && it.text) ? String(it.text) : ''
+        };
+      }).filter(x=>x.src);
+
+      // Ordena por date e depois por src
+      norm.sort((a,b)=>{
+        const da = a.date || ''; const db = b.date || '';
+        if(da && db) return da.localeCompare(db);
+        return a.src.localeCompare(b.src);
+      });
+
+      return norm;
+    }
+
+    async function fetchManifest(){
+      let lastErr = '';
+      for(const base of BASES){
+        const url = `${base}/manifest.json`;
+        try{
+          const res = await fetch(url, { cache: 'no-store' });
+          if(!res.ok){ lastErr = `HTTP ${res.status} ao buscar ${url}`; continue; }
+          const data = await res.json();
+          const normalized = normalize(data, base);
+          if(normalized.length) return { photos: normalized, url, error: '' };
+          lastErr = `Manifest vazio em ${url}`;
+        } catch(e){
+          lastErr = `Falha ao buscar ${url}: ${String(e && e.message ? e.message : e)}`;
+        }
+      }
+      return { photos: null, url: `${BASES[0]}/manifest.json`, error: lastErr || 'Não foi possível carregar o manifest.' };
+    }
+
+    function cardEl(item, idx){
+      const el = document.createElement('div');
+      el.className = 'card';
+
+      const img = document.createElement('img');
+      img.className = 'thumb';
+      img.alt = item.title;
+      img.src = item.src;
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = 'assets/og_divapop.jpg';
+      };
+
+      const tag = document.createElement('div');
+      tag.className = 'tag';
+      tag.textContent = niceTag(item.tag);
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      const when = item.date ? ` • ${item.date}` : '';
+      meta.innerHTML = `<div class="title">${item.title}${when}</div><div class="sub">${item.text || ''}</div>`;
+
+      el.appendChild(img);
+      el.appendChild(tag);
+      el.appendChild(meta);
+
+      el.addEventListener('click', ()=> openAt(idx));
+      return el;
+    }
+
+    function apply(){
+      const query = (q.value || '').trim().toLowerCase();
+      filtered = PHOTOS
+        .filter(p => filter === 'all' ? true : p.tag === filter)
+        .filter(p => !query ? true : (`${p.title} ${p.text} ${niceTag(p.tag)} ${(p.date||'')}`.toLowerCase().includes(query)));
+
+      grid.innerHTML = '';
+      filtered.forEach((p, i)=> grid.appendChild(cardEl(p, i)));
+      count.textContent = `${filtered.length} foto(s)`;
+    }
+
+    function openAt(i){
+      activeIndex = i;
+      const p = filtered[activeIndex];
+      if(!p) return;
+
+      lbTitle.textContent = p.title + (p.date ? ` • ${p.date}` : '');
+      lbText.textContent = p.text || '';
+      lbTag.textContent = niceTag(p.tag);
+      lbImg.alt = p.title;
+      lbImg.src = p.src;
+      lbImg.onerror = () => {
+        lbImg.onerror = null;
+        lbImg.src = 'assets/og_divapop.jpg';
+      };
+
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+    }
+
+    function close(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); activeIndex = -1; }
+    function prev(){ if(activeIndex > 0) openAt(activeIndex - 1); }
+    function next(){ if(activeIndex < filtered.length - 1) openAt(activeIndex + 1); }
+
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) close(); });
+    document.addEventListener('keydown', (e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key === 'Escape') close();
+      if(e.key === 'ArrowLeft') prev();
+      if(e.key === 'ArrowRight') next();
+    });
+
+    document.querySelectorAll('.chip').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.chip').forEach(b=> b.classList.remove('active'));
+        btn.classList.add('active');
+        filter = btn.dataset.filter;
+        apply();
+      });
+    });
+
+    q.addEventListener('input', apply);
+
+    async function init(){
+      const res = await fetchManifest();
+      if(res.photos){
+        PHOTOS = res.photos;
+        notice.style.display = 'none';
+        apply();
+        return;
+      }
+
+      PHOTOS = [];
+      apply();
+      notice.style.display = 'block';
+      diag.innerHTML = `Arquivo esperado: <code>${res.url}</code><br>Erro: <code>${res.error}</code><br><br>Modo atual: <code>${location.protocol}//</code>`;
+    }
+
+    window.addEventListener('load', init);
+  </script>
+</body>
+</html>

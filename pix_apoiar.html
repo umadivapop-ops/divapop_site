@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apoiar via PIX | Diva Pop</title>
+  <meta name="description" content="Apoie a Diva Pop via PIX e ajude a manter os encartes imersivos, gravações e shows." />
+  <meta property="og:title" content="Apoiar via PIX | Diva Pop" />
+  <meta property="og:description" content="Seu apoio mantém o palco aceso: encartes imersivos, gravações, clipes e shows." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Diva Pop" />
+  <meta property="og:image" content="assets/og_divapop.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    :root{ --neon:#e63946; --cream:#f5f5dc; }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#000;
+      color:var(--cream);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    nav{
+      background:rgba(0,0,0,.85);
+      text-align:center;
+      padding:12px 0;
+      border-top:2px solid var(--neon);
+      border-bottom:2px solid var(--neon);
+      position:sticky;
+      top:0;
+      z-index:10;
+      backdrop-filter: blur(6px);
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin:0 14px;
+      font-weight:600;
+      transition:color .3s;
+      display:inline-block;
+      padding:6px 2px;
+    }
+    nav a:hover{ color:var(--neon); }
+
+    header{
+      padding:54px 18px 18px;
+      text-align:center;
+    }
+    header h1{
+      margin:0;
+      font-size:2.2rem;
+      color:var(--neon);
+      text-shadow:0 0 16px rgba(230,57,70,.75);
+      letter-spacing:1px;
+    }
+    header p{ margin:12px auto 0; max-width:820px; line-height:1.7; }
+
+    .wrap{
+      width:min(980px, 92vw);
+      margin: 8px auto 40px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+    }
+
+    .card{
+      background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%);
+      border:1px solid rgba(230,57,70,.35);
+      border-radius:22px;
+      box-shadow:0 0 28px rgba(230,57,70,.25);
+      padding:18px;
+      overflow:hidden;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:1.2rem;
+    }
+
+    .pixbox{
+      border:1px dashed rgba(245,245,220,.35);
+      border-radius:18px;
+      padding:14px;
+      background:rgba(0,0,0,.35);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .label{
+      font-size:.9rem;
+      opacity:.92;
+      margin: 4px 0 -6px;
+    }
+
+    .code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.95rem;
+      color:#fff;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(230,57,70,.45);
+      box-shadow:0 0 18px rgba(230,57,70,.20);
+      word-break: break-all;
+      background: rgba(0,0,0,.25);
+    }
+
+    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; }
+    button{
+      border:none;
+      border-radius:999px;
+      padding:10px 16px;
+      cursor:pointer;
+      font-weight:600;
+      background:var(--neon);
+      color:#fff;
+      transition: transform .25s ease, box-shadow .35s, background-color .35s;
+      min-width: 160px;
+    }
+    button:hover{ background:#ff4757; box-shadow:0 0 22px var(--neon); transform: translateY(-1px); }
+    button.secondary{
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(230,57,70,.75);
+    }
+    button.secondary:hover{ background: rgba(230,57,70,.18); }
+
+    .note{ font-size:.95rem; line-height:1.7; color:rgba(245,245,220,.92); }
+
+    .qr{
+      height: 340px;
+      border-radius: 18px;
+      border:1px solid rgba(230,57,70,.35);
+      background: linear-gradient(180deg, rgba(230,57,70,.14), rgba(0,0,0,.65));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding: 18px;
+      box-shadow: 0 0 22px rgba(230,57,70,.18);
+      position: relative;
+    }
+
+    .qr img{
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 0 24px rgba(230,57,70,.35);
+      border: 1px solid rgba(245,245,220,.18);
+      background: rgba(0,0,0,.35);
+      padding: 10px;
+    }
+
+    .qr b{ color: var(--neon); }
+
+    .qr-fallback{
+      display:none;
+      color: rgba(245,245,220,.92);
+      line-height: 1.6;
+    }
+
+    footer{
+      margin-top:auto;
+      text-align:center;
+      padding:30px;
+      font-size:.9rem;
+      color:#aaa;
+      background:#111;
+      box-shadow:0 -5px 15px rgba(230,57,70,.2);
+    }
+
+    /* scroll reveal (leve, sem pesar) */
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
+    .reveal.is-visible{ opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+    @media (max-width: 880px){
+      .wrap{ grid-template-columns: 1fr; }
+      .qr{ height: 260px; }
+      nav a{ margin: 0 10px; }
+      header{ padding-top: 34px; }
+      header h1{ font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="discografia_completa.html">Discografia</a>
+    <a href="mural_fas.html">Mural</a>
+    <a href="arquivo2.html">Nossa História</a>
+    <a href="presskit_oficial.html">Press Kit</a>
+    <a href="contato_contrate_diva_pop.html">Contato</a>
+    <a href="area_restrita.html">Área Restrita</a>
+  </nav>
+
+  <header>
+    <h1>Apoiar via PIX</h1>
+    <p>Seu apoio mantém o palco aceso: encartes imersivos, gravações, clipes e novos shows. 💝</p>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>PIX (copia e cola)</h2>
+
+      <div class="pixbox">
+        <div class="label">Chave PIX</div>
+        <div id="pixKey" class="code">umadivapop@gmail.com</div>
+        <div class="btnrow">
+          <button onclick="copyText('pixKey')">📋 Copiar chave</button>
+          <button class="secondary" onclick="window.location.href='discografia_completa.html'">🎧 Voltar para a Discografia</button>
+        </div>
+
+        <div class="label" style="margin-top:4px;">Copia e Cola (payload do QR)</div>
+        <div id="pixPayload" class="code">00020126420014br.gov.bcb.pix0120umadivapop@gmail.com5204000053039865802BR5920Diogo Ferreira Alves6008Brasilia62080504mpda630450E1</div>
+        <div class="btnrow">
+          <button onclick="copyText('pixPayload')">📋 Copiar PIX Copia e Cola</button>
+          <button class="secondary" onclick="window.location.href='contato_contrate_diva_pop.html'">✉️ Falar com a banda</button>
+        </div>
+
+        <div class="note">
+          <p style="margin:0;">
+            Dica: no app do banco, escolha <b>PIX → Copia e Cola</b> e cole o código acima.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card">
+      <h2>QR Code</h2>
+      <div class="qr">
+        <img id="qrImg" src="capas/qrcode.png" alt="QR Code do PIX da Diva Pop" />
+        <div id="qrFallback" class="qr-fallback">
+          <div>
+            <p style="margin:0 0 8px;">Não encontrei o arquivo do QR ainda.</p>
+            <p style="margin:0; opacity:.9;"><b>Esperado:</b> <span style="font-family:ui-monospace,monospace;">capas/qrcode.png</span></p>
+          </div>
+        </div>
+      </div>
+      <p class="note" style="margin:12px 0 0;">Se o QR não aparecer, verifique se o arquivo está em <b>/capas/qrcode.png</b> e atualize a página.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Config rápido: se quiser sobrescrever sem editar HTML:
+    // localStorage.setItem('divapop_pix', 'SUA_CHAVE_REAL');
+    // localStorage.setItem('divapop_pix_payload', 'SEU_COPIA_E_COLA_REAL');
+
+    const PIX_KEY_DEFAULT = 'umadivapop@gmail.com';
+    const PIX_PAYLOAD_DEFAULT = '00020126420014br.gov.bcb.pix0120umadivapop@gmail.com5204000053039865802BR5920Diogo Ferreira Alves6008Brasilia62080504mpda630450E1';
+
+    const storedKey = (localStorage.getItem('divapop_pix') || '').trim();
+    const storedPayload = (localStorage.getItem('divapop_pix_payload') || '').trim();
+
+    const pixKeyEl = document.getElementById('pixKey');
+    const pixPayloadEl = document.getElementById('pixPayload');
+
+    pixKeyEl.innerText = storedKey || PIX_KEY_DEFAULT;
+    pixPayloadEl.innerText = storedPayload || PIX_PAYLOAD_DEFAULT;
+
+    function copyText(id){
+      const el = document.getElementById(id);
+      const txt = (el?.innerText || '').trim();
+      if(!txt) return;
+
+      navigator.clipboard?.writeText(txt).then(()=>{
+        const old = el.innerText;
+        el.innerText = '✅ Copiado!';
+        setTimeout(()=> el.innerText = old, 1100);
+      }).catch(()=>{});
+    }
+
+    // QR code: fallback elegante se não carregar
+    const qrImg = document.getElementById('qrImg');
+    const qrFallback = document.getElementById('qrFallback');
+    qrImg.onerror = () => {
+      qrImg.style.display = 'none';
+      qrFallback.style.display = 'block';
+    };
+
+    // scroll reveal (auto)
+    (function(){
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if(reduce) return;
+      const targets = [];
+      document.querySelectorAll('header, .card, footer').forEach(el=>{
+        if(!el.classList.contains('reveal')){ el.classList.add('reveal'); targets.push(el); }
+      });
+      const io = new IntersectionObserver((entries)=>{
+        for(const e of entries){
+          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        }
+      }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
+      targets.forEach(t=>io.observe(t));
+    })();
+  </script>
+</body>
+</html>

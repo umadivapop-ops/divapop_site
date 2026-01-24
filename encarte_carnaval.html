@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encarte - Carnaval | Diva Pop</title>
+  <meta name="description" content="Encarte imersivo do EP 'Carnaval' — arte + fotos + áudio faixa a faixa." />
+  <meta property="og:title" content="Encarte - Carnaval | Diva Pop" />
+  <meta property="og:description" content="Experiência vinil retrô + neon moderno: encarte com áudio faixa a faixa." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Diva Pop" />
+  <meta property="og:image" content="assets/og_divapop.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#000000">
+  <style>
+    :root{ --neon:#e63946; --cream:#f5f5dc; }
+
+    body{
+      margin:0;
+      background:#000;
+      color:#fff;
+      font-family:'Poppins',sans-serif;
+      overflow:hidden;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+    }
+
+    .stage{
+      position:relative;
+      width:92vw;
+      height:calc(100vh - 120px);
+      margin:18px auto 0;
+      border-radius:16px;
+      box-shadow:0 0 34px rgba(230,57,70,.55);
+      overflow:hidden;
+      background: radial-gradient(ellipse at center, rgba(230,57,70,.08) 0%, rgba(0,0,0,0) 60%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .spread{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:2.5vh 2.5vw;
+      box-sizing:border-box;
+      gap:1.5vw;
+    }
+
+    .page{
+      flex:1;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:1;
+      transition:opacity 1.2s ease;
+      position:relative;
+    }
+
+    .page.hidden{ opacity:0; }
+
+    .page img{
+      max-width:100%;
+      max-height:100%;
+      width:auto;
+      height:auto;
+      object-fit:contain;
+      border-radius:12px;
+      box-shadow:0 0 30px rgba(230,57,70,.55);
+    }
+
+    .fallback{
+      width:100%;
+      height:100%;
+      border-radius:12px;
+      border:1px dashed rgba(245,245,220,.25);
+      background: rgba(0,0,0,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:16px;
+      line-height:1.6;
+      color:#f5f5dc;
+      box-shadow:0 0 18px rgba(230,57,70,.18);
+    }
+    .fallback b{ color: var(--neon); }
+
+    .bottombar{
+      width:92vw;
+      height:92px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0 18px;
+      box-sizing:border-box;
+    }
+
+    audio{
+      width:min(420px, 92vw);
+      border-radius:28px;
+      box-shadow:0 0 26px rgba(230,57,70,.85);
+      border:2px solid var(--neon);
+      background: rgba(0,0,0,.85);
+    }
+
+    .hint{
+      padding:10px 14px;
+      border:1px solid rgba(230,57,70,.65);
+      box-shadow:0 0 18px rgba(230,57,70,.35);
+      border-radius:14px;
+      background:rgba(0,0,0,.55);
+      font-size:13px;
+      color:#f5f5dc;
+      user-select:none;
+      white-space:nowrap;
+      pointer-events:none;
+    }
+    .hint b{ color: var(--neon); font-weight:600; }
+
+    /* botão download */
+    .dlbtn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      text-decoration:none;
+      border-radius:999px;
+      padding:10px 16px;
+      font-weight:600;
+      background: rgba(0,0,0,.55);
+      border: 1px solid rgba(230,57,70,.75);
+      color: #fff;
+      box-shadow: 0 0 18px rgba(230,57,70,.18);
+      transition: transform .25s ease, box-shadow .35s, background-color .35s;
+      min-width: 170px;
+      user-select:none;
+    }
+    .dlbtn:hover{ background: rgba(230,57,70,.18); box-shadow:0 0 22px rgba(230,57,70,.55); transform: translateY(-1px); }
+    .dlbtn[aria-disabled="true"]{ opacity:.45; pointer-events:none; }
+
+    @media (max-width: 900px){
+      .spread{ padding:2vh 2vw; gap:2vw; }
+      .bottombar{ justify-content:center; gap:10px; }
+      .hint{ display:none; }
+      .dlbtn{ min-width: 150px; }
+    }
+
+    @media (max-width: 720px){
+      .stage{ height:calc(100vh - 96px); margin-top:10px; }
+      .spread{ flex-direction:column; justify-content:center; }
+      .page{ height:50%; }
+      .bottombar{ height:72px; padding-bottom:10px; }
+      .dlbtn{ display:none; } /* em mobile, o usuário pode baixar via menu do player; fica mais limpo */
+    }
+  </style>
+</head>
+<body>
+  <div class="stage">
+    <div id="spread" class="spread">
+      <div class="page left">
+        <img id="leftImage" src="" alt="" />
+        <div id="leftFallback" class="fallback" style="display:none;"><div><b>Arquivo não encontrado</b><br><span id="leftPath"></span></div></div>
+      </div>
+      <div class="page right">
+        <img id="rightImage" src="" alt="" />
+        <div id="rightFallback" class="fallback" style="display:none;"><div><b>Arquivo não encontrado</b><br><span id="rightPath"></span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottombar">
+    <audio id="player" controls preload="metadata"></audio>
+    <a id="downloadBtn" class="dlbtn no-advance" href="#" download aria-disabled="true" title="Baixar a faixa atual">⬇️ Baixar faixa</a>
+    <div class="hint"><b>Clique</b> em qualquer lugar para avançar</div>
+  </div>
+
+  <script>
+    // ===== Analytics local (para área_restrita.html) =====
+    const DP_STATS_KEY = 'divapop_stats_v1';
+
+    function dpLoad(){
+      try{
+        const raw = localStorage.getItem(DP_STATS_KEY);
+        if(!raw) return { v:1, pages:{}, plays:{}, downloads:{}, updatedAt:null };
+        const s = JSON.parse(raw);
+        return { v:1, pages: s.pages||{}, plays: s.plays||{}, downloads: s.downloads||{}, updatedAt: s.updatedAt||null };
+      }catch(e){
+        return { v:1, pages:{}, plays:{}, downloads:{}, updatedAt:null };
+      }
+    }
+
+    function dpSave(s){
+      try{ s.updatedAt = new Date().toISOString(); }catch(e){}
+      localStorage.setItem(DP_STATS_KEY, JSON.stringify(s));
+    }
+
+    function dpInc(kind, key){
+      if(!key) return;
+      const s = dpLoad();
+      const bucket = (kind === 'plays') ? s.plays : (kind === 'downloads') ? s.downloads : s.pages;
+      bucket[key] = (Number(bucket[key])||0) + 1;
+      dpSave(s);
+    }
+
+    function dpPageName(){
+      const last = (location.pathname || '').split('/').pop();
+      return last || 'encarte_carnaval.html';
+    }
+
+    // ===== Conteúdo do encarte =====
+    // Nomes EXATOS conforme seus prints.
+    // Observação: créditos está como "7_creditos_canaval.png" (sem R).
+
+    const pages = [
+      { left: 'fotos_carnaval/7contra_capa.png', right: 'encarte_carnaval/1_capa_carnaval.png', song: null },
+      { left: 'fotos_carnaval/2_carnaval.png', right: 'encarte_carnaval/2_carnaval.png', song: ['musicas_carnaval/1_carnaval.mp3','musicas_carnaval/1_carnaval.MP3'] },
+      { left: 'fotos_carnaval/3_o_preco_de_ser_mulher.png', right: 'encarte_carnaval/3_o_preco_de_ser_mulher.png', song: ['musicas_carnaval/2_o_preco_de_ser_mulher.mp3','musicas_carnaval/2-o-preco-de-ser-mulher.mp3','musicas_carnaval/2_o_preco_de_ser_mulher.MP3'] },
+      { left: 'fotos_carnaval/4_sem_titulo.png', right: 'encarte_carnaval/4_sem_titulo.png', song: ['musicas_carnaval/3_sem-titulo.mp3','musicas_carnaval/3-sem-titulo.mp3','musicas_carnaval/3_sem_titulo.mp3','musicas_carnaval/3_sem_titulo.MP3'] },
+      { left: 'fotos_carnaval/5_pagina_encarte.png', right: 'encarte_carnaval/6_citacao.png', song: null },
+      { left: 'fotos_carnaval/6_pagina_encarte.png', right: 'encarte_carnaval/7_creditos_canaval.png', song: null },
+      { left: 'fotos_carnaval/7contra_capa.png', right: 'encarte_carnaval/8_contra_capa_carnaval.png', song: null },
+    ];
+
+    let currentPage = 0;
+    let currentTrackKey = null;
+
+    const leftImg = document.getElementById('leftImage');
+    const rightImg = document.getElementById('rightImage');
+    const leftFb = document.getElementById('leftFallback');
+    const rightFb = document.getElementById('rightFallback');
+    const leftPath = document.getElementById('leftPath');
+    const rightPath = document.getElementById('rightPath');
+    const player = document.getElementById('player');
+    const dlBtn = document.getElementById('downloadBtn');
+
+    function setDownload(url){
+      currentTrackKey = url || null;
+      if(!url){
+        dlBtn.setAttribute('aria-disabled','true');
+        dlBtn.removeAttribute('href');
+        dlBtn.removeAttribute('download');
+        return;
+      }
+      dlBtn.setAttribute('aria-disabled','false');
+      dlBtn.href = url;
+      // sugere um nome de arquivo amigável
+      const name = url.split('/').pop() || 'divapop.mp3';
+      dlBtn.setAttribute('download', name);
+    }
+
+    function fadeOut(){
+      document.querySelector('.page.left')?.classList.add('hidden');
+      document.querySelector('.page.right')?.classList.add('hidden');
+    }
+
+    function fadeIn(){
+      document.querySelector('.page.left')?.classList.remove('hidden');
+      document.querySelector('.page.right')?.classList.remove('hidden');
+    }
+
+    function setImg(imgEl, fbEl, pathEl, src, alt){
+      fbEl.style.display = 'none';
+      pathEl.textContent = '';
+      imgEl.style.display = 'block';
+      imgEl.alt = alt;
+      imgEl.onerror = () => {
+        imgEl.style.display = 'none';
+        fbEl.style.display = 'flex';
+        pathEl.textContent = src;
+        console.warn('[DivaPop] Imagem não encontrada:', src);
+      };
+      imgEl.src = src;
+    }
+
+    async function tryPlay(list){
+      for(const src of list){
+        currentTrackKey = src;
+        player.src = src;
+        try{
+          await player.play();
+          setDownload(src);
+          return true;
+        }catch(e){
+          console.warn('[DivaPop] Falha ao tocar, tentando outro nome:', src);
+        }
+      }
+      return false;
+    }
+
+    function startAudioForPage(idx){
+      const song = pages[idx].song;
+      if(!song){
+        player.pause();
+        player.removeAttribute('src');
+        player.load();
+        setDownload(null);
+        return;
+      }
+      const list = Array.isArray(song) ? song : [song];
+      tryPlay(list).then((ok)=>{ if(!ok){ setDownload(null); console.warn('[DivaPop] Nenhuma variação do áudio tocou.'); } });
+    }
+
+    function renderPage(idx){
+      const page = pages[idx];
+      fadeOut();
+      setTimeout(() => {
+        setImg(leftImg, leftFb, leftPath, page.left, 'Foto do EP Carnaval');
+        setImg(rightImg, rightFb, rightPath, page.right, 'Arte do encarte');
+        fadeIn();
+      }, 820);
+    }
+
+    // ===== Métricas =====
+    window.addEventListener('load', () => {
+      dpInc('pages', dpPageName());
+      renderPage(0);
+      setDownload(null);
+    });
+
+    // conta play toda vez que começa a tocar
+    player.addEventListener('play', ()=>{
+      if(currentTrackKey) dpInc('plays', currentTrackKey);
+    });
+
+    // conta download ao clicar no botão (quando habilitado)
+    dlBtn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      if(dlBtn.getAttribute('aria-disabled') !== 'true' && currentTrackKey){
+        dpInc('downloads', currentTrackKey);
+      }
+    });
+
+    document.body.addEventListener('click', (e) => {
+      if(e.target && (e.target.tagName === 'AUDIO' || e.target.closest('audio') || e.target.closest('.no-advance'))) return;
+      if(currentPage < pages.length - 1){
+        currentPage++;
+        startAudioForPage(currentPage);
+        renderPage(currentPage);
+      }
+    });
+  </script>
+</body>
+</html>

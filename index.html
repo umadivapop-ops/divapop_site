@@ -72,22 +72,14 @@
 
     .logo:hover { transform: translateY(-50%) scale(1.05); }
 
-    /* Texto + botão mais embaixo (altura “canela”) */
+    /* Botão e texto colados no rodapé do herói, 10px acima do menu */
     .hero-content {
       position: absolute;
       left: 50%;
-      bottom: 12%;
+      bottom: 10px; /* 10px de distância do menu abaixo */
       transform: translateX(-50%);
       z-index: 2;
       width: min(920px, 92vw);
-    }
-
-    .hero h1 {
-      font-size: 1.5rem;
-      font-style: italic;
-      color: #e63946;
-      margin-bottom: 18px;
-      text-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
     }
 
     .hero .btn {
@@ -103,6 +95,17 @@
     }
 
     .hero .btn:hover { background-color: #ff4d5a; transform: scale(1.05); }
+
+    /* Slogan abaixo do botão, legível */
+    .hero .slogan {
+      margin-top: 10px; /* abaixo do botão */
+      font-size: 1.45rem;
+      font-style: italic;
+      color: #ffffff; /* mais legível que o vermelho */
+      text-shadow:
+        0 2px 18px rgba(0,0,0,0.75),
+        0 0 18px rgba(230,57,70,0.18);
+    }
 
     nav {
       background-color: rgba(0, 0, 0, 0.85);
@@ -270,8 +273,8 @@
 
     @media (max-width: 720px){
       .logo{ left: 18px; width: 170px; }
-      .hero-content{ bottom: 10%; }
-      .hero h1{ font-size: 1.15rem; }
+      .hero-content{ bottom: 12px; }
+      .hero .slogan{ font-size: 1.12rem; }
       .thumb img{ height: 130px; }
       .portal-view img{ height:min(38vh, 360px); }
     }
@@ -281,8 +284,8 @@
   <section class="hero">
     <img src="logo_diva_pop.png" alt="Logo Diva Pop" class="logo">
     <div class="hero-content">
-      <h1>“Entre a inocência que nasce e a experiência que pulsa”</h1>
       <button class="btn" onclick="location.href='arquivo1.html'">Ouça Agora</button>
+      <div class="slogan">“Entre a inocência que nasce e a experiência que pulsa”</div>
     </div>
   </section>
 

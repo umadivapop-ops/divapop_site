@@ -125,6 +125,7 @@
       border: 1px solid rgba(230,57,70,.75);
     }
     a.btn.secondary:hover{ background: rgba(230,57,70,.18); }
+    button[disabled]{ opacity:.65; cursor:not-allowed; transform:none; box-shadow:none; }
 
     .info{
       display:flex;
@@ -141,6 +142,18 @@
       box-shadow: 0 0 16px rgba(230,57,70,.14);
     }
     .chip b{ color:#fff; }
+
+    .status{
+      margin:12px 0 0;
+      font-size:.92rem;
+      line-height:1.6;
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid rgba(245,245,220,.18);
+      background: rgba(0,0,0,.35);
+      display:none;
+    }
+    .status.show{ display:block; }
 
     footer{
       margin-top:auto;
@@ -178,15 +191,15 @@
 
   <header>
     <h1>Contato & Contrate</h1>
-    <p>Shows, eventos, imprensa e parcerias. Responda com os detalhes e a Diva Pop retorna com rapidez.</p>
+    <p>Shows, eventos, imprensa e parcerias. Preencha e envie — o formulário pode disparar por um endpoint (recomendado) ou abrir seu e-mail como plano B.</p>
   </header>
 
   <main class="wrap">
     <section class="card">
-      <h2>Formulário (envio via e-mail)</h2>
-      <form id="form" onsubmit="return sendEmail()">
+      <h2>Formulário</h2>
+      <form id="form" onsubmit="return handleSubmit(event)">
         <label for="tipo">Assunto</label>
-        <select id="tipo">
+        <select id="tipo" name="tipo">
           <option value="Show">Show / Evento</option>
           <option value="Imprensa">Imprensa / Entrevista</option>
           <option value="Parceria">Parceria / Collab</option>
@@ -194,21 +207,23 @@
         </select>
 
         <label for="nome">Nome</label>
-        <input id="nome" required maxlength="60" placeholder="Seu nome" />
+        <input id="nome" name="nome" required maxlength="60" placeholder="Seu nome" />
 
         <label for="email">E-mail</label>
-        <input id="email" type="email" required maxlength="80" placeholder="voce@email.com" />
+        <input id="email" name="email" type="email" required maxlength="80" placeholder="voce@email.com" />
 
         <label for="msg">Mensagem</label>
-        <textarea id="msg" required maxlength="800" placeholder="Conte a data, cidade, local, duração e estrutura desejada..."></textarea>
+        <textarea id="msg" name="mensagem" required maxlength="800" placeholder="Conte a data, cidade, local, duração e estrutura desejada..."></textarea>
 
         <div class="btnrow">
-          <button type="submit">✉️ Enviar</button>
+          <button id="btnEnviar" type="submit">✉️ Enviar</button>
           <a class="btn secondary" href="presskit_oficial.html">📎 Ver Press Kit</a>
         </div>
 
+        <p id="status" class="status" aria-live="polite"></p>
+
         <p style="margin:12px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">
-          Obs.: site estático — o botão abre seu app de e-mail com a mensagem preenchida.
+          Dica: para enviar sem abrir o app de e-mail, configure um endpoint (ex.: Formspree/Netlify) em <b>localStorage</b> com a chave <code>divapop_form_endpoint</code>.
         </p>
       </form>
     </section>
@@ -232,7 +247,10 @@
   <script>
     // Ajuste rápido (centralizado): edite aqui com os dados reais.
     // Dica: também dá para testar sem editar HTML via localStorage:
-    // localStorage.setItem('divapop_email','umadivapop@gmail.com'); localStorage.setItem('divapop_whats','+55 11 94727-9393'); localStorage.setItem('divapop_insta','@...');
+    // localStorage.setItem('divapop_email','umadivapop@gmail.com');
+    // localStorage.setItem('divapop_whats','+55 11 94727-9393');
+    // localStorage.setItem('divapop_insta','@divapop');
+    // localStorage.setItem('divapop_form_endpoint','https://formspree.io/f/SEU_ID');
     const CONTACT_DEFAULT = {
       email: 'umadivapop@gmail.com',
       whatsapp: '+55 11 94727-9393',
@@ -247,7 +265,21 @@
     document.getElementById('chanWhats').textContent = CONTACT.whatsapp;
     document.getElementById('chanInsta').textContent = CONTACT.instagram;
 
-    function sendEmail(){
+    const FORM_ENDPOINT = (localStorage.getItem('divapop_form_endpoint') || '').trim();
+
+    function setStatus(text){
+      const el = document.getElementById('status');
+      el.textContent = text;
+      el.classList.add('show');
+    }
+
+    function clearStatus(){
+      const el = document.getElementById('status');
+      el.textContent = '';
+      el.classList.remove('show');
+    }
+
+    function openMailtoFallback(){
       const to = CONTACT.email;
       const tipo = document.getElementById('tipo').value;
       const nome = document.getElementById('nome').value.trim();
@@ -258,6 +290,64 @@
       const body = `Nome: ${nome}\nE-mail: ${email}\nAssunto: ${tipo}\n\nMensagem:\n${msg}`;
 
       window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    async function handleSubmit(e){
+      e.preventDefault();
+      clearStatus();
+
+      const btn = document.getElementById('btnEnviar');
+      btn.disabled = true;
+      const btnLabel = btn.textContent;
+      btn.textContent = 'Enviando…';
+
+      const tipo = document.getElementById('tipo').value;
+      const nome = document.getElementById('nome').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('msg').value.trim();
+
+      // Se não houver endpoint configurado, abre o mailto como plano B.
+      if(!FORM_ENDPOINT){
+        setStatus('Endpoint não configurado — abrindo seu app de e-mail como alternativa.');
+        btn.disabled = false;
+        btn.textContent = btnLabel;
+        openMailtoFallback();
+        return false;
+      }
+
+      try{
+        const payload = {
+          assunto: tipo,
+          nome,
+          email,
+          mensagem: msg,
+          origem: 'site-diva-pop'
+        };
+
+        const res = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if(res.ok){
+          setStatus('✅ Mensagem enviada com sucesso! Obrigada 💖');
+          document.getElementById('form').reset();
+        }else{
+          // Alguns serviços retornam 4xx se o endpoint estiver errado.
+          setStatus('⚠️ Não foi possível enviar pelo formulário (endpoint recusou). Abrindo seu e-mail como alternativa.');
+          openMailtoFallback();
+        }
+      }catch(err){
+        setStatus('⚠️ Falha de rede ao enviar. Abrindo seu e-mail como alternativa.');
+        openMailtoFallback();
+      }finally{
+        btn.disabled = false;
+        btn.textContent = btnLabel;
+      }
       return false;
     }
 

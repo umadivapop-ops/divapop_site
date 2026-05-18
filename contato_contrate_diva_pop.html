@@ -6,7 +6,7 @@
   <title>Contato & Contrate | Diva Pop</title>
   <meta name="description" content="Contato oficial da Diva Pop para shows, eventos e imprensa." />
   <meta property="og:title" content="Contato & Contrate | Diva Pop" />
-  <meta property="og:description" content="Shows, eventos, imprensa e parcerias â€” fale com a Diva Pop." />
+  <meta property="og:description" content="Shows, eventos, imprensa e parcerias — fale com a Diva Pop." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -180,23 +180,23 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">InÃ­cio</a>
+    <a href="index.html">Início</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="presskit_oficial.html">Press Kit</a>
     <a href="pix_apoiar.html">Apoiar (PIX)</a>
-    <a href="arquivo2.html">Nossa HistÃ³ria</a>
+    <a href="arquivo2.html">Nossa História</a>
     <a href="contato_contrate_diva_pop.html">Contato</a>
     <a href="area_restrita.html">Ãrea Restrita</a>
   </nav>
 
   <header>
     <h1>Contato & Contrate</h1>
-    <p>Shows, eventos, imprensa e parcerias. Preencha e envie â€” o formulÃ¡rio pode disparar por um endpoint (recomendado) ou abrir seu e-mail como plano B.</p>
+    <p>Shows, eventos, imprensa e parcerias. Preencha e envie — o formulário pode disparar por um endpoint (recomendado) ou abrir seu e-mail como plano B.</p>
   </header>
 
   <main class="wrap">
     <section class="card">
-      <h2>FormulÃ¡rio</h2>
+      <h2>Formulário</h2>
       <form id="form" onsubmit="return handleSubmit(event)">
         <label for="tipo">Assunto</label>
         <select id="tipo" name="tipo">
@@ -213,11 +213,11 @@
         <input id="email" name="email" type="email" required maxlength="80" placeholder="voce@email.com" />
 
         <label for="msg">Mensagem</label>
-        <textarea id="msg" name="mensagem" required maxlength="800" placeholder="Conte a data, cidade, local, duraÃ§Ã£o e estrutura desejada..."></textarea>
+        <textarea id="msg" name="mensagem" required maxlength="800" placeholder="Conte a data, cidade, local, duração e estrutura desejada..."></textarea>
 
         <div class="btnrow">
-          <button id="btnEnviar" type="submit">âœ‰ï¸ Enviar</button>
-          <a class="btn secondary" href="presskit_oficial.html">ðŸ“Ž Ver Press Kit</a>
+          <button id="btnEnviar" type="submit">✉ Enviar</button>
+          <a class="btn secondary" href="presskit_oficial.html">📎 Ver Press Kit</a>
         </div>
 
         <p id="status" class="status" aria-live="polite"></p>
@@ -233,28 +233,28 @@
       <div class="info">
         <div class="chip"><b>E-mail:</b> <span id="chanEmail">umadivapop@gmail.com</span></div>
         <div class="chip"><b>WhatsApp:</b> <span id="chanWhats">+55 11 94727-9393</span></div>
-        <div class="chip"><b>Instagram:</b> <span id="chanInsta">@divapop</span></div>
-        <a class="btn" href="discografia_completa.html">ðŸŽ§ Ouvir agora</a>
-        <a class="btn secondary" href="pix_apoiar.html">ðŸ’ Apoiar via PIX</a>
+        <div class="chip"><b>Instagram:</b> <span id="chanInsta">@divapopoficial</span></div>
+        <a class="btn" href="discografia_completa.html">🎧 Ouvir agora</a>
+        <a class="btn secondary" href="pix_apoiar.html">💝 Apoiar via PIX</a>
       </div>
     </aside>
   </main>
 
   <footer>
-    <p>Â© 2026 Diva Pop. Todos os direitos reservados.</p>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
   </footer>
 
   <script>
-    // Ajuste rÃ¡pido (centralizado): edite aqui com os dados reais.
-    // Dica: tambÃ©m dÃ¡ para testar sem editar HTML via localStorage:
+    // Ajuste rápido (centralizado): edite aqui com os dados reais.
+    // Dica: também dá para testar sem editar HTML via localStorage:
     // localStorage.setItem('divapop_email','umadivapop@gmail.com');
     // localStorage.setItem('divapop_whats','+55 11 94727-9393');
-    // localStorage.setItem('divapop_insta','@divapop');
+    // localStorage.setItem('divapop_insta','@divapopoficial');
     // localStorage.setItem('divapop_form_endpoint','https://formspree.io/f/SEU_ID');
     const CONTACT_DEFAULT = {
       email: 'umadivapop@gmail.com',
       whatsapp: '+55 11 94727-9393',
-      instagram: '@divapop'
+      instagram: '@divapopoficial'
     };
     const CONTACT = {
       email: (localStorage.getItem('divapop_email') || CONTACT_DEFAULT.email).trim(),
@@ -286,7 +286,7 @@
       const email = document.getElementById('email').value.trim();
       const msg = document.getElementById('msg').value.trim();
 
-      const subject = `[Diva Pop] ${tipo} â€” ${nome}`;
+      const subject = `[Diva Pop] ${tipo} — ${nome}`;
       const body = `Nome: ${nome}\nE-mail: ${email}\nAssunto: ${tipo}\n\nMensagem:\n${msg}`;
 
       window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -299,16 +299,16 @@
       const btn = document.getElementById('btnEnviar');
       btn.disabled = true;
       const btnLabel = btn.textContent;
-      btn.textContent = 'Enviandoâ€¦';
+      btn.textContent = 'Enviando…';
 
       const tipo = document.getElementById('tipo').value;
       const nome = document.getElementById('nome').value.trim();
       const email = document.getElementById('email').value.trim();
       const msg = document.getElementById('msg').value.trim();
 
-      // Se nÃ£o houver endpoint configurado, abre o mailto como plano B.
+      // Se não houver endpoint configurado, abre o mailto como plano B.
       if(!FORM_ENDPOINT){
-        setStatus('Endpoint nÃ£o configurado â€” abrindo seu app de e-mail como alternativa.');
+        setStatus('Endpoint não configurado — abrindo seu app de e-mail como alternativa.');
         btn.disabled = false;
         btn.textContent = btnLabel;
         openMailtoFallback();
@@ -334,15 +334,15 @@
         });
 
         if(res.ok){
-          setStatus('âœ… Mensagem enviada com sucesso! Obrigada ðŸ’–');
+          setStatus('✅ Mensagem enviada com sucesso! Obrigada 💖');
           document.getElementById('form').reset();
         }else{
-          // Alguns serviÃ§os retornam 4xx se o endpoint estiver errado.
-          setStatus('âš ï¸ NÃ£o foi possÃ­vel enviar pelo formulÃ¡rio (endpoint recusou). Abrindo seu e-mail como alternativa.');
+          // Alguns serviços retornam 4xx se o endpoint estiver errado.
+          setStatus('⚠ Não foi possível enviar pelo formulário (endpoint recusou). Abrindo seu e-mail como alternativa.');
           openMailtoFallback();
         }
       }catch(err){
-        setStatus('âš ï¸ Falha de rede ao enviar. Abrindo seu e-mail como alternativa.');
+        setStatus('⚠ Falha de rede ao enviar. Abrindo seu e-mail como alternativa.');
         openMailtoFallback();
       }finally{
         btn.disabled = false;
@@ -369,3 +369,4 @@
   </script>
 </body>
 </html>
+

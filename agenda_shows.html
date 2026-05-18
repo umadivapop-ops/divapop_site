@@ -6,7 +6,7 @@
   <title>Agenda de Shows | Diva Pop</title>
   <meta name="description" content="Agenda oficial de shows da Diva Pop." />
   <meta property="og:title" content="Agenda de Shows | Diva Pop" />
-  <meta property="og:description" content="PrÃ³ximas datas e eventos da Diva Pop." />
+  <meta property="og:description" content="Próximas datas e eventos da Diva Pop." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -96,7 +96,7 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">InÃ­cio</a>
+    <a href="index.html">Início</a>
     <a href="agenda_shows.html">Agenda</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="mural_fas.html">Mural</a>
@@ -107,7 +107,7 @@
 
   <header>
     <h1>Agenda de Shows</h1>
-    <p>PrÃ³ximas datas, eventos e avisos oficiais. (Edite o array <b>SHOWS</b> no final para atualizar.)</p>
+    <p>Próximas datas, eventos e avisos oficiais. (Edite o array <b>SHOWS</b> no final para atualizar.)</p>
   </header>
 
   <main class="wrap">
@@ -117,12 +117,12 @@
       <select id="status">
         <option value="">Todos os status</option>
         <option value="Confirmado">Confirmado</option>
-        <option value="Em negociaÃ§Ã£o">Em negociaÃ§Ã£o</option>
+        <option value="Em negociação">Em negociação</option>
         <option value="Em breve">Em breve</option>
       </select>
       <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn" href="contato_contrate_diva_pop.html">âœ‰ï¸ Contrate</a>
-        <a class="btn secondary" href="discografia_completa.html">ðŸŽ§ Discografia</a>
+        <a class="btn" href="contato_contrate_diva_pop.html">✉ Contrate</a>
+        <a class="btn secondary" href="discografia_completa.html">🎧 Discografia</a>
       </div>
       <p style="margin:12px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">Dica: mantenha datas em ISO (<b>YYYY-MM-DD</b>) para ordenar automaticamente.</p>
     </aside>
@@ -135,14 +135,14 @@
   </main>
 
   <footer>
-    <p>Â© 2026 Diva Pop. Todos os direitos reservados.</p>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
   </footer>
 
   <script>
     // Edite aqui para sincronizar datas reais
     const SHOWS = [
-      { date:'2026-02-15', city:'SÃ£o Paulo - SP', venue:'(definir)', event:'Show Diva Pop', status:'Em negociaÃ§Ã£o', tickets:'' },
-      { date:'2026-03-01', city:'(definir)', venue:'(definir)', event:'Carnaval â€” pÃ³s-temporada', status:'Em breve', tickets:'' },
+      { date:'2026-02-15', city:'São Paulo - SP', venue:'(definir)', event:'Show Diva Pop', status:'Em negociação', tickets:'' },
+      { date:'2026-03-01', city:'(definir)', venue:'(definir)', event:'Carnaval — pós-temporada', status:'Em breve', tickets:'' },
       { date:'2026-01-25', city:'(definir)', venue:'(definir)', event:'Live / Pocket', status:'Em breve', tickets:'' },
     ];
 
@@ -179,8 +179,8 @@
             <div class="city">${s.city}</div>
           </div>
           <div class="btnrow">
-            ${s.tickets ? `<a class="btn" href="${s.tickets}" target="_blank" rel="noopener">ðŸŽŸï¸ Ingressos</a>` : `<a class="btn secondary" href="contato_contrate_diva_pop.html">ðŸ“ Pedir infos</a>`}
-            <a class="btn secondary" href="pix_apoiar.html">ðŸ’ Apoiar</a>
+            ${s.tickets ? `<a class="btn" href="${s.tickets}" target="_blank" rel="noopener">🎟 Ingressos</a>` : `<a class="btn secondary" href="contato_contrate_diva_pop.html">ðŸ“ Pedir infos</a>`}
+            <a class="btn secondary" href="pix_apoiar.html">💝 Apoiar</a>
           </div>
         `;
         list.appendChild(div);
@@ -208,3 +208,4 @@
   </script>
 </body>
 </html>
+

@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encarte - Carnaval | Diva Pop</title>
-  <meta name="description" content="Encarte imersivo do EP 'Carnaval' â€” arte + fotos + Ã¡udio faixa a faixa." />
+  <meta name="description" content="Encarte imersivo do EP 'Carnaval' — arte + fotos + áudio faixa a faixa." />
   <meta property="og:title" content="Encarte - Carnaval | Diva Pop" />
-  <meta property="og:description" content="ExperiÃªncia vinil retrÃ´ + neon moderno: encarte com Ã¡udio faixa a faixa." />
+  <meta property="og:description" content="Experiência vinil retrô + neon moderno: encarte com áudio faixa a faixa." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -133,7 +133,7 @@
     }
     .hint b{ color: var(--neon); font-weight:600; }
 
-    /* botÃ£o download */
+    /* botão download */
     .dlbtn{
       display:inline-flex;
       align-items:center;
@@ -166,7 +166,7 @@
       .spread{ flex-direction:column; justify-content:center; }
       .page{ height:50%; }
       .bottombar{ height:72px; padding-bottom:10px; }
-      .dlbtn{ display:none; } /* em mobile, o usuÃ¡rio pode baixar via menu do player; fica mais limpo */
+      .dlbtn{ display:none; } /* em mobile, o usuário pode baixar via menu do player; fica mais limpo */
     }
   </style>
 </head>
@@ -175,23 +175,23 @@
     <div id="spread" class="spread">
       <div class="page left">
         <img id="leftImage" src="" alt="" />
-        <div id="leftFallback" class="fallback" style="display:none;"><div><b>Arquivo nÃ£o encontrado</b><br><span id="leftPath"></span></div></div>
+        <div id="leftFallback" class="fallback" style="display:none;"><div><b>Arquivo não encontrado</b><br><span id="leftPath"></span></div></div>
       </div>
       <div class="page right">
         <img id="rightImage" src="" alt="" />
-        <div id="rightFallback" class="fallback" style="display:none;"><div><b>Arquivo nÃ£o encontrado</b><br><span id="rightPath"></span></div></div>
+        <div id="rightFallback" class="fallback" style="display:none;"><div><b>Arquivo não encontrado</b><br><span id="rightPath"></span></div></div>
       </div>
     </div>
   </div>
 
   <div class="bottombar">
     <audio id="player" controls preload="metadata"></audio>
-    <a id="downloadBtn" class="dlbtn no-advance" href="#" download aria-disabled="true" title="Baixar a faixa atual">â¬‡ï¸ Baixar faixa</a>
-    <div class="hint"><b>Clique</b> em qualquer lugar para avanÃ§ar</div>
+    <a id="downloadBtn" class="dlbtn no-advance" href="#" download aria-disabled="true" title="Baixar a faixa atual">⬇ Baixar faixa</a>
+    <div class="hint"><b>Clique</b> em qualquer lugar para avançar</div>
   </div>
 
   <script>
-    // ===== Analytics local (para Ã¡rea_restrita.html) =====
+    // ===== Analytics local (para área_restrita.html) =====
     const DP_STATS_KEY = 'divapop_stats_v1';
 
     function dpLoad(){
@@ -223,9 +223,9 @@
       return last || 'encarte_carnaval.html';
     }
 
-    // ===== ConteÃºdo do encarte =====
+    // ===== Conteúdo do encarte =====
     // Nomes EXATOS conforme seus prints.
-    // ObservaÃ§Ã£o: crÃ©ditos estÃ¡ como "7_creditos_canaval.png" (sem R).
+    // Observação: créditos está como "7_creditos_canaval.png" (sem R).
 
     const pages = [
       { left: 'fotos_carnaval/7contra_capa.png', right: 'encarte_carnaval/1_capa_carnaval.png', song: null },
@@ -259,7 +259,7 @@
       }
       dlBtn.setAttribute('aria-disabled','false');
       dlBtn.href = url;
-      // sugere um nome de arquivo amigÃ¡vel
+      // sugere um nome de arquivo amigável
       const name = url.split('/').pop() || 'divapop.mp3';
       dlBtn.setAttribute('download', name);
     }
@@ -283,7 +283,7 @@
         imgEl.style.display = 'none';
         fbEl.style.display = 'flex';
         pathEl.textContent = src;
-        console.warn('[DivaPop] Imagem nÃ£o encontrada:', src);
+        console.warn('[DivaPop] Imagem não encontrada:', src);
       };
       imgEl.src = src;
     }
@@ -313,7 +313,7 @@
         return;
       }
       const list = Array.isArray(song) ? song : [song];
-      tryPlay(list).then((ok)=>{ if(!ok){ setDownload(null); console.warn('[DivaPop] Nenhuma variaÃ§Ã£o do Ã¡udio tocou.'); } });
+      tryPlay(list).then((ok)=>{ if(!ok){ setDownload(null); console.warn('[DivaPop] Nenhuma variação do áudio tocou.'); } });
     }
 
     function renderPage(idx){
@@ -326,19 +326,19 @@
       }, 820);
     }
 
-    // ===== MÃ©tricas =====
+    // ===== Métricas =====
     window.addEventListener('load', () => {
       dpInc('pages', dpPageName());
       renderPage(0);
       setDownload(null);
     });
 
-    // conta play toda vez que comeÃ§a a tocar
+    // conta play toda vez que começa a tocar
     player.addEventListener('play', ()=>{
       if(currentTrackKey) dpInc('plays', currentTrackKey);
     });
 
-    // conta download ao clicar no botÃ£o (quando habilitado)
+    // conta download ao clicar no botão (quando habilitado)
     dlBtn.addEventListener('click', (e)=>{
       e.stopPropagation();
       if(dlBtn.getAttribute('aria-disabled') !== 'true' && currentTrackKey){
@@ -357,3 +357,4 @@
   </script>
 </body>
 </html>
+

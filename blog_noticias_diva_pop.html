@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog & NotÃ­cias | Diva Pop</title>
-  <meta name="description" content="Blog oficial da Diva Pop â€” novidades, bastidores e lanÃ§amentos." />
-  <meta property="og:title" content="Blog & NotÃ­cias | Diva Pop" />
-  <meta property="og:description" content="Novidades, bastidores e lanÃ§amentos da Diva Pop." />
+  <title>Blog & Notícias | Diva Pop</title>
+  <meta name="description" content="Blog oficial da Diva Pop — novidades, bastidores e lançamentos." />
+  <meta property="og:title" content="Blog & Notícias | Diva Pop" />
+  <meta property="og:description" content="Novidades, bastidores e lançamentos da Diva Pop." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -111,38 +111,38 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">InÃ­cio</a>
+    <a href="index.html">Início</a>
     <a href="agenda_shows.html">Agenda</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="mural_fas.html">Mural</a>
-    <a href="arquivo2.html">Nossa HistÃ³ria</a>
+    <a href="arquivo2.html">Nossa História</a>
     <a href="presskit_oficial.html">Press Kit</a>
     <a href="contato_contrate_diva_pop.html">Contato</a>
     <a href="area_restrita.html">Ãrea Restrita</a>
   </nav>
 
   <header>
-    <h1>Blog & NotÃ­cias</h1>
-    <p>Novidades, bastidores e lanÃ§amentos â€” com a estÃ©tica <i>vinil retrÃ´ + neon moderno</i> da Diva Pop.</p>
+    <h1>Blog & Notícias</h1>
+    <p>Novidades, bastidores e lançamentos — com a estética <i>vinil retrô + neon moderno</i> da Diva Pop.</p>
   </header>
 
   <main class="wrap">
     <aside class="card">
       <h2>Filtrar</h2>
       <div class="controls">
-        <input id="q" placeholder="Buscar por tÃ­tulo ou texto..." />
+        <input id="q" placeholder="Buscar por título ou texto..." />
         <select id="cat">
           <option value="">Todas as categorias</option>
-          <option value="LanÃ§amento">LanÃ§amento</option>
+          <option value="Lançamento">Lançamento</option>
           <option value="Bastidores">Bastidores</option>
           <option value="Show">Show</option>
           <option value="Imprensa">Imprensa</option>
         </select>
         <div class="btnrow">
-          <button class="btn" onclick="resetFilters()">ðŸ”Ž Aplicar</button>
-          <a class="btn secondary" href="discografia_completa.html">ðŸŽ§ Ouvir agora</a>
+          <button class="btn" onclick="resetFilters()">🔎 Aplicar</button>
+          <a class="btn secondary" href="discografia_completa.html">🎧 Ouvir agora</a>
         </div>
-        <p style="margin:10px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">VersÃ£o estÃ¡tica: os posts abaixo sÃ£o placeholders. DÃ¡ para editar o array <b>POSTS</b> no final do arquivo.</p>
+        <p style="margin:10px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">Versão estática: os posts abaixo são placeholders. Dá para editar o array <b>POSTS</b> no final do arquivo.</p>
       </div>
     </aside>
 
@@ -156,15 +156,15 @@
   </main>
 
   <footer>
-    <p>Â© 2026 Diva Pop. Todos os direitos reservados.</p>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
   </footer>
 
   <script>
     // Edite aqui para sincronizar posts reais
     const POSTS = [
-      { id:'p1', cat:'LanÃ§amento', date:'2026-01-10', title:'Carnaval â€” encarte imersivo no ar', excerpt:'O EP Carnaval ganhou encarte premium com fotos + arte + Ã¡udio faixa a faixa. Clique, vire pÃ¡ginas e sinta o palco.' },
-      { id:'p2', cat:'Bastidores', date:'2025-12-18', title:'No estÃºdio: entre o vinil e o neon', excerpt:'Um pouco do processo criativo â€” referÃªncias, arranjos e a energia que guia a Diva Pop.' },
-      { id:'p3', cat:'Show', date:'2025-11-02', title:'Agenda 2026: primeiros anÃºncios', excerpt:'Estamos organizando as datas e abrindo conversas para novos palcos. Quer a Diva Pop no seu evento? Fale conosco.' },
+      { id:'p1', cat:'Lançamento', date:'2026-01-10', title:'Carnaval — encarte imersivo no ar', excerpt:'O EP Carnaval ganhou encarte premium com fotos + arte + áudio faixa a faixa. Clique, vire páginas e sinta o palco.' },
+      { id:'p2', cat:'Bastidores', date:'2025-12-18', title:'No estúdio: entre o vinil e o neon', excerpt:'Um pouco do processo criativo — referências, arranjos e a energia que guia a Diva Pop.' },
+      { id:'p3', cat:'Show', date:'2025-11-02', title:'Agenda 2026: primeiros anúncios', excerpt:'Estamos organizando as datas e abrindo conversas para novos palcos. Quer a Diva Pop no seu evento? Fale conosco.' },
     ];
 
     const $ = (id)=>document.getElementById(id);
@@ -202,8 +202,8 @@
           <div class="meta">${fmtDate(p.date)}</div>
           <p class="excerpt">${p.excerpt}</p>
           <div class="btnrow" style="margin-top:14px;">
-            <a class="btn" href="discografia_completa.html">ðŸŽ§ Discografia</a>
-            <a class="btn secondary" href="contato_contrate_diva_pop.html">âœ‰ï¸ Contato</a>
+            <a class="btn" href="discografia_completa.html">🎧 Discografia</a>
+            <a class="btn secondary" href="contato_contrate_diva_pop.html">✉ Contato</a>
           </div>
         `;
         grid.appendChild(div);
@@ -234,3 +234,4 @@
   </script>
 </body>
 </html>
+

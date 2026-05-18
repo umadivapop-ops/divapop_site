@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nossa HistÃ³ria em Fotos | Diva Pop</title>
-  <meta name="description" content="Nossa histÃ³ria em fotos â€” bastidores, ensaios e palcos da Diva Pop em uma galeria imersiva." />
-  <meta property="og:title" content="Nossa HistÃ³ria em Fotos | Diva Pop" />
-  <meta property="og:description" content="Linha do tempo visual da Diva Pop â€” clique e abra em tela cheia." />
+  <title>Nossa História em Fotos | Diva Pop</title>
+  <meta name="description" content="Nossa história em fotos — bastidores, ensaios e palcos da Diva Pop em uma galeria imersiva." />
+  <meta property="og:title" content="Nossa História em Fotos | Diva Pop" />
+  <meta property="og:description" content="Linha do tempo visual da Diva Pop — clique e abra em tela cheia." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -227,8 +227,8 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">InÃ­cio</a>
-    <a href="arquivo1.html">OuÃ§a Agora</a>
+    <a href="index.html">Início</a>
+    <a href="arquivo1.html">Ouça Agora</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="blog_noticias_diva_pop.html">Blog</a>
     <a href="pix_apoiar.html">PIX</a>
@@ -240,15 +240,15 @@
   <header class="hero">
     <div class="heroInner">
       <div>
-        <h1>Nossa histÃ³ria em fotos</h1>
-        <p>Galeria automÃ¡tica via <b>manifest.json</b> (ordem cronolÃ³gica). Clique em uma foto para abrir em tela cheia.</p>
+        <h1>Nossa história em fotos</h1>
+        <p>Galeria automática via <b>manifest.json</b> (ordem cronológica). Clique em uma foto para abrir em tela cheia.</p>
       </div>
       <div class="chips" aria-label="Filtros">
         <button class="chip active" data-filter="all">Tudo</button>
         <button class="chip" data-filter="ensaio">Ensaio</button>
         <button class="chip" data-filter="bastidores">Bastidores</button>
         <button class="chip" data-filter="palco">Palco</button>
-        <button class="chip" data-filter="estudio">EstÃºdio</button>
+        <button class="chip" data-filter="estudio">Estúdio</button>
         <button class="chip" data-filter="carnaval">Carnaval</button>
         <button class="chip" data-filter="qtt">Quanto Tempo Temos?</button>
       </div>
@@ -257,17 +257,17 @@
 
   <section class="toolbar">
     <div class="search" role="search">
-      <span aria-hidden="true">ðŸ”Ž</span>
-      <input id="q" type="search" placeholder="Buscar por tÃ­tulo/legenda/dataâ€¦" autocomplete="off" />
+      <span aria-hidden="true">🔎</span>
+      <input id="q" type="search" placeholder="Buscar por título/legenda/data…" autocomplete="off" />
     </div>
-    <div class="count" id="count">â€”</div>
+    <div class="count" id="count">—</div>
   </section>
 
   <section class="notice" id="notice">
-    <b>NÃ£o consegui carregar o manifest.</b>
+    <b>Não consegui carregar o manifest.</b>
     <div style="margin-top:8px; opacity:.92;" id="diag"></div>
     <div style="margin-top:10px; opacity:.92;">
-      Dica: abra via <code>http://</code> (servidor local/NGROK), nÃ£o por <code>file://</code>.
+      Dica: abra via <code>http://</code> (servidor local/NGROK), não por <code>file://</code>.
     </div>
   </section>
 
@@ -276,28 +276,28 @@
   <div class="lb" id="lb" aria-hidden="true">
     <div class="lbPanel" role="dialog" aria-modal="true" aria-label="Visualizar foto">
       <div class="lbTop">
-        <div class="tt" id="lbTitle">â€”</div>
+        <div class="tt" id="lbTitle">—</div>
         <div class="lbBtns">
-          <button class="lbBtn" id="prevBtn" title="Anterior">âŸµ</button>
-          <button class="lbBtn" id="nextBtn" title="PrÃ³xima">âŸ¶</button>
-          <button class="lbBtn" id="closeBtn" title="Fechar">âœ•</button>
+          <button class="lbBtn" id="prevBtn" title="Anterior">⟵</button>
+          <button class="lbBtn" id="nextBtn" title="Próxima">⟶</button>
+          <button class="lbBtn" id="closeBtn" title="Fechar">✕</button>
         </div>
       </div>
       <div class="lbBody">
         <div class="lbImgWrap"><img id="lbImg" class="lbImg" src="" alt="" /></div>
         <div class="lbText">
-          <div class="p" id="lbText">â€”</div>
+          <div class="p" id="lbText">—</div>
           <div class="line"></div>
-          <div class="pill" id="lbTag">â€”</div>
+          <div class="pill" id="lbTag">—</div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-    // âœ… Tentamos dois nomes de pasta:
-    // 1) o seu atual com espaÃ§o (precisa de %20)
-    // 2) o padrÃ£o recomendado (sem espaÃ§o)
+    // ✅ Tentamos dois nomes de pasta:
+    // 1) o seu atual com espaço (precisa de %20)
+    // 2) o padrão recomendado (sem espaço)
     const BASES = [
       'nossa_hitoria_em%20fotos',
       'nossa_historia_em_fotos'
@@ -324,7 +324,7 @@
     let activeIndex = -1;
 
     function niceTag(t){
-      const map = { ensaio:'Ensaio', bastidores:'Bastidores', palco:'Palco', estudio:'EstÃºdio', carnaval:'Carnaval', qtt:'Quanto Tempo Temos?' };
+      const map = { ensaio:'Ensaio', bastidores:'Bastidores', palco:'Palco', estudio:'Estúdio', carnaval:'Carnaval', qtt:'Quanto Tempo Temos?' };
       return map[t] || t || 'Foto';
     }
 
@@ -378,7 +378,7 @@
           lastErr = `Falha ao buscar ${url}: ${String(e && e.message ? e.message : e)}`;
         }
       }
-      return { photos: null, url: `${BASES[0]}/manifest.json`, error: lastErr || 'NÃ£o foi possÃ­vel carregar o manifest.' };
+      return { photos: null, url: `${BASES[0]}/manifest.json`, error: lastErr || 'Não foi possível carregar o manifest.' };
     }
 
     function cardEl(item, idx){
@@ -400,7 +400,7 @@
 
       const meta = document.createElement('div');
       meta.className = 'meta';
-      const when = item.date ? ` â€¢ ${item.date}` : '';
+      const when = item.date ? ` • ${item.date}` : '';
       meta.innerHTML = `<div class="title">${item.title}${when}</div><div class="sub">${item.text || ''}</div>`;
 
       el.appendChild(img);
@@ -427,7 +427,7 @@
       const p = filtered[activeIndex];
       if(!p) return;
 
-      lbTitle.textContent = p.title + (p.date ? ` â€¢ ${p.date}` : '');
+      lbTitle.textContent = p.title + (p.date ? ` • ${p.date}` : '');
       lbText.textContent = p.text || '';
       lbTag.textContent = niceTag(p.tag);
       lbImg.alt = p.title;
@@ -487,3 +487,4 @@
   </script>
 </body>
 </html>
+

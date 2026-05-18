@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mural dos FÃ£s | Diva Pop</title>
-  <meta name="description" content="Mural dos fÃ£s da Diva Pop â€” deixe sua mensagem e mantenha o palco aceso." />
-  <meta property="og:title" content="Mural dos FÃ£s | Diva Pop" />
-  <meta property="og:description" content="Deixe sua mensagem para a Diva Pop e para a comunidade de fÃ£s." />
+  <title>Mural dos Fãs | Diva Pop</title>
+  <meta name="description" content="Mural dos fãs da Diva Pop — deixe sua mensagem e mantenha o palco aceso." />
+  <meta property="og:title" content="Mural dos Fãs | Diva Pop" />
+  <meta property="og:description" content="Deixe sua mensagem para a Diva Pop e para a comunidade de fãs." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -194,7 +194,7 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">InÃ­cio</a>
+    <a href="index.html">Início</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="mural_fas.html">Mural</a>
     <a href="pix_apoiar.html">Apoiar (PIX)</a>
@@ -203,8 +203,8 @@
   </nav>
 
   <header>
-    <h1>Mural dos FÃ£s</h1>
-    <p>Deixe sua mensagem, compartilhe sua histÃ³ria com a Diva Pop e mantenha o palco aceso.</p>
+    <h1>Mural dos Fãs</h1>
+    <p>Deixe sua mensagem, compartilhe sua história com a Diva Pop e mantenha o palco aceso.</p>
   </header>
 
   <main class="wrap">
@@ -214,27 +214,27 @@
       <input id="nome" maxlength="40" placeholder="Ex.: Ana" />
 
       <label for="msg">Sua mensagem</label>
-      <textarea id="msg" maxlength="320" placeholder="Escreva aqui... (atÃ© 320 caracteres)"></textarea>
+      <textarea id="msg" maxlength="320" placeholder="Escreva aqui... (até 320 caracteres)"></textarea>
 
       <div class="btnrow">
-        <button onclick="addMessage()">âœ¨ Publicar</button>
-        <button class="secondary" onclick="clearAll()">ðŸ—‘ï¸ Limpar mural</button>
+        <button onclick="addMessage()">✨ Publicar</button>
+        <button class="secondary" onclick="clearAll()">🗑 Limpar mural</button>
       </div>
 
       <p style="margin:12px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">
-        Obs.: este mural salva as mensagens no seu prÃ³prio navegador (localStorage). Ideal para versÃ£o estÃ¡tica.
+        Obs.: este mural salva as mensagens no seu próprio navegador (localStorage). Ideal para versão estática.
       </p>
     </section>
 
     <section class="card">
       <h2>Mensagens</h2>
       <div id="list" class="grid"></div>
-      <div id="empty" class="empty" style="display:none;">Ainda nÃ£o tem mensagem aqui. Seja o primeiro! ðŸ’¬</div>
+      <div id="empty" class="empty" style="display:none;">Ainda não tem mensagem aqui. Seja o primeiro! 💬</div>
     </section>
   </main>
 
   <footer>
-    <p>Â© 2026 Diva Pop. Todos os direitos reservados.</p>
+    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
   </footer>
 
   <script>
@@ -260,7 +260,7 @@
         div.className = 'msg';
         div.innerHTML = `
           <div class="meta">
-            <div class="name">${escapeHtml(item.name || 'FÃ£')}</div>
+            <div class="name">${escapeHtml(item.name || 'Fã')}</div>
             <div class="date">${new Date(item.ts).toLocaleDateString('pt-BR')}</div>
           </div>
           <p class="text">${escapeHtml(item.text)}</p>
@@ -309,3 +309,4 @@
   </script>
 </body>
 </html>
+

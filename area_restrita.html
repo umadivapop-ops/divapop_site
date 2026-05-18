@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ãrea Restrita â€” OperaÃ§Ã£o | Diva Pop</title>
-  <meta name="description" content="Painel interno (client-side) para mÃ©tricas locais: acessos, plays e downloads." />
+  <title>Ãrea Restrita — Operação | Diva Pop</title>
+  <meta name="description" content="Painel interno (client-side) para métricas locais: acessos, plays e downloads." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -75,22 +75,22 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">InÃ­cio</a>
+    <a href="index.html">Início</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="pix_apoiar.html">PIX</a>
     <a href="area_restrita.html" style="color:#e63946;">Ãrea Restrita</a>
   </nav>
 
   <header>
-    <h1>Ãrea Restrita â€” OperaÃ§Ã£o</h1>
-    <p class="muted">Painel <b>client-side</b> para ver mÃ©tricas registradas neste navegador/dispositivo: <b>acessos</b>, <b>plays</b> e <b>downloads</b> das faixas (quando houver botÃ£o de download nas pÃ¡ginas).</p>
+    <h1>Ãrea Restrita — Operação</h1>
+    <p class="muted">Painel <b>client-side</b> para ver métricas registradas neste navegador/dispositivo: <b>acessos</b>, <b>plays</b> e <b>downloads</b> das faixas (quando houver botão de download nas páginas).</p>
   </header>
 
   <main class="wrap">
     <section id="login" class="login">
       <div class="card">
         <div class="warn">
-          <b>Aviso importante:</b> este painel nÃ£o Ã© um â€œlogin realâ€. Ã‰ apenas uma trava local (sem backend). Para mÃ©tricas globais e seguras, serÃ¡ preciso integrar Analytics/servidor.
+          <b>Aviso importante:</b> este painel não é um “login realâ€. É apenas uma trava local (sem backend). Para métricas globais e seguras, será preciso integrar Analytics/servidor.
         </div>
         <div style="height:12px"></div>
         <div class="row" style="justify-content:center; gap:10px;">
@@ -99,7 +99,7 @@
         </div>
         <div style="height:10px"></div>
         <div class="muted" style="text-align:center; font-size:.92rem;">
-          PIN padrÃ£o (local): <b>diva2026</b> â€” vocÃª pode alterar depois.
+          PIN padrão (local): <b>diva2026</b> — você pode alterar depois.
         </div>
       </div>
     </section>
@@ -107,11 +107,11 @@
     <section id="panel" class="hidden">
       <div class="card">
         <div class="row">
-          <div class="pill">Status: <b id="status">Carregandoâ€¦</b></div>
+          <div class="pill">Status: <b id="status">Carregando…</b></div>
           <div class="row" style="gap:10px;">
-            <button id="btnRefresh">â†» Atualizar</button>
-            <button id="btnCopy">ðŸ“‹ Copiar JSON</button>
-            <button id="btnReset">ðŸ§¹ Zerar tudo</button>
+            <button id="btnRefresh">↻ Atualizar</button>
+            <button id="btnCopy">📋 Copiar JSON</button>
+            <button id="btnReset">🧹 Zerar tudo</button>
           </div>
         </div>
 
@@ -119,17 +119,17 @@
           <div class="box">
             <div class="label">Acessos (pageviews)</div>
             <div class="value" id="kpiViews">0</div>
-            <div class="sub" id="kpiViewsSub">â€”</div>
+            <div class="sub" id="kpiViewsSub">—</div>
           </div>
           <div class="box">
             <div class="label">Plays (faixas)</div>
             <div class="value" id="kpiPlays">0</div>
-            <div class="sub" id="kpiPlaysSub">â€”</div>
+            <div class="sub" id="kpiPlaysSub">—</div>
           </div>
           <div class="box">
             <div class="label">Downloads (faixas)</div>
             <div class="value" id="kpiDownloads">0</div>
-            <div class="sub" id="kpiDownloadsSub">â€”</div>
+            <div class="sub" id="kpiDownloadsSub">—</div>
           </div>
         </div>
 
@@ -138,13 +138,13 @@
         <div class="grid2">
           <div class="mini">
             <div class="row">
-              <div style="font-weight:700; color:#fff;">Acessos por pÃ¡gina</div>
+              <div style="font-weight:700; color:#fff;">Acessos por página</div>
               <input id="qPages" placeholder="Filtrar (ex.: encarte)" />
             </div>
             <div style="height:10px"></div>
             <div style="overflow:auto; max-height: 360px; border-radius:18px;">
               <table>
-                <thead><tr><th>PÃ¡gina</th><th class="num">Acessos</th></tr></thead>
+                <thead><tr><th>Página</th><th class="num">Acessos</th></tr></thead>
                 <tbody id="tblPages"></tbody>
               </table>
             </div>
@@ -182,7 +182,7 @@
 
           <div style="height:14px"></div>
           <div class="warn">
-            <b>Como esses nÃºmeros sÃ£o coletados:</b> o site grava contadores no <b>localStorage</b> quando a pÃ¡gina abre e quando a mÃºsica comeÃ§a a tocar. Downloads contam ao clicar no botÃ£o de download (se existir).
+            <b>Como esses números são coletados:</b> o site grava contadores no <b>localStorage</b> quando a página abre e quando a música começa a tocar. Downloads contam ao clicar no botão de download (se existir).
           </div>
 
           <div style="height:14px"></div>
@@ -195,7 +195,7 @@
 
         <div class="mini">
           <div class="row">
-            <div style="font-weight:700; color:#fff;">ConfiguraÃ§Ã£o local (PIN)</div>
+            <div style="font-weight:700; color:#fff;">Configuração local (PIN)</div>
           </div>
           <div style="height:10px"></div>
           <div class="row">
@@ -204,14 +204,14 @@
             <button id="btnLogout">Sair</button>
           </div>
           <div style="height:8px"></div>
-          <div class="muted" id="pinHint">PIN atual: â€”</div>
+          <div class="muted" id="pinHint">PIN atual: —</div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Â© 2026 Diva Pop. Painel local (sem backend).</p>
+    <p>© 2026 Diva Pop. Painel local (sem backend).</p>
   </footer>
 
   <script>
@@ -256,7 +256,7 @@
     }
 
     function fmtKey(k){
-      if(!k) return 'â€”';
+      if(!k) return '—';
       // se vier como URL absoluta, pega o final
       try{
         const parts = String(k).split('/');
@@ -276,7 +276,7 @@
       $('kpiPlays').textContent = String(plays);
       $('kpiDownloads').textContent = String(downs);
 
-      $('kpiViewsSub').textContent = Object.keys(s.pages||{}).length + ' pÃ¡ginas registradas';
+      $('kpiViewsSub').textContent = Object.keys(s.pages||{}).length + ' páginas registradas';
       $('kpiPlaysSub').textContent = Object.keys(s.plays||{}).length + ' faixas registradas';
       $('kpiDownloadsSub').textContent = Object.keys(s.downloads||{}).length + ' faixas registradas';
 
@@ -347,14 +347,14 @@
       const s = loadStats();
       const text = JSON.stringify(s, null, 2);
       navigator.clipboard?.writeText(text)
-        .then(()=> alert('JSON copiado para a Ã¡rea de transferÃªncia.'))
+        .then(()=> alert('JSON copiado para a área de transferência.'))
         .catch(()=>{
           // fallback
           const ta = document.createElement('textarea');
           ta.value = text;
           document.body.appendChild(ta);
           ta.select();
-          try{ document.execCommand('copy'); alert('JSON copiado.'); }catch(e){ alert('NÃ£o foi possÃ­vel copiar automaticamente.'); }
+          try{ document.execCommand('copy'); alert('JSON copiado.'); }catch(e){ alert('Não foi possível copiar automaticamente.'); }
           ta.remove();
         });
     }
@@ -403,3 +403,4 @@
   </script>
 </body>
 </html>
+

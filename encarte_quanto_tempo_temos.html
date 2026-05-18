@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Encarte - Quanto Tempo Temos? | Diva Pop</title>
-  <meta name="description" content="Encarte imersivo do álbum 'Quanto Tempo Temos?' — arte + fotos + áudio faixa a faixa." />
+  <meta name="description" content="Encarte imersivo do Ã¡lbum 'Quanto Tempo Temos?' â€” arte + fotos + Ã¡udio faixa a faixa." />
   <meta property="og:title" content="Encarte - Quanto Tempo Temos? | Diva Pop" />
-  <meta property="og:description" content="Experiência vinil retrô + neon moderno: encarte com áudio faixa a faixa." />
+  <meta property="og:description" content="ExperiÃªncia vinil retrÃ´ + neon moderno: encarte com Ã¡udio faixa a faixa." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -181,23 +181,23 @@
     <div id="spread" class="spread single">
       <div class="page left">
         <img id="leftImage" src="" alt="" />
-        <div id="leftFallback" class="fallback" style="display:none;"><div><b>Arquivo não encontrado</b><br><span id="leftPath"></span></div></div>
+        <div id="leftFallback" class="fallback" style="display:none;"><div><b>Arquivo nÃ£o encontrado</b><br><span id="leftPath"></span></div></div>
       </div>
       <div class="page right">
         <img id="rightImage" src="" alt="" />
-        <div id="rightFallback" class="fallback" style="display:none;"><div><b>Arquivo não encontrado</b><br><span id="rightPath"></span></div></div>
+        <div id="rightFallback" class="fallback" style="display:none;"><div><b>Arquivo nÃ£o encontrado</b><br><span id="rightPath"></span></div></div>
       </div>
     </div>
   </div>
 
   <div class="bottombar">
     <audio id="player" controls preload="metadata"></audio>
-    <a id="downloadBtn" class="dlbtn no-advance" href="#" download aria-disabled="true" title="Baixar a faixa atual">⬇️ Baixar faixa</a>
-    <div class="hint"><b>Clique</b> em qualquer lugar para avançar</div>
+    <a id="downloadBtn" class="dlbtn no-advance" href="#" download aria-disabled="true" title="Baixar a faixa atual">â¬‡ï¸ Baixar faixa</a>
+    <div class="hint"><b>Clique</b> em qualquer lugar para avanÃ§ar</div>
   </div>
 
   <script>
-    // ===== Analytics local (para área_restrita.html) =====
+    // ===== Analytics local (para Ã¡rea_restrita.html) =====
     const DP_STATS_KEY = 'divapop_stats_v1';
 
     function dpLoad(){
@@ -229,7 +229,7 @@
       return last || 'encarte_quanto_tempo_temos.html';
     }
 
-    // ===== Conteúdo do encarte =====
+    // ===== ConteÃºdo do encarte =====
     const pages = [
       { mode:'single', right: 'encarte_quanto_tempo_temos/1_capa_quanto_tempo_temos.png', song: null },
 
@@ -244,7 +244,7 @@
       { mode:'double', left:'fotos_quanto_tempo_temos/luz.png',       right:'encarte_quanto_tempo_temos/10_fim_dos_tempos.png',      song:['musicas_quanto_tempo_temos/9_fim_dos_tempos.mp3','musicas_quanto_tempo_temos/9_fim_dos_tempos.MP3'] },
 
       { mode:'single', right: 'encarte_quanto_tempo_temos/12_citacao.png', song: null },
-      { mode:'single', right: ['encarte_quanto_tempo_temos/11_créditos_quanto_tempo_temos.png','encarte_quanto_tempo_temos/11_creditos_quanto_tempo_temos.png'], song: null },
+      { mode:'single', right: ['encarte_quanto_tempo_temos/11_crÃ©ditos_quanto_tempo_temos.png','encarte_quanto_tempo_temos/11_creditos_quanto_tempo_temos.png'], song: null },
       { mode:'single', right: 'encarte_quanto_tempo_temos/13_contra_capa.png', song: null },
     ];
 
@@ -299,7 +299,7 @@
         imgEl.style.display = 'none';
         fbEl.style.display = 'flex';
         pathEl.textContent = src;
-        console.warn('[DivaPop] Imagem não encontrada:', src);
+        console.warn('[DivaPop] Imagem nÃ£o encontrada:', src);
       };
       imgEl.src = src;
     }
@@ -314,7 +314,7 @@
 
       const tryNext = () => {
         const src = list[i];
-        rightImg.alt = 'Página do encarte';
+        rightImg.alt = 'PÃ¡gina do encarte';
         rightImg.onerror = () => {
           i++;
           if(i < list.length){
@@ -325,7 +325,7 @@
           rightImg.style.display = 'none';
           rightFb.style.display = 'flex';
           rightPath.textContent = src;
-          console.warn('[DivaPop] Imagem não encontrada:', src);
+          console.warn('[DivaPop] Imagem nÃ£o encontrada:', src);
         };
         rightImg.src = src;
       };
@@ -358,7 +358,7 @@
         return;
       }
       const list = Array.isArray(song) ? song : [song];
-      tryPlay(list).then((ok)=>{ if(!ok){ setDownload(null); console.warn('[DivaPop] Nenhuma variação do áudio tocou.'); } });
+      tryPlay(list).then((ok)=>{ if(!ok){ setDownload(null); console.warn('[DivaPop] Nenhuma variaÃ§Ã£o do Ã¡udio tocou.'); } });
     }
 
     function renderPage(idx){
@@ -381,7 +381,7 @@
       }, 820);
     }
 
-    // ===== Métricas =====
+    // ===== MÃ©tricas =====
     window.addEventListener('load', () => {
       dpInc('pages', dpPageName());
       renderPage(0);

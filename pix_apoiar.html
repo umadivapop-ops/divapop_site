@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apoiar via PIX | Diva Pop</title>
-  <meta name="description" content="Apoie a Diva Pop via PIX e ajude a manter os encartes imersivos, gravações e shows." />
+  <meta name="description" content="Apoie a Diva Pop via PIX e ajude a manter os encartes imersivos, gravaÃ§Ãµes e shows." />
   <meta property="og:title" content="Apoiar via PIX | Diva Pop" />
-  <meta property="og:description" content="Seu apoio mantém o palco aceso: encartes imersivos, gravações, clipes e shows." />
+  <meta property="og:description" content="Seu apoio mantÃ©m o palco aceso: encartes imersivos, gravaÃ§Ãµes, clipes e shows." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Diva Pop" />
@@ -198,18 +198,18 @@
 </head>
 <body>
   <nav>
-    <a href="index.html">Início</a>
+    <a href="index.html">InÃ­cio</a>
     <a href="discografia_completa.html">Discografia</a>
     <a href="mural_fas.html">Mural</a>
-    <a href="arquivo2.html">Nossa História</a>
+    <a href="arquivo2.html">Nossa HistÃ³ria</a>
     <a href="presskit_oficial.html">Press Kit</a>
     <a href="contato_contrate_diva_pop.html">Contato</a>
-    <a href="area_restrita.html">Área Restrita</a>
+    <a href="area_restrita.html">Ãrea Restrita</a>
   </nav>
 
   <header>
     <h1>Apoiar via PIX</h1>
-    <p>Seu apoio mantém o palco aceso: encartes imersivos, gravações, clipes e novos shows. 💝</p>
+    <p>Seu apoio mantÃ©m o palco aceso: encartes imersivos, gravaÃ§Ãµes, clipes e novos shows. ðŸ’</p>
   </header>
 
   <main class="wrap">
@@ -220,20 +220,20 @@
         <div class="label">Chave PIX</div>
         <div id="pixKey" class="code">umadivapop@gmail.com</div>
         <div class="btnrow">
-          <button onclick="copyText('pixKey')">📋 Copiar chave</button>
-          <button class="secondary" onclick="window.location.href='discografia_completa.html'">🎧 Voltar para a Discografia</button>
+          <button onclick="copyText('pixKey')">ðŸ“‹ Copiar chave</button>
+          <button class="secondary" onclick="window.location.href='discografia_completa.html'">ðŸŽ§ Voltar para a Discografia</button>
         </div>
 
         <div class="label" style="margin-top:4px;">Copia e Cola (payload do QR)</div>
         <div id="pixPayload" class="code">00020126420014br.gov.bcb.pix0120umadivapop@gmail.com5204000053039865802BR5920Diogo Ferreira Alves6008Brasilia62080504mpda630450E1</div>
         <div class="btnrow">
-          <button onclick="copyText('pixPayload')">📋 Copiar PIX Copia e Cola</button>
-          <button class="secondary" onclick="window.location.href='contato_contrate_diva_pop.html'">✉️ Falar com a banda</button>
+          <button onclick="copyText('pixPayload')">ðŸ“‹ Copiar PIX Copia e Cola</button>
+          <button class="secondary" onclick="window.location.href='contato_contrate_diva_pop.html'">âœ‰ï¸ Falar com a banda</button>
         </div>
 
         <div class="note">
           <p style="margin:0;">
-            Dica: no app do banco, escolha <b>PIX → Copia e Cola</b> e cole o código acima.
+            Dica: no app do banco, escolha <b>PIX â†’ Copia e Cola</b> e cole o cÃ³digo acima.
           </p>
         </div>
       </div>
@@ -245,21 +245,21 @@
         <img id="qrImg" src="capas/qrcode.png" alt="QR Code do PIX da Diva Pop" />
         <div id="qrFallback" class="qr-fallback">
           <div>
-            <p style="margin:0 0 8px;">Não encontrei o arquivo do QR ainda.</p>
+            <p style="margin:0 0 8px;">NÃ£o encontrei o arquivo do QR ainda.</p>
             <p style="margin:0; opacity:.9;"><b>Esperado:</b> <span style="font-family:ui-monospace,monospace;">capas/qrcode.png</span></p>
           </div>
         </div>
       </div>
-      <p class="note" style="margin:12px 0 0;">Se o QR não aparecer, verifique se o arquivo está em <b>/capas/qrcode.png</b> e atualize a página.</p>
+      <p class="note" style="margin:12px 0 0;">Se o QR nÃ£o aparecer, verifique se o arquivo estÃ¡ em <b>/capas/qrcode.png</b> e atualize a pÃ¡gina.</p>
     </aside>
   </main>
 
   <footer>
-    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
+    <p>Â© 2026 Diva Pop. Todos os direitos reservados.</p>
   </footer>
 
   <script>
-    // Config rápido: se quiser sobrescrever sem editar HTML:
+    // Config rÃ¡pido: se quiser sobrescrever sem editar HTML:
     // localStorage.setItem('divapop_pix', 'SUA_CHAVE_REAL');
     // localStorage.setItem('divapop_pix_payload', 'SEU_COPIA_E_COLA_REAL');
 
@@ -282,12 +282,12 @@
 
       navigator.clipboard?.writeText(txt).then(()=>{
         const old = el.innerText;
-        el.innerText = '✅ Copiado!';
+        el.innerText = 'âœ… Copiado!';
         setTimeout(()=> el.innerText = old, 1100);
       }).catch(()=>{});
     }
 
-    // QR code: fallback elegante se não carregar
+    // QR code: fallback elegante se nÃ£o carregar
     const qrImg = document.getElementById('qrImg');
     const qrFallback = document.getElementById('qrFallback');
     qrImg.onerror = () => {

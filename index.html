@@ -381,6 +381,42 @@
         width:100%;
       }
     }
+  
+    /* FOTO ORIGINAL SEM ZOOM - OVERRIDE FINAL */
+    .hero{
+      background:#000 !important;
+      border-bottom:1px solid var(--line) !important;
+      position:relative !important;
+      overflow:visible !important;
+      display:block !important;
+      padding:0 !important;
+      margin:0 !important;
+      height:auto !important;
+      min-height:0 !important;
+      max-height:none !important;
+    }
+
+    .hero-photo,
+    .hero img.hero-photo,
+    .hero-foto img{
+      display:block !important;
+      width:100% !important;
+      height:auto !important;
+      max-width:100% !important;
+      max-height:none !important;
+      object-fit:contain !important;
+      object-position:center center !important;
+      background:#000 !important;
+    }
+
+    .hero-foto{
+      background-size:contain !important;
+      background-repeat:no-repeat !important;
+      background-position:center center !important;
+      background-color:#000 !important;
+    }
+    /* FIM FOTO ORIGINAL SEM ZOOM */
+
   </style>
 </head>
 <body>

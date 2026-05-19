@@ -76,6 +76,14 @@
       margin:0 auto;
       padding:0;
     }
+    .press-logo{
+      width:120px;
+      max-width:36vw;
+      display:block;
+      margin:0 0 16px;
+      filter:drop-shadow(0 0 18px rgba(230,57,70,.35));
+    }
+
     .eyebrow{
       display:inline-block;
       background:rgba(230,57,70,.2);
@@ -192,6 +200,20 @@
       grid-template-columns:1fr 1fr;
       gap:10px;
     }
+    .media-embed{
+      width:100%;
+      min-height:360px;
+      border:0;
+      border-radius:18px;
+      background:#000;
+    }
+
+    .download-note{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
     .song{
       border-left:3px solid var(--neon);
       padding-left:12px;
@@ -238,6 +260,7 @@
   <main>
 
     <section class="card intro-card">
+      <img src="logo_diva_pop.png" alt="Logo Diva Pop" class="press-logo">
       <div class="eyebrow">Press Kit Oficial — Diva Pop</div>
       <h1>Quanto Tempo Temos?</h1>
       <p>
@@ -246,8 +269,8 @@
       </p>
       <div class="actions">
         <a class="btn" href="contato_contrate_diva_pop.html">Contratar show</a>
-        <a class="btn secondary" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouvir no Spotify</a>
-        <a class="btn ghost" href="https://www.youtube.com/@BandaDivaPop" target="_blank" rel="noopener">Assistir no YouTube</a>
+        <a class="btn secondary" href="arquivo1.html">Ouvir músicas</a>
+        <a class="btn ghost" href="#downloads">Baixar press kit</a>
       </div>
     </section>
 
@@ -255,30 +278,30 @@
       <div class="card">
         <h2>Resumo para contratação</h2>
         <div class="summary">
-          <div class="mini"><b>Formato</b>Show autoral</div>
-          <div class="mini"><b>Duração</b>60 minutos</div>
-          <div class="mini"><b>Gênero</b>Pop rock nacional / rock autoral</div>
+          <div class="mini"><b>Nome artístico</b>Diva Pop</div>
           <div class="mini"><b>Cidade</b>São Paulo — SP</div>
-          <div class="mini"><b>Formação</b>Vocal, duas guitarras, baixo e bateria</div>
-          <div class="mini"><b>Indicado para</b>Casas de show, festivais, centros culturais e eventos públicos</div>
-          <div class="mini"><b>Contato</b>Diogo Alves — (11) 94727-9393</div>
+          <div class="mini"><b>Formato</b>Show musical autoral</div>
+          <div class="mini"><b>Duração</b>Aproximadamente 60 minutos</div>
+          <div class="mini"><b>Gênero</b>Pop rock nacional / rock autoral</div>
+          <div class="mini"><b>Formação</b>Vocal, duas guitarras, contrabaixo elétrico e bateria</div>
           <div class="mini"><b>Rider técnico</b>Disponível mediante solicitação</div>
+          <div class="mini"><b>Contato</b>Diogo Alves — (11) 94727-9393</div>
         </div>
       </div>
 
-      <div class="card">
-        <h2>Materiais e ações</h2>
+      <div class="card" id="downloads">
+        <h2>Materiais para download</h2>
         <div class="download-grid">
-          <a class="btn small" href="contato_contrate_diva_pop.html">Solicitar Press Kit PDF</a>
-          <a class="btn small secondary" href="contato_contrate_diva_pop.html">Solicitar rider técnico</a>
+          <a class="btn small" href="contato_contrate_diva_pop.html">Solicitar press kit completo em PDF</a>
           <a class="btn small secondary" href="contato_contrate_diva_pop.html">Solicitar one-sheet</a>
-          <a class="btn small secondary" href="contato_contrate_diva_pop.html">Solicitar fotos</a>
-          <a class="btn small secondary" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Spotify</a>
-          <a class="btn small secondary" href="https://www.youtube.com/@BandaDivaPop" target="_blank" rel="noopener">YouTube</a>
-          <a class="btn small secondary" href="https://www.instagram.com/divapopoficial" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn small secondary" href="contato_contrate_diva_pop.html">Solicitar rider técnico</a>
+          <a class="btn small secondary" href="contato_contrate_diva_pop.html">Solicitar fotos oficiais</a>
+          <a class="btn small secondary" href="logo_diva_pop.png" download>Baixar logo da banda</a>
+          <a class="btn small secondary" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouvir no Spotify</a>
+          <a class="btn small secondary" href="https://www.youtube.com/@BandaDivaPop" target="_blank" rel="noopener">Assistir no YouTube</a>
           <a class="btn small" href="contato_contrate_diva_pop.html">Contratar show</a>
         </div>
-        <p class="muted" style="margin-top:12px;">Os materiais em PDF e fotos podem ser solicitados diretamente pelo contato oficial.</p>
+        <p class="download-note">Os materiais em PDF e fotos oficiais podem ser solicitados diretamente pelo contato da banda.</p>
       </div>
     </section>
 
@@ -286,12 +309,23 @@
       <div>
         <div class="card">
           <h2>Apresentação</h2>
-          <p>A banda paulistana Diva Pop apresenta <b>“Quanto Tempo Temos?”</b>, um show autoral de pop rock nacional que une energia de banda ao vivo, letras reflexivas e presença cênica em uma narrativa sobre tempo, memória, crítica social e resistência.</p>
-          <p>Com Karine Lisboa nos vocais, Diogo Alves na guitarra e backing vocal, Matheus Ramos na guitarra, Ernani Barbosa no contrabaixo elétrico e Dalmir Godinho na bateria, a Diva Pop constrói uma sonoridade direta, melódica e intensa.</p>
+          <p>A Diva Pop é uma banda paulistana de pop rock autoral que une guitarras marcantes, vocal expressivo, crítica social e presença cênica.</p>
+          <p>No show <b>“Quanto Tempo Temos?”</b>, a banda apresenta uma experiência direta e intensa sobre tempo, memória, desigualdade, liberdade e resistência.</p>
         </div>
 
         <div class="card">
-          <h2>Sobre o show</h2>
+          <h2>Ouça / assista</h2>
+          <iframe class="media-embed" src="https://open.spotify.com/embed/artist/2aUCpjQdBI35RVTUQ8K8WM?utm_source=generator" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+
+        <div class="card">
+          <h2>Sobre a banda</h2>
+          <p>Formada por Karine Lisboa nos vocais, Diogo Alves na guitarra e backing vocal, Matheus Ramos na guitarra, Ernani Barbosa no contrabaixo elétrico e Dalmir Godinho na bateria, a Diva Pop constrói uma sonoridade direta, melódica e intensa.</p>
+          <p>A banda dialoga com o rock nacional, o pop rock contemporâneo, o rock alternativo e o indie rock, mantendo a essência de banda de palco: voz, guitarras, contrabaixo elétrico e bateria.</p>
+        </div>
+
+        <div class="card">
+          <h2>O show “Quanto Tempo Temos?”</h2>
           <p>“Quanto Tempo Temos?” é um show autoral com duração aproximada de 60 minutos, pensado para casas de show, festivais, espaços culturais, eventos públicos, programações de música independente e projetos voltados à produção autoral brasileira.</p>
           <p>O repertório percorre temas como manipulação social, desigualdade, opressão, consumismo, memória histórica, conflitos internos, apatia coletiva e finitude.</p>
           <p>Mais do que uma sequência de canções, a apresentação propõe uma travessia: do despertar crítico à catarse final.</p>
@@ -360,7 +394,7 @@
         </div>
 
         <div class="card">
-          <h2>Histórico de mídia</h2>
+          <h2>Histórico de mídia com links</h2>
           <div class="media-list">
             <p><a href="https://www.rapadurarockweb.com.br/news-260-novo-rock-brasil--banda-diva-pop" target="_blank" rel="noopener"><b>Rapadura Rock Web</b> — matéria “Novo Rock Brasil - Banda Diva Pop”</a></p>
             <p><a href="https://www.youtube.com/watch?v=EIRbwKdrZB0" target="_blank" rel="noopener"><b>Happy Hour Musical</b> — entrevista</a></p>

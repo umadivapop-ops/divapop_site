@@ -557,6 +557,225 @@
 
     /* FIM COMPACTACAO VISUAL HOME DIVA POP */
 
+  
+    /* COMPACTACAO FORTE HOME DIVA POP - OVERRIDE FINAL
+       Correção mais forte: reduz fontes gigantes e encurta a home.
+       NÃO altera a foto principal.
+       NÃO recoloca o logo sobreposto.
+    */
+
+    html {
+      font-size: 14px !important;
+    }
+
+    body {
+      font-size: 0.98rem !important;
+      line-height: 1.45 !important;
+    }
+
+    /* Hero: mantém impacto, mas reduz gigantismo */
+    .hero-content {
+      padding-top: 38px !important;
+      padding-bottom: 38px !important;
+    }
+
+    .hero-content h1,
+    .hero h1,
+    h1 {
+      font-size: clamp(2.7rem, 5.8vw, 4.4rem) !important;
+      line-height: 0.95 !important;
+      margin-top: 0 !important;
+      margin-bottom: 14px !important;
+      letter-spacing: -0.04em !important;
+    }
+
+    .hero-content .subtitle,
+    .hero .subtitle,
+    .subtitle {
+      font-size: clamp(1rem, 1.6vw, 1.22rem) !important;
+      line-height: 1.32 !important;
+      margin-bottom: 14px !important;
+    }
+
+    .hero-content p,
+    .hero p {
+      font-size: clamp(0.95rem, 1.25vw, 1.08rem) !important;
+      line-height: 1.42 !important;
+      margin-bottom: 14px !important;
+    }
+
+    /* Títulos de seção: redução real */
+    section h2,
+    .section-title,
+    h2 {
+      font-size: clamp(1.45rem, 2.35vw, 2rem) !important;
+      line-height: 1.08 !important;
+      margin-top: 0 !important;
+      margin-bottom: 16px !important;
+      letter-spacing: -0.025em !important;
+    }
+
+    section h3,
+    .card h3,
+    .member-card h3,
+    .contact-card h3,
+    h3 {
+      font-size: clamp(1rem, 1.25vw, 1.12rem) !important;
+      line-height: 1.18 !important;
+      margin-top: 0 !important;
+      margin-bottom: 8px !important;
+    }
+
+    /* Textos corridos */
+    section p,
+    .card p,
+    .info-box p,
+    .member-card p,
+    .contact-card p,
+    li {
+      font-size: clamp(0.9rem, 1vw, 1rem) !important;
+      line-height: 1.42 !important;
+      margin-bottom: 10px !important;
+    }
+
+    /* Cards e blocos */
+    .card,
+    .info-box,
+    .contact-card,
+    .member-card,
+    article {
+      padding: 18px !important;
+    }
+
+    /* Seções: menos altura total */
+    section,
+    .section,
+    .content-block {
+      padding-top: 34px !important;
+      padding-bottom: 34px !important;
+    }
+
+    .section-wrapper,
+    .container,
+    .wrap {
+      margin-bottom: 24px !important;
+    }
+
+    .grid,
+    .cards,
+    .members,
+    .contact-grid,
+    .photo-grid {
+      gap: 16px !important;
+    }
+
+    /* Botões menores */
+    .btn,
+    button,
+    a.button,
+    .cta,
+    .link-button {
+      font-size: 0.88rem !important;
+      padding: 11px 18px !important;
+      line-height: 1.15 !important;
+    }
+
+    /* Reduz espaçamentos extras comuns */
+    .lead,
+    .intro,
+    .description {
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem) !important;
+      line-height: 1.4 !important;
+      margin-bottom: 14px !important;
+    }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 13px !important;
+      }
+
+      .hero-content {
+        padding-top: 28px !important;
+        padding-bottom: 28px !important;
+      }
+
+      .hero-content h1,
+      .hero h1,
+      h1 {
+        font-size: 2.45rem !important;
+        line-height: 0.95 !important;
+        margin-bottom: 12px !important;
+      }
+
+      .hero-content .subtitle,
+      .hero .subtitle,
+      .subtitle {
+        font-size: 1rem !important;
+      }
+
+      .hero-content p,
+      .hero p,
+      section p,
+      .card p,
+      .info-box p,
+      .member-card p,
+      .contact-card p,
+      li {
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+      }
+
+      section h2,
+      .section-title,
+      h2 {
+        font-size: 1.45rem !important;
+        line-height: 1.08 !important;
+        margin-bottom: 14px !important;
+      }
+
+      section h3,
+      .card h3,
+      .member-card h3,
+      .contact-card h3,
+      h3 {
+        font-size: 1rem !important;
+      }
+
+      section,
+      .section,
+      .content-block {
+        padding-top: 26px !important;
+        padding-bottom: 26px !important;
+      }
+
+      .card,
+      .info-box,
+      .contact-card,
+      .member-card,
+      article {
+        padding: 16px !important;
+      }
+
+      .grid,
+      .cards,
+      .members,
+      .contact-grid,
+      .photo-grid {
+        gap: 14px !important;
+      }
+
+      .btn,
+      button,
+      a.button,
+      .cta,
+      .link-button {
+        font-size: 0.86rem !important;
+        padding: 10px 16px !important;
+      }
+    }
+
+    /* FIM COMPACTACAO FORTE HOME DIVA POP */
+
   </style>
 </head>
 <body>

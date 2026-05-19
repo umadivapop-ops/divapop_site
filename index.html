@@ -73,18 +73,17 @@
       background:#000;
       border-bottom:1px solid var(--line);
       position:relative;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      overflow:visible;
+      display:block;
       padding:0;
+      margin:0;
     }
 
     .hero-photo{
       display:block;
       width:100%;
       height:auto;
-      max-height:82vh;
+      max-width:100%;
       object-fit:contain;
       object-position:center center;
       background:#000;
@@ -92,10 +91,10 @@
 
     .hero-logo-over{
       position:absolute;
-      top:34px;
-      left:42px;
-      width:228px;
-      max-width:26vw;
+      top:28px;
+      left:34px;
+      width:190px;
+      max-width:24vw;
       z-index:3;
       filter:drop-shadow(0 0 18px rgba(0,0,0,.95)) drop-shadow(0 0 18px rgba(230,57,70,.45));
     }
@@ -103,7 +102,7 @@
     .home-intro{
       width:min(1180px,92vw);
       margin:0 auto;
-      padding:46px 0 12px;
+      padding:42px 0 12px;
     }
 
     .home-intro h1{
@@ -362,41 +361,6 @@
       nav a{
         margin:0 8px;
         font-size:.92rem;
-      }
-
-      .hero{
-        min-height:86vh;
-        background:
-          linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.76)),
-          url("presskit_hero_divapop.png") center top / cover no-repeat;
-      }
-
-      .hero-inner{
-        padding:34px 0 42px;
-      }
-
-      .hero{
-        display:block;
-        padding:0;
-      }
-
-      .hero-photo{
-        width:100%;
-        height:auto;
-        max-height:none;
-        object-fit:contain;
-        object-position:center center;
-      }
-
-      .hero-logo-over{
-        top:14px;
-        left:16px;
-        width:112px;
-        max-width:32vw;
-      }
-
-      .home-intro{
-        padding:34px 0 8px;
       }
 
 

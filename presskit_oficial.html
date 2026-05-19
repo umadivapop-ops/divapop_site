@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Press Kit Oficial | Diva Pop</title>
-  <meta name="description" content="Press kit oficial da Diva Pop — bio, releases, fotos e contatos para imprensa." />
+  <meta name="description" content="Press kit oficial da Banda Diva Pop — show autoral Quanto Tempo Temos?, release, formação, repertório, ficha técnica, links e contato para shows." />
   <meta property="og:title" content="Press Kit Oficial | Diva Pop" />
-  <meta property="og:description" content="Bio, release, fotos e contatos para imprensa." />
+  <meta property="og:description" content="Banda paulistana de pop rock autoral. Conheça o show Quanto Tempo Temos?, repertório, formação e contato para contratação." />
   <meta property="og:image" content="assets/og_divapop.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
@@ -14,132 +14,457 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="theme-color" content="#000000">
   <style>
-    :root{ --neon:#e63946; --cream:#f5f5dc; }
+    :root{
+      --neon:#e63946;
+      --cream:#f5f5dc;
+      --muted:#cfc6aa;
+      --card:#111;
+      --line:rgba(230,57,70,.38);
+    }
     *{ box-sizing:border-box; }
-    body{ margin:0; font-family:'Poppins',sans-serif; background:#000; color:var(--cream); min-height:100vh; display:flex; flex-direction:column; }
-    nav{ background:rgba(0,0,0,.85); text-align:center; padding:12px 0; border-top:2px solid var(--neon); border-bottom:2px solid var(--neon); position:sticky; top:0; z-index:10; backdrop-filter: blur(6px); }
-    nav a{ color:#fff; text-decoration:none; margin:0 14px; font-weight:600; transition:color .3s; display:inline-block; padding:6px 2px; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:#050505;
+      color:var(--cream);
+      line-height:1.75;
+    }
+    nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(0,0,0,.9);
+      text-align:center;
+      padding:12px 10px;
+      border-top:2px solid var(--neon);
+      border-bottom:2px solid var(--neon);
+      backdrop-filter:blur(8px);
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin:0 14px;
+      font-weight:700;
+      display:inline-block;
+      padding:6px 2px;
+    }
     nav a:hover{ color:var(--neon); }
-    header{ padding:54px 18px 10px; text-align:center; }
-    header h1{ margin:0; font-size:2.2rem; color:var(--neon); text-shadow:0 0 16px rgba(230,57,70,.75); letter-spacing:1px; }
-    header p{ margin:12px auto 0; max-width:920px; line-height:1.7; }
-    .wrap{ width:min(1100px, 92vw); margin:16px auto 44px; display:grid; grid-template-columns: 1fr 380px; gap:18px; align-items:start; }
-    .card{ background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%); border:1px solid rgba(230,57,70,.35); border-radius:22px; box-shadow:0 0 28px rgba(230,57,70,.25); padding:18px; overflow:hidden; }
-    .card h2{ margin:0 0 10px; color:#fff; font-size:1.15rem; }
-    .pdf{ width:100%; height:68vh; min-height:420px; border:1px solid rgba(245,245,220,.18); border-radius:18px; background:rgba(0,0,0,.35); }
-    .placeholder{ height:68vh; min-height:420px; border-radius:18px; border:1px dashed rgba(245,245,220,.28); background:rgba(0,0,0,.35); display:flex; align-items:center; justify-content:center; text-align:center; padding:18px; line-height:1.7; }
-    .placeholder b{ color:var(--neon); }
-    .chip{ border:1px solid rgba(230,57,70,.35); background: rgba(0,0,0,.35); border-radius:16px; padding:12px; box-shadow:0 0 16px rgba(230,57,70,.14); line-height:1.7; margin-bottom:10px; }
-    .chip b{ color:#fff; }
-    a.btn{ border:none; border-radius:999px; padding:10px 16px; cursor:pointer; font-weight:600; background:var(--neon); color:#fff; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; transition: transform .25s ease, box-shadow .35s, background-color .35s; width:100%; margin-top:10px; }
-    a.btn:hover{ background:#ff4757; box-shadow:0 0 22px var(--neon); transform: translateY(-1px); }
-    a.btn.secondary{ background: rgba(0,0,0,.55); border: 1px solid rgba(230,57,70,.75); }
-    a.btn.secondary:hover{ background: rgba(230,57,70,.18); }
-    footer{ margin-top:auto; text-align:center; padding:30px; font-size:.9rem; color:#aaa; background:#111; box-shadow:0 -5px 15px rgba(230,57,70,.2); }
-
-    /* scroll reveal (leve, sem pesar) */
-    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
-    .reveal.is-visible{ opacity:1; transform:none; }
-    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
-
-    @media (max-width: 980px){ .wrap{ grid-template-columns:1fr; } header{ padding-top:34px; } header h1{ font-size:1.9rem; } nav a{ margin:0 10px; } .pdf,.placeholder{ height:52vh; } }
+    header{
+      min-height:52vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:70px 20px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.92)),
+        radial-gradient(circle at center, rgba(230,57,70,.22), transparent 55%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero{
+      width:min(1050px,92vw);
+      margin:auto;
+    }
+    .eyebrow{
+      color:var(--neon);
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:.85rem;
+    }
+    h1{
+      margin:10px 0 12px;
+      font-size:clamp(2.1rem,6vw,4.8rem);
+      line-height:1.05;
+      color:#fff;
+      text-shadow:0 0 28px rgba(230,57,70,.55);
+    }
+    .lead{
+      font-size:clamp(1rem,2vw,1.35rem);
+      max-width:920px;
+      margin:0 auto;
+      color:#fff6db;
+    }
+    .hero-actions{
+      margin-top:28px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .btn{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:11px 18px;
+      background:var(--neon);
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:170px;
+    }
+    .btn.secondary{
+      background:rgba(0,0,0,.45);
+    }
+    .btn:hover{
+      filter:brightness(1.08);
+      box-shadow:0 0 22px rgba(230,57,70,.45);
+    }
+    main{
+      width:min(1120px,92vw);
+      margin:34px auto 60px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 340px;
+      gap:18px;
+      align-items:start;
+    }
+    section, aside{
+      background:radial-gradient(ellipse at top, rgba(230,57,70,.12), rgba(17,17,17,1) 60%);
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 0 24px rgba(230,57,70,.16);
+      margin-bottom:18px;
+    }
+    h2{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:1.35rem;
+    }
+    h3{
+      margin:20px 0 8px;
+      color:#fff;
+      font-size:1.05rem;
+    }
+    p{ margin:0 0 13px; }
+    ul, ol{ margin-top:8px; padding-left:22px; }
+    li{ margin-bottom:6px; }
+    .muted{ color:var(--muted); }
+    .tagline{
+      font-size:1.05rem;
+      color:#fff;
+      font-weight:600;
+    }
+    .facts{
+      display:grid;
+      gap:10px;
+    }
+    .fact{
+      border:1px solid rgba(245,245,220,.16);
+      border-radius:16px;
+      padding:12px;
+      background:rgba(0,0,0,.28);
+    }
+    .fact b{ color:#fff; }
+    .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .song{
+      border-left:3px solid var(--neon);
+      padding-left:12px;
+      margin-bottom:14px;
+    }
+    .links a{
+      color:#fff;
+      word-break:break-word;
+    }
+    footer{
+      text-align:center;
+      padding:28px;
+      color:#aaa;
+      background:#111;
+      border-top:1px solid rgba(230,57,70,.25);
+    }
+    @media(max-width:900px){
+      .grid,.two{ grid-template-columns:1fr; }
+      nav a{ margin:0 8px; }
+      section,aside{ padding:18px; }
+    }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html">Início</a>
-
+    <a href="arquivo1.html">Ouça Agora</a>
     <a href="presskit_oficial.html">Press Kit</a>
-    <a href="pix_apoiar.html">Apoiar (PIX)</a>
     <a href="contato_contrate_diva_pop.html">Contato</a>
-
   </nav>
 
   <header>
-    <h1>Press Kit Oficial</h1>
-    <p>Material para imprensa: bio, release, fotos e informações oficiais da Diva Pop.</p>
+    <div class="hero">
+      <div class="eyebrow">Press Kit Oficial — Diva Pop</div>
+      <h1>Quanto Tempo Temos?</h1>
+      <p class="lead">
+        Show autoral de pop rock nacional que une crítica social, guitarras marcantes,
+        letras reflexivas e presença cênica em uma narrativa sobre tempo, memória,
+        resistência e humanidade.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="contato_contrate_diva_pop.html">Contratar show</a>
+        <a class="btn secondary" href="arquivo1.html">Ouvir músicas</a>
+      </div>
+    </div>
   </header>
 
-  <main class="wrap">
-    <section class="card">
-      <h2>Press Kit (PDF)</h2>
-      <!-- Coloque o arquivo no projeto e ajuste o caminho abaixo (ex.: assets/presskit_divapop.pdf) -->
-      <div id="pdfArea"></div>
-      <a class="btn" id="downloadBtn" href="assets/presskit_divapop.pdf" download>⬇ Baixar Press Kit (PDF)</a>
-      <a class="btn secondary" href="contato_contrate_diva_pop.html">✉ Contato / Contrate</a>
-    </section>
+  <main>
+    <div class="grid">
+      <div>
+        <section>
+          <h2>Apresentação</h2>
+          <p>
+            A banda paulistana Diva Pop apresenta <b>“Quanto Tempo Temos?”</b>, um show autoral
+            de pop rock nacional que une energia de banda ao vivo, letras reflexivas e presença
+            cênica em uma narrativa sobre tempo, memória, crítica social e resistência.
+          </p>
+          <p>
+            Com Karine Lisboa nos vocais, Diogo Alves na guitarra e backing vocal, Matheus Ramos
+            na guitarra, Ernani Barbosa no contrabaixo elétrico e Dalmir Godinho na bateria, a Diva Pop
+            constrói uma sonoridade direta, melódica e intensa, baseada na força das guitarras,
+            no baixo pulsante, na bateria firme e na interpretação vocal expressiva.
+          </p>
+          <p>
+            O repertório aborda temas como tempo, memória, desigualdade, liberdade, consciência social,
+            conflitos internos, apatia coletiva e resistência. Mais do que uma apresentação musical,
+            “Quanto Tempo Temos?” propõe uma travessia artística: do despertar crítico à catarse coletiva,
+            das máscaras sociais ao colapso íntimo, da indiferença à necessidade de permanecer humano.
+          </p>
+        </section>
 
-    <aside class="card">
-      <h2>Contato para imprensa</h2>
-      <div class="chip"><b>E-mail:</b> <span id="chanEmail">umadivapop@gmail.com</span></div>
-      <div class="chip"><b>WhatsApp:</b> <span id="chanWhats">11 94727-9393</span></div>
-      <div class="chip"><b>Instagram:</b> <span id="chanInsta">@divapopoficial</span></div>
+        <section>
+          <h2>Sobre a banda</h2>
+          <p>
+            A Diva Pop é uma banda paulistana de pop rock autoral, com letras reflexivas, crítica social
+            e arranjos centrados em guitarras, contrabaixo elétrico e bateria.
+          </p>
+          <p>
+            Sua sonoridade dialoga com o rock nacional, o pop rock contemporâneo, o rock alternativo
+            e o indie rock, sem perder a essência de banda de palco: voz, guitarras, contrabaixo elétrico
+            e bateria conduzindo a narrativa musical.
+          </p>
+          <p>
+            A banda transforma vivências individuais e coletivas em música feita para provocar, emocionar
+            e criar identificação com o público. Em sua fase atual, a Diva Pop apresenta uma proposta
+            mais madura e conceitual, tendo o show “Quanto Tempo Temos?” como centro de sua identidade artística.
+          </p>
+        </section>
 
-      <a class="btn secondary" href="pix_apoiar.html">💝 Apoiar via PIX</a>
-    </aside>
+        <section>
+          <h2>Release</h2>
+          <p>
+            A banda paulistana Diva Pop apresenta o show “Quanto Tempo Temos?”, uma experiência autoral
+            de pop rock nacional que une crítica social, força melódica e presença cênica em uma narrativa
+            sobre tempo, memória e resistência.
+          </p>
+          <p>
+            O espetáculo parte de uma pergunta urgente: quanto tempo ainda temos para enxergar, sentir,
+            resistir e mudar? A partir dela, a banda conduz o público por um repertório que atravessa
+            consciência social, desigualdade, liberdade, conflitos internos, apatia coletiva, memória histórica
+            e a passagem do tempo.
+          </p>
+          <p>
+            Mais do que uma sequência de canções, “Quanto Tempo Temos?” propõe uma travessia emocional
+            e política: do despertar à resistência, da crítica social ao conflito íntimo, da apatia coletiva
+            à catarse final. É um show sobre o mundo que nos cerca, as batalhas que carregamos e o tempo
+            que insiste em passar.
+          </p>
+        </section>
+
+        <section>
+          <h2>Minibio</h2>
+          <p>
+            A Diva Pop é uma banda paulistana de pop rock autoral formada por Karine Lisboa nos vocais,
+            Diogo Alves na guitarra e backing vocal, Matheus Ramos na guitarra, Ernani Barbosa no contrabaixo
+            elétrico e Dalmir Godinho na bateria.
+          </p>
+          <p>
+            Com letras reflexivas, crítica social e sonoridade marcada por guitarras, baixo pulsante, bateria
+            firme e vocal feminino expressivo, o grupo aborda temas como tempo, memória, desigualdade,
+            liberdade e resistência. No show “Quanto Tempo Temos?”, a banda apresenta uma narrativa musical
+            intensa sobre as urgências do Brasil contemporâneo.
+          </p>
+        </section>
+
+        <section>
+          <h2>O show “Quanto Tempo Temos?”</h2>
+          <p>
+            “Quanto Tempo Temos?” é um show autoral da banda Diva Pop, com duração aproximada de 60 minutos,
+            que apresenta a fase mais madura e conceitual do grupo.
+          </p>
+          <p>
+            A proposta une repertório autoral, crítica social, força melódica e presença cênica em uma narrativa
+            sobre as urgências do mundo contemporâneo. O show percorre temas como manipulação social,
+            desigualdade, opressão, consumismo, memória histórica, conflitos internos, apatia coletiva e finitude.
+          </p>
+          <p>
+            A apresentação foi pensada para espaços culturais, festivais, casas de show, eventos públicos,
+            programações de música independente, projetos culturais e ações voltadas à produção autoral brasileira.
+          </p>
+          <p>
+            Durante o show, a banda pode realizar breves falas de mediação entre algumas músicas, contextualizando
+            o processo criativo, os temas abordados e a proposta artística da apresentação.
+          </p>
+        </section>
+
+        <section>
+          <h2>Ordem sugerida do repertório</h2>
+          <ol>
+            <li><b>Abra Seus Olhos</b> — abertura e chamado à consciência</li>
+            <li><b>Caminhando</b> — movimento, alienação e sociedade sem rumo</li>
+            <li><b>Este País</b> — crítica social direta</li>
+            <li><b>Carnaval</b> — máscaras, ilusões e identidade estética</li>
+            <li><b>O Preço de Ser Mulher</b> — liberdade, medo e vivência feminina</li>
+            <li><b>Sem Título</b> — consumo, vazio e anestesia moderna</li>
+            <li><b>Batalhas</b> — conflitos internos e resistência</li>
+            <li><b>Quanto Tempo Temos</b> — centro emocional e reflexão existencial</li>
+            <li><b>Ilha das Flores</b> — memória histórica e ápice político</li>
+            <li><b>Banalizados</b> — catarse coletiva e crítica à apatia</li>
+            <li><b>Fim dos Tempos</b> — encerramento cinematográfico e existencial</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Destaques do repertório</h2>
+          <div class="two">
+            <div>
+              <div class="song"><b>Abra Seus Olhos</b><br>Faixa de abertura ideal, com letra sobre manipulação, falsas promessas e consciência crítica.</div>
+              <div class="song"><b>Este País</b><br>Canção de crítica social direta sobre desigualdade, fome e sobrevivência no Brasil contemporâneo.</div>
+              <div class="song"><b>O Preço de Ser Mulher</b><br>Música de forte carga emocional e social sobre liberdade, medo, autonomia e vivência feminina.</div>
+              <div class="song"><b>Batalhas</b><br>Faixa sobre conflitos internos, resistência emocional e enfrentamento das próprias dores.</div>
+            </div>
+            <div>
+              <div class="song"><b>Quanto Tempo Temos</b><br>Núcleo emocional do espetáculo, refletindo sobre tempo, rotina, afetos adiados e urgências da vida.</div>
+              <div class="song"><b>Ilha das Flores</b><br>Canção de memória histórica e crítica social, com forte potencial de impacto ao vivo.</div>
+              <div class="song"><b>Banalizados</b><br>Faixa sobre apatia coletiva, individualismo e indiferença diante da dor do outro.</div>
+              <div class="song"><b>Fim dos Tempos</b><br>Encerramento épico e cinematográfico, com imagens de colapso, tensão emocional e desfecho instrumental.</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Sonoridade e referências</h2>
+          <p>
+            A Diva Pop trabalha uma sonoridade baseada no pop rock nacional e no rock autoral, com influências
+            do rock brasileiro dos anos 80 e 90, do rock alternativo e do indie rock.
+          </p>
+          <p>
+            A identidade da banda se destaca pelo uso de vocal feminino expressivo, duas guitarras, contrabaixo
+            elétrico pulsante e bateria firme, construindo arranjos diretos, melódicos e intensos.
+          </p>
+          <p>
+            Ao vivo, a força da Diva Pop está na combinação entre interpretação vocal, presença de palco,
+            peso das guitarras, sustentação rítmica do baixo e energia da bateria.
+          </p>
+        </section>
+
+        <section>
+          <h2>Histórico de mídia e divulgação</h2>
+          <p>A Diva Pop já possui circulação pública em veículos, programas e canais voltados à música independente e ao rock nacional.</p>
+          <ul>
+            <li><b>Rapadura Rock Web</b> — matéria/release jornalístico “Novo Rock Brasil - Banda Diva Pop”.</li>
+            <li><b>Programa Happy Hour Musical</b> — entrevista divulgada em junho de 2024.</li>
+            <li><b>Arpoador Rock Radio</b> — divulgação da banda na programação da rádio.</li>
+            <li><b>Rock no Pinheiro</b> — participação em entrevista no canal ligado à cena rock independente.</li>
+            <li><b>Tautocronia Rock Na Ativa / Rádio Putzgrila</b> — participação em programa voltado à música e cultura rock.</li>
+            <li><b>Alpha Rock</b> — mídia complementar em live/programa musical dedicado ao rock independente.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Justificativa artística</h2>
+          <p>
+            A proposta da Diva Pop valoriza a música autoral independente e amplia o acesso do público à produção
+            artística paulistana. Por meio de uma linguagem acessível e contemporânea, a banda utiliza o pop rock
+            nacional e o rock autoral como ferramentas de expressão artística, abordando questões sociais, existenciais
+            e emocionais que dialogam com diferentes públicos.
+          </p>
+          <p>
+            O show “Quanto Tempo Temos?” contribui para a difusão da produção musical independente e para o
+            fortalecimento da cena autoral, unindo entretenimento, reflexão crítica e conexão coletiva.
+          </p>
+        </section>
+
+        <section>
+          <h2>Indicação de público e espaços</h2>
+          <ul>
+            <li>Casas de show</li>
+            <li>Festivais de música independente</li>
+            <li>Espaços culturais e centros culturais</li>
+            <li>Eventos públicos</li>
+            <li>Programações de rock nacional</li>
+            <li>Projetos de música autoral</li>
+            <li>Ações culturais em escolas, universidades e equipamentos públicos</li>
+            <li>Eventos com foco em arte, juventude, reflexão social e diversidade</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside>
+        <h2>Resumo rápido</h2>
+        <div class="facts">
+          <div class="fact"><b>Nome artístico:</b><br>Diva Pop</div>
+          <div class="fact"><b>Cidade:</b><br>São Paulo — SP</div>
+          <div class="fact"><b>Formato:</b><br>Show musical autoral</div>
+          <div class="fact"><b>Duração aproximada:</b><br>60 minutos</div>
+          <div class="fact"><b>Gênero:</b><br>Pop rock nacional / rock autoral</div>
+          <div class="fact"><b>Formação:</b><br>Vocal, duas guitarras, contrabaixo elétrico e bateria</div>
+          <div class="fact"><b>Rider técnico:</b><br>Disponível mediante solicitação</div>
+        </div>
+      </aside>
+
+      <aside>
+        <h2>Formação</h2>
+        <ul>
+          <li>Karine Lisboa — vocal principal</li>
+          <li>Diogo Alves — guitarra 1 e backing vocal</li>
+          <li>Matheus Ramos — guitarra 2</li>
+          <li>Ernani Barbosa — contrabaixo elétrico</li>
+          <li>Dalmir Godinho — bateria</li>
+        </ul>
+      </aside>
+
+      <aside>
+        <h2>Links oficiais</h2>
+        <div class="links">
+          <p><b>Site:</b><br><a href="https://www.bandadivapop.com.br/">www.bandadivapop.com.br</a></p>
+          <p><b>Spotify:</b><br><a href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM">Diva Pop no Spotify</a></p>
+          <p><b>YouTube:</b><br><a href="https://www.youtube.com/@BandaDivaPop">@BandaDivaPop</a></p>
+          <p><b>Instagram:</b><br><a href="https://www.instagram.com/divapopoficial">@divapopoficial</a></p>
+          <p><b>Matéria / divulgação:</b><br><a href="https://www.rapadurarockweb.com.br/news-260-novo-rock-brasil--banda-diva-pop">Rapadura Rock Web</a></p>
+          <p><b>Entrevista / vídeo:</b><br><a href="https://www.youtube.com/watch?v=EIRbwKdrZB0">Entrevista no YouTube</a></p>
+          <p><b>Divulgação em rádio / rede social:</b><br><a href="https://www.instagram.com/p/C7ZCCI1g0Gr/">Registro no Instagram</a></p>
+        </div>
+      </aside>
+
+      <aside>
+        <h2>Contato</h2>
+        <div class="facts">
+          <div class="fact"><b>E-mail:</b><br>umadivapop@gmail.com</div>
+          <div class="fact"><b>WhatsApp:</b><br>11 94727-9393<br><span class="muted">Falar com Diogo Alves</span></div>
+          <div class="fact"><b>Instagram:</b><br>@divapopoficial</div>
+          <div class="fact"><b>Cidade:</b><br>São Paulo — SP</div>
+        </div>
+        <div class="hero-actions" style="justify-content:flex-start; margin-top:18px;">
+          <a class="btn" href="contato_contrate_diva_pop.html">Contato / Contrate</a>
+        </div>
+      </aside>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-    // Ajuste rápido (centralizado) — use os mesmos localStorage keys da página de Contato:
-    // divapop_email, divapop_whats, divapop_insta
-    const CONTACT_DEFAULT = {
-      email: 'umadivapop@gmail.com',
-      whatsapp: '11 94727-9393',
-      instagram: '@divapopoficial'
-    };
-    const CONTACT = {
-      email: (localStorage.getItem('divapop_email') || CONTACT_DEFAULT.email).trim(),
-      whatsapp: (localStorage.getItem('divapop_whats') || CONTACT_DEFAULT.whatsapp).trim(),
-      instagram: (localStorage.getItem('divapop_insta') || CONTACT_DEFAULT.instagram).trim(),
-    };
-    document.getElementById('chanEmail').textContent = CONTACT.email;
-    document.getElementById('chanWhats').textContent = CONTACT.whatsapp;
-    document.getElementById('chanInsta').textContent = CONTACT.instagram;
-
-    // Render: se o PDF existir, embute; se não, mostra placeholder premium.
-    const pdfPath = 'assets/presskit_divapop.pdf';
-    const area = document.getElementById('pdfArea');
-    const dl = document.getElementById('downloadBtn');
-
-    function showPlaceholder(){
-      area.innerHTML = `<div class="placeholder">\n<div>\n<p style="margin:0 0 10px;">Ãrea reservada para o <b>Press Kit (PDF)</b>.</p>\n<p style="margin:0; opacity:.9;">Assim que o arquivo estiver no projeto em <b>${pdfPath}</b>, ele aparece aqui automaticamente.</p>\n</div>\n</div>`;
-      dl.addEventListener('click', (e)=>{ e.preventDefault(); });
-      dl.textContent = '📎 Adicionar o PDF para habilitar download';
-    }
-
-    // Tenta validar existência do arquivo sem quebrar a página
-    fetch(pdfPath, { method: 'HEAD' }).then(r=>{
-      if(!r.ok) throw new Error('missing');
-      area.innerHTML = `<iframe class="pdf" src="${pdfPath}" title="Press Kit Diva Pop"></iframe>`;
-      dl.href = pdfPath;
-    }).catch(()=> showPlaceholder());
-
-    // scroll reveal (auto)
-    (function(){
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce) return;
-      const targets = [];
-      document.querySelectorAll('header, .card, footer').forEach(el=>{
-        if(!el.classList.contains('reveal')){ el.classList.add('reveal'); targets.push(el); }
-      });
-      const io = new IntersectionObserver((entries)=>{
-        for(const e of entries){
-          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        }
-      }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
-      targets.forEach(t=>io.observe(t));
-    })();
-  </script>
 </body>
 </html>
-

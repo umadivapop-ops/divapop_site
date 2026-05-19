@@ -54,12 +54,10 @@
     }
     nav a:hover{color:var(--neon)}
     .hero{
-      min-height:82vh;
-      display:flex;
-      align-items:flex-end;
+      min-height:68vh;
       background:
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.55) 58%, rgba(0,0,0,.94)),
-        url("presskit_hero_divapop.png") center center / cover no-repeat;
+        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.10) 62%, rgba(0,0,0,.38) 100%),
+        url("presskit_hero_divapop.png") center 22% / cover no-repeat;
       border-bottom:1px solid var(--line);
     }
     .hero-inner{
@@ -131,10 +129,21 @@
       display:grid;
       grid-template-columns:1.15fr .85fr;
       gap:18px;
-      margin-top:-34px;
+      margin-top:18px;
       position:relative;
-      z-index:5;
+      z-index:1;
     }
+    .intro-card{
+      margin-top:24px;
+    }
+    .intro-card p{
+      max-width:920px;
+    }
+    .intro-card h1{
+      margin:8px 0 12px;
+      text-shadow:none;
+    }
+
     .content-grid{
       display:grid;
       grid-template-columns:1.15fr .85fr;
@@ -213,20 +222,24 @@
     <a href="contato_contrate_diva_pop.html">Contato</a>
   </nav>
 
-  <header class="hero">
-    <div class="hero-inner">
+  <header class="hero" aria-label="Foto da banda Diva Pop"></header>
+
+  <main>
+
+    <section class="card intro-card">
       <div class="eyebrow">Press Kit Oficial — Diva Pop</div>
       <h1>Quanto Tempo Temos?</h1>
-      <p>Show autoral de pop rock nacional que une crítica social, presença cênica, guitarras marcantes e reflexão sobre tempo, memória, desigualdade, liberdade e resistência.</p>
+      <p>
+        Show autoral de pop rock nacional que une crítica social, presença cênica,
+        guitarras marcantes e reflexão sobre tempo, memória, desigualdade, liberdade e resistência.
+      </p>
       <div class="actions">
         <a class="btn" href="contato_contrate_diva_pop.html">Contratar show</a>
         <a class="btn secondary" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouvir no Spotify</a>
         <a class="btn ghost" href="https://www.youtube.com/@BandaDivaPop" target="_blank" rel="noopener">Assistir no YouTube</a>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <main>
     <section class="top-grid">
       <div class="card">
         <h2>Resumo para contratação</h2>

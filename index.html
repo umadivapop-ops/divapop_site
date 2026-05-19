@@ -776,6 +776,90 @@
 
     /* FIM COMPACTACAO FORTE HOME DIVA POP */
 
+  
+    /* CONTAINERS HOME 1120PX - OVERRIDE FINAL
+       Ajuste cirúrgico: reduz largura máxima dos blocos internos da home.
+       Não altera a foto principal do hero.
+       Não recoloca logo sobreposto.
+    */
+
+    .container,
+    .section-container,
+    .content-wrapper,
+    .wrap {
+      max-width: 1120px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+      box-sizing: border-box !important;
+    }
+
+    .section-card,
+    .info-box,
+    .content-block {
+      max-width: 1120px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      box-sizing: border-box !important;
+    }
+
+    .two-columns,
+    .video-section,
+    .photos-section {
+      gap: 40px !important;
+    }
+
+    /* Limite extra para evitar blocos esticados demais em desktop grande */
+    section > .container,
+    section > .section-container,
+    section > .content-wrapper,
+    section > .wrap {
+      max-width: 1120px !important;
+    }
+
+    /* Mantém a foto principal do hero livre, sem alterar enquadramento */
+    .hero-foto {
+      max-width: 100% !important;
+    }
+
+    @media (min-width: 1400px) {
+      .container,
+      .section-container,
+      .content-wrapper,
+      .wrap,
+      .section-card,
+      .info-box,
+      .content-block {
+        max-width: 1120px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container,
+      .section-container,
+      .content-wrapper,
+      .wrap {
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+      .section-card,
+      .info-box,
+      .content-block {
+        max-width: 100% !important;
+      }
+
+      .two-columns,
+      .video-section,
+      .photos-section {
+        gap: 24px !important;
+      }
+    }
+
+    /* FIM CONTAINERS HOME 1120PX */
+
   </style>
 </head>
 <body>

@@ -54,16 +54,27 @@
     }
     nav a:hover{color:var(--neon)}
     .hero{
-      min-height:68vh;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.10) 62%, rgba(0,0,0,.38) 100%),
-        url("presskit_hero_divapop.png") center 22% / cover no-repeat;
+      background:#000;
       border-bottom:1px solid var(--line);
+      padding:0;
+      min-height:auto;
+      display:block;
     }
+    .hero-img{
+      display:block;
+      width:100%;
+      max-width:1180px;
+      max-height:78vh;
+      margin:0 auto;
+      object-fit:contain;
+      object-position:center top;
+      background:#000;
+    }
+
     .hero-inner{
       width:min(1180px,92vw);
       margin:0 auto;
-      padding:42px 0 58px;
+      padding:0;
     }
     .eyebrow{
       display:inline-block;
@@ -222,7 +233,7 @@
     <a href="contato_contrate_diva_pop.html">Contato</a>
   </nav>
 
-  <header class="hero" aria-label="Foto da banda Diva Pop"></header>
+  <header class="hero" aria-label="Foto da banda Diva Pop"><img src="presskit_hero_divapop.png" alt="Integrantes da banda Diva Pop" class="hero-img"></header>
 
   <main>
 

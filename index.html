@@ -74,20 +74,19 @@
       border-bottom:1px solid var(--line);
       position:relative;
       overflow:hidden;
-      height:74vh;
-      min-height:500px;
-      max-height:790px;
       display:flex;
       align-items:center;
       justify-content:center;
+      padding:0;
     }
 
     .hero-photo{
       display:block;
       width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center 54%;
+      height:auto;
+      max-height:82vh;
+      object-fit:contain;
+      object-position:center center;
       background:#000;
     }
 
@@ -377,17 +376,16 @@
       }
 
       .hero{
-        height:auto;
-        min-height:auto;
-        max-height:none;
         display:block;
+        padding:0;
       }
 
       .hero-photo{
         width:100%;
         height:auto;
+        max-height:none;
         object-fit:contain;
-        object-position:center top;
+        object-position:center center;
       }
 
       .hero-logo-over{
@@ -400,6 +398,7 @@
       .home-intro{
         padding:34px 0 8px;
       }
+
 
 
 

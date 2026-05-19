@@ -438,12 +438,12 @@
       </div>
 
       <nav class="nav" aria-label="Navegação">
-        <a href="index.html">Início <span> </span></a>
-        <a class="active" href="arquivo1.html">Ouça Agora <span>🎧</span></a>
+        <a href="index.html">Início</a>
+        <a class="active" href="arquivo1.html">Ouça Agora</a>
 
-        <a href="pix_apoiar.html">Apoiar via PIX <span>💝</span></a>
+        <a href="pix_apoiar.html">Apoiar via PIX</a>
 
-        <a href="contato_contrate_diva_pop.html">Contato <span>✉</span></a>
+        <a href="contato_contrate_diva_pop.html">Contato</a>
 
       </nav>
 
@@ -465,21 +465,21 @@
       <section class="hero" aria-label="Apresentação">
         <div>
           <h1>Ouça Agora</h1>
-          <p>Uma área no estilo “player”: <b>capas + faixas</b>, sem encartes. <br>Entre a inocência que nasce e a experiência que pulsa.</p>
+          <p>Uma área no estilo “player": <b>capas + faixas</b>, sem encartes. <br>Entre a inocência que nasce e a experiência que pulsa.</p>
         </div>
         <div class="heroActions">
-          <button class="btn primary" id="playAll">▶ Tocar tudo</button>
+          <button class="btn primary" id="playAll">Tocar tudo</button>
 
         </div>
       </section>
 
-      <section class="albums" aria-label="Ãlbuns">
+      <section class="albums" aria-label="Ãlbuns">
         <article class="album" data-album="Quanto Tempo Temos?">
           <div class="albumHeader">
             <img class="cover" src="capas/capa_quanto_tempo_temos.png" alt="Capa Quanto Tempo Temos?" onerror="this.onerror=null; this.src='capas/capa_quanto_tempo_temos.jpg';" />
             <div class="meta">
               <h2>Quanto Tempo Temos?</h2>
-              <div class="sub">Ãlbum • 9 faixas</div>
+              <div class="sub">Álbum • 9 faixas</div>
             </div>
           </div>
           <div class="tracklist" id="qttList"></div>
@@ -510,7 +510,7 @@
 
         <audio id="player" controls preload="metadata"></audio>
 
-        <a id="downloadCurrent" class="dlcurrent" href="#" download aria-disabled="true">⬇ Baixar faixa atual</a>
+        <a id="downloadCurrent" class="dlcurrent" href="#" download aria-disabled="true">Baixar faixa atual</a>
       </div>
     </footer>
 
@@ -584,7 +584,7 @@
       ui.seek.max = dur ? String(dur) : '0';
       ui.seek.value = dur ? String(cur) : '0';
 
-      ui.miniBtn.textContent = player.paused ? '▶' : 'âšâš';
+      ui.miniBtn.textContent = player.paused ? '▶' : 'âšâš';
       ui.miniBtn.title = player.paused ? 'Tocar' : 'Pausar';
     }
 
@@ -620,7 +620,7 @@
 
       const dl = document.createElement('a');
       dl.className = 'dl';
-      dl.textContent = '⬇';
+      dl.textContent = '⬇';
       dl.title = 'Baixar';
       dl.href = Array.isArray(t.src) ? t.src[0] : t.src;
       dl.setAttribute('download', (dl.href.split('/').pop() || 'divapop.mp3'));

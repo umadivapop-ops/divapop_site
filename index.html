@@ -70,14 +70,51 @@
     nav a:hover{ color:var(--neon); }
 
     .hero{
-      min-height:calc(100vh - 58px);
-      display:flex;
-      align-items:flex-end;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.58) 38%, rgba(0,0,0,.18) 70%),
-        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.72)),
-        url("presskit_hero_divapop.png") center center / cover no-repeat;
+      background:#000;
       border-bottom:1px solid var(--line);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-photo{
+      display:block;
+      width:100%;
+      height:auto;
+      max-height:82vh;
+      object-fit:contain;
+      object-position:center top;
+      background:#000;
+    }
+
+    .hero-logo-over{
+      position:absolute;
+      top:28px;
+      left:34px;
+      width:190px;
+      max-width:30vw;
+      z-index:3;
+      filter:drop-shadow(0 0 18px rgba(0,0,0,.95)) drop-shadow(0 0 18px rgba(230,57,70,.45));
+    }
+
+    .home-intro{
+      width:min(1180px,92vw);
+      margin:0 auto;
+      padding:34px 0 10px;
+    }
+
+    .home-intro h1{
+      margin:0 0 10px;
+      color:#fff;
+      font-size:clamp(2.4rem,6vw,5rem);
+      line-height:1;
+      text-shadow:none;
+    }
+
+    .home-intro .lead{
+      max-width:860px;
+      margin:0 0 8px;
+      color:#fff7df;
+      font-size:clamp(1rem,1.8vw,1.25rem);
     }
 
     .hero-inner{
@@ -334,6 +371,24 @@
         padding:34px 0 42px;
       }
 
+      .hero-photo{
+        max-height:none;
+        width:100%;
+        height:auto;
+      }
+
+      .hero-logo-over{
+        top:16px;
+        left:18px;
+        width:130px;
+        max-width:38vw;
+      }
+
+      .home-intro{
+        padding:26px 0 4px;
+      }
+
+
       .grid-2,
       .grid-3,
       .members,
@@ -359,20 +414,21 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <header class="hero" id="inicio">
-    <div class="hero-inner">
-      <img src="logo_diva_pop.png" alt="Logo Diva Pop" class="logo">
-      <div class="eyebrow">Show autoral • São Paulo</div>
-      <h1>Diva Pop</h1>
-      <p>Pop rock autoral brasileiro direto de São Paulo.</p>
-      <p>Letras em português, presença cênica e energia de palco em um show autoral para casas de show, festivais e eventos culturais.</p>
-      <div class="actions">
-        <a class="btn" href="https://wa.me/5511947279393" target="_blank" rel="noopener">Contratar show</a>
-        <a class="btn secondary" href="presskit_oficial.html">Baixar press kit</a>
-        <a class="btn ghost" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouça agora</a>
-      </div>
-    </div>
+  <header class="hero" id="inicio" aria-label="Foto oficial da banda Diva Pop">
+    <img src="presskit_hero_divapop.png" alt="Banda Diva Pop em foto oficial de divulgação" class="hero-photo">
+    <img src="logo_diva_pop.png" alt="Logo Diva Pop" class="hero-logo-over">
   </header>
+
+  <section class="home-intro">
+    <h1>Diva Pop</h1>
+    <p class="lead">Pop rock autoral brasileiro direto de São Paulo.</p>
+    <p class="lead">Letras em português, presença cênica e um show feito para casas de show, festivais e eventos culturais.</p>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/5511947279393" target="_blank" rel="noopener">Contratar show</a>
+      <a class="btn secondary" href="presskit_oficial.html">Baixar press kit</a>
+      <a class="btn ghost" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouça agora</a>
+    </div>
+  </section>
 
   <main>
     <section class="block" id="contratacao">

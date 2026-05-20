@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Quanto Tempo Temos? | Diva Pop</title>
+
+  <meta name="description" content="Conheça o show Quanto Tempo Temos?, da banda Diva Pop: proposta artística, repertório autoral e rider técnico para contratação.">
+
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --text: #F3EBDD;
+      --muted: #D8D0C4;
+      --soft: #B9B0A3;
+      --red: #FF1F2D;
+      --red-strong: #FF3340;
+      --cream: #F3EBDD;
+      --line: rgba(243, 235, 221, 0.18);
+      --card: rgba(243, 235, 221, 0.065);
+      --card-strong: rgba(243, 235, 221, 0.10);
+      --max: 1120px;
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,31,45,0.20), transparent 34%),
+        radial-gradient(circle at top right, rgba(243,235,221,0.08), transparent 30%),
+        linear-gradient(180deg, #050505 0%, #0A0A0A 50%, #050505 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(10, 10, 10, 0.90);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--soft);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .menu a:hover {
+      color: var(--red-strong);
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 88px 28px 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(243,235,221,0.06);
+      color: var(--cream);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 18px rgba(255,31,45,0.85);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .red {
+      color: var(--red);
+    }
+
+    .lead {
+      max-width: 880px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.18rem);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 26px;
+      min-height: 190px;
+    }
+
+    .card h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      color: var(--cream);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+
+    .doc-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,31,45,0.65);
+      background: rgba(243, 235, 221, 0.095);
+    }
+
+    .card-kicker {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(243,235,221,0.04);
+      color: var(--cream);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .mini-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--cream);
+    }
+    .action-box {
+      margin-top: 42px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,31,45,0.18), rgba(243,235,221,0.07));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .action-box p {
+      margin: 0;
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--cream);
+      box-shadow: 0 14px 36px rgba(255,31,45,0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--red-strong);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: rgba(243,235,221,0.04);
+      color: var(--cream);
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-top: 34px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: var(--red-strong);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 28px;
+      color: var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+  
+    .doc-card {
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .doc-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,31,45,0.65);
+      background: rgba(243, 235, 221, 0.095);
+    }
+
+    .card-kicker {
+      display: inline-flex;
+      margin-bottom: 14px;
+      color: var(--red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .mini-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(243,235,221,0.04);
+      color: var(--cream);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .mini-btn:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--cream);
+    }
+    .action-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav,
+      .page {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Menu principal">
+      <a class="brand" href="index.html">
+        <strong>Diva Pop</strong>
+        <span>Pop rock autoral</span>
+      </a>
+
+      <div class="menu">
+        <a href="index.html#show">Show</a>
+        <a href="index.html#banda">A Banda</a>
+        <a href="index.html#musicas">Ouça</a>
+        <a href="presskit_oficial.html">Press Kit</a>
+        <a href="index.html#contato">Contratar</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Material do show
+    </div>
+
+    <h1>Conheça o show <span class="red">“Quanto Tempo Temos?”</span></h1>
+
+    <p class="lead">
+      Reunimos aqui as principais informações sobre o show da Diva Pop: proposta artística,
+      repertório autoral e necessidades técnicas para alinhamento com casas, festivais,
+      produtores e eventos culturais.
+    </p>
+
+        <section class="cards" aria-label="Documentos do show">
+      <article class="card doc-card" role="link" tabindex="0" onclick="window.open('docs/ficha_tecnica_diva_pop.pdf', '_blank')" onkeydown="if(event.key==='Enter'){window.open('docs/ficha_tecnica_diva_pop.pdf', '_blank')}">
+        <span class="card-kicker">Documento PDF</span>
+        <h2>Ficha técnica</h2>
+        <p>
+          Formato, duração, formação da banda e proposta da apresentação.
+        </p>
+
+        <div class="card-actions" onclick="event.stopPropagation()">
+          <a class="mini-btn" href="docs/ficha_tecnica_diva_pop.pdf" target="_blank" rel="noopener">Visualizar PDF</a>
+          <a class="mini-btn" href="docs/ficha_tecnica_diva_pop.pdf" download>Download</a>
+        </div>
+      </article>
+
+      <article class="card doc-card" role="link" tabindex="0" onclick="window.open('docs/repertorio_diva_pop.pdf', '_blank')" onkeydown="if(event.key==='Enter'){window.open('docs/repertorio_diva_pop.pdf', '_blank')}">
+        <span class="card-kicker">Documento PDF</span>
+        <h2>Repertório</h2>
+        <p>
+          Ordem sugerida do show e descrição das músicas autorais.
+        </p>
+
+        <div class="card-actions" onclick="event.stopPropagation()">
+          <a class="mini-btn" href="docs/repertorio_diva_pop.pdf" target="_blank" rel="noopener">Visualizar PDF</a>
+          <a class="mini-btn" href="docs/repertorio_diva_pop.pdf" download>Download</a>
+        </div>
+      </article>
+
+      <article class="card doc-card" role="link" tabindex="0" onclick="window.open('docs/rider_tecnico_diva_pop.pdf', '_blank')" onkeydown="if(event.key==='Enter'){window.open('docs/rider_tecnico_diva_pop.pdf', '_blank')}">
+        <span class="card-kicker">Documento PDF</span>
+        <h2>Rider técnico</h2>
+        <p>
+          Informações de palco, som, microfones, monitoração e estrutura necessária.
+        </p>
+
+        <div class="card-actions" onclick="event.stopPropagation()">
+          <a class="mini-btn" href="docs/rider_tecnico_diva_pop.pdf" target="_blank" rel="noopener">Visualizar PDF</a>
+          <a class="mini-btn" href="docs/rider_tecnico_diva_pop.pdf" download>Download</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="action-box" aria-label="Solicitação de informações para contratação">
+      <p>
+        Esse bloco fecha a ponte entre o site e os documentos profissionais da banda,
+        facilitando o primeiro contato para contratação e alinhamento técnico.
+      </p>
+
+      <a class="btn btn-primary" href="https://wa.me/5511947279393?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20informa%C3%A7%C3%B5es%20para%20contrata%C3%A7%C3%A3o%20da%20Diva%20Pop.%20Gostaria%20de%20saber%20disponibilidade%2C%20formato%20do%20show%20e%20condi%C3%A7%C3%B5es%20para%20apresenta%C3%A7%C3%A3o." target="_blank" rel="noopener">Solicitar informações para contratação</a>
+    </section>
+
+    <a class="back-link" href="index.html">← Voltar para a página inicial</a>
+  </main>
+
+  <footer class="site-footer">
+    Diva Pop © 2026 · Site oficial · São Paulo/SP · Shows, parcerias e imprensa: umadivapop@gmail.com
+  </footer>
+</body>
+</html>
+
+

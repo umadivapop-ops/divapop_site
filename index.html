@@ -1,692 +1,680 @@
-﻿<!-- PATCH_DIVA_POP_FOTO_EXATA_INICIO -->
-<style>
-/* ============================================================
-   PATCH CIRÚRGICO — FOTO EXATA DA HOME DIVA POP
-   Usa a imagem já recortada, sem zoom, sem corte adicional
-   ============================================================ */
-
-.hero-foto,
-.hero-image,
-.hero-principal,
-.hero-banner,
-.hero-media,
-#inicio .hero-foto,
-#inicio .hero-image,
-#inicio .hero-principal {
-  width: min(100%, 1472px) !important;
-  max-width: 1472px !important;
-  aspect-ratio: 1472 / 768 !important;
-  height: auto !important;
-  min-height: 0 !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  overflow: hidden !important;
-  background-image: url('./hero_home_exato.png') !important;
-  background-size: contain !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  background-color: #000 !important;
-}
-
-.hero-foto img,
-.hero-image img,
-.hero-principal img,
-.hero-banner img,
-.hero-media img,
-#inicio .hero-foto img,
-#inicio .hero-image img,
-#inicio .hero-principal img {
-  width: min(100%, 1472px) !important;
-  max-width: 1472px !important;
-  height: auto !important;
-  aspect-ratio: 1472 / 768 !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-@media (max-width: 768px) {
-  .hero-foto,
-  .hero-image,
-  .hero-principal,
-  .hero-banner,
-  .hero-media,
-  #inicio .hero-foto,
-  #inicio .hero-image,
-  #inicio .hero-principal,
-  .hero-foto img,
-  .hero-image img,
-  .hero-principal img,
-  .hero-banner img,
-  .hero-media img,
-  #inicio .hero-foto img,
-  #inicio .hero-image img,
-  #inicio .hero-principal img {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var heroSrc = 'hero_home_exato.png?v=1';
-
-  var heroImgSelectors = [
-    '.hero-foto img',
-    '.hero-image img',
-    '.hero-principal img',
-    '.hero-banner img',
-    '.hero-media img',
-    '#inicio .hero-foto img',
-    '#inicio .hero-image img',
-    '#inicio .hero-principal img'
-  ];
-
-  heroImgSelectors.forEach(function (sel) {
-    document.querySelectorAll(sel).forEach(function (img) {
-      img.setAttribute('src', heroSrc);
-      img.removeAttribute('srcset');
-      img.style.width = 'min(100%, 1472px)';
-      img.style.maxWidth = '1472px';
-      img.style.height = 'auto';
-      img.style.objectFit = 'contain';
-      img.style.objectPosition = 'center center';
-      img.style.display = 'block';
-      img.style.marginLeft = 'auto';
-      img.style.marginRight = 'auto';
-    });
-  });
-
-  var heroBoxSelectors = [
-    '.hero-foto',
-    '.hero-image',
-    '.hero-principal',
-    '.hero-banner',
-    '.hero-media',
-    '#inicio .hero-foto',
-    '#inicio .hero-image',
-    '#inicio .hero-principal'
-  ];
-
-  heroBoxSelectors.forEach(function (sel) {
-    document.querySelectorAll(sel).forEach(function (el) {
-      el.style.backgroundImage = "url('" + heroSrc + "')";
-      el.style.backgroundSize = 'contain';
-      el.style.backgroundPosition = 'center center';
-      el.style.backgroundRepeat = 'no-repeat';
-      el.style.backgroundColor = '#000';
-      el.style.width = 'min(100%, 1472px)';
-      el.style.maxWidth = '1472px';
-      el.style.aspectRatio = '1472 / 768';
-      el.style.height = 'auto';
-      el.style.minHeight = '0';
-      el.style.marginLeft = 'auto';
-      el.style.marginRight = 'auto';
-    });
-  });
-});
-</script>
-<!-- PATCH_DIVA_POP_FOTO_EXATA_FIM -->
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diva Pop - Banda Oficial</title>
-  <meta name="description" content="Site oficial da Banda Diva Pop â€” pop rock autoral de SÃ£o Paulo, com mÃºsicas, vÃ­deos, press kit e contato para shows." />
-  <meta property="og:title" content="Diva Pop - Banda Oficial" />
-  <meta property="og:description" content="Banda Diva Pop â€” pop rock autoral de SÃ£o Paulo. ConheÃ§a o show Quanto Tempo Temos?, ouÃ§a as mÃºsicas e acesse o press kit oficial." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Diva Pop" />
-  <meta property="og:image" content="assets/og_divapop.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#000000">
+
+  <title>Diva Pop | Pop Rock Autoral de São Paulo</title>
+
+  <meta name="description" content="Diva Pop é uma banda paulistana de pop rock autoral. Contrate o show, baixe o press kit e ouça agora.">
+  <meta name="keywords" content="Diva Pop, banda Diva Pop, pop rock autoral, banda de São Paulo, contratar banda, Quanto Tempo Temos">
+  <meta name="author" content="Diva Pop">
+
   <style>
-    :root{ --neon:#e63946; --cream:#f5f5dc; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0A0A0A;
+      --bg-soft: #141414;
+      --text: #F3EBDD;
+      --muted: #D8D0C4;
+      --soft: #B9B0A3;
+      --red: #FF1F2D;
+      --red-strong: #FF3340;
+      --cream: #F3EBDD;
+      --line: rgba(243, 235, 221, 0.18);
+      --card: rgba(243, 235, 221, 0.065);
+      --card-strong: rgba(243, 235, 221, 0.10);
+      --max: 1120px;
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #0b0b0b;
-      color: #fdf2f2;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,31,45,0.20), transparent 34%),
+        radial-gradient(circle at top right, rgba(243,235,221,0.08), transparent 30%),
+        linear-gradient(180deg, #050505 0%, #0A0A0A 50%, #050505 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(10, 10, 10, 0.90);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--soft);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .menu {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .menu a:hover {
+      color: var(--red-strong);
     }
 
     .hero {
-      position: relative;
-      height: 85vh;
-      background: url('hero_home_exato.png') no-repeat center 20% / cover;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 56px 28px 38px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(243,235,221,0.06);
+      color: var(--cream);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 18px rgba(255,31,45,0.85);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 100%;
+      font-size: clamp(1.9rem, 3.7vw, 3.25rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+
+    .red {
+      color: var(--red);
+    }
+    .title-show-line {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .hero-subtitle {
+      max-width: 700px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(0.92rem, 1.25vw, 1.08rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--cream);
+      box-shadow: 0 14px 36px rgba(255,31,45,0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--red-strong);
+    }
+
+    .btn-secondary {
+      background: var(--cream);
+      color: var(--bg);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: rgba(243,235,221,0.04);
+      color: var(--cream);
+    }
+
+    .hero-photo {
+      min-height: 520px;
+      border-radius: 34px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.42)),
+        url("hero_home_exato.png") center center / contain no-repeat,
+        #000;
+      box-shadow: 0 28px 90px rgba(0,0,0,0.58);
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 28px;
+    }
+
+    .section.compact {
+      padding-top: 28px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-lead {
+      margin: 0;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .show-card {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 26px;
+      align-items: center;
+      background: linear-gradient(135deg, rgba(255,31,45,0.18), rgba(243,235,221,0.07));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.36);
+    }
+
+    .date-box {
+      background: rgba(0,0,0,0.32);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      text-align: center;
+    }
+
+    .date-box .day {
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+      color: var(--red);
+    }
+
+    .date-box .month {
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .show-info h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 3vw, 3.15rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .show-info p {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+
+    .cards-two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 820px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      color: var(--cream);
+      font-size: 1.16rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .about-box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .quote {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--cream);
+    }
+
+    .about-box p {
+      margin-top: 0;
+      color: var(--muted);
+    }
+
+    .listen-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .listen-link {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
+      min-height: 148px;
+      background: var(--card-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(230,57,70,0.2));
-      animation: pulseLight 6s ease-in-out infinite;
+    .listen-link:hover {
+      border-color: rgba(255,31,45,0.65);
     }
 
-    @keyframes pulseLight {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-
-    /* LOGO Ã¯Â¿Â½ 40% maior + centralizado verticalmente */
-    .logo {
-      position: absolute;
-      top: 50%;
-      left: 40px;
-      width: 196px; /* 140px * 1.4 */
-      transform: translateY(-50%);
-      filter: drop-shadow(0 0 6px rgba(230, 57, 70, 0.8));
-      transition: transform 0.4s ease;
-      z-index: 3;
-    }
-
-    .logo:hover { transform: translateY(-50%) scale(1.05); }
-
-    /* BotÃ¯Â¿Â½o e texto colados no rodapÃ¯Â¿Â½ do herÃ¯Â¿Â½i, 10px acima do menu */
-    .hero-content {
-      position: absolute;
-      left: 50%;
-      bottom: 10px; /* 10px de distÃ¯Â¿Â½ncia do menu abaixo */
-      transform: translateX(-50%);
-      z-index: 2;
-      width: min(920px, 92vw);
-    }
-
-    .hero .btn {
-      padding: 14px 30px;
-      background-color: #e63946;
-      color: #fff;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .hero .btn:hover { background-color: #ff4d5a; transform: scale(1.05); }
-
-    /* Slogan abaixo do botÃ¯Â¿Â½o, legÃ¯Â¿Â½vel */
-    .hero .slogan {
-      margin-top: 10px; /* abaixo do botÃ¯Â¿Â½o */
+    .listen-link strong {
       font-size: 1.45rem;
-      font-style: italic;
-      color: #ffffff; /* mais legÃ¯Â¿Â½vel que o vermelho */
-      text-shadow:
-        0 2px 18px rgba(0,0,0,0.75),
-        0 0 18px rgba(230,57,70,0.18);
+      letter-spacing: -0.03em;
     }
 
-    nav {
-      background-color: rgba(0, 0, 0, 0.85);
-      text-align: center;
-      padding: 12px 0;
-      border-top: 2px solid #e63946;
-      border-bottom: 2px solid #e63946;
+    .listen-link span {
+      margin-top: 6px;
+      color: var(--muted);
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s;
+    .contact-strip {
+      background: linear-gradient(135deg, rgba(255,31,45,0.22), rgba(243,235,221,0.08));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: center;
     }
 
-    nav a:hover { color: #e63946; }
-
-    main {
-      max-width: 1000px;
-      margin: 80px auto;
-      padding: 0 20px;
-      text-align: center;
-      line-height: 1.7;
+    .contact-strip h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
-    h2 { color: #e63946; margin-bottom: 20px; font-size: 2rem; }
+    .contact-strip p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-    .band-members {
+    .contact-actions {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
       margin-top: 40px;
-    }
-
-    /* cards viram PORTAIS */
-    .member {
-      position: relative;
-      width: 22%;
-      min-width: 200px;
-      border-radius: 14px;
-      overflow: hidden;
-      cursor: pointer;
-      border: 1px solid rgba(230,57,70,.20);
-      box-shadow: 0 0 18px rgba(230,57,70,.12);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color .35s ease;
-      background: rgba(0,0,0,.25);
-    }
-
-    .member img {
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-      filter: brightness(0.9);
-      transition: transform 0.5s ease, filter .5s ease;
-      display:block;
-    }
-
-    .member:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 0 32px rgba(230,57,70,.28);
-      border-color: rgba(230,57,70,.55);
-    }
-
-    .member:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.12) drop-shadow(0 0 15px rgba(230, 57, 70, 0.55));
-    }
-
-    .overlay {
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 0;
-      background: rgba(0, 0, 0, 0.72);
-      transition: height 0.5s ease;
-    }
-
-    .member:hover .overlay { height: 42%; }
-
-    .info {
-      position: absolute;
-      bottom: 14px;
-      width: 100%;
+      padding: 28px;
+      color: var(--soft);
       text-align: center;
-      color: #e63946;
-      font-weight: 600;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      padding: 0 10px;
-      line-height: 1.25;
+      font-size: 0.92rem;
     }
 
-    .info .sub{
-      display:block;
-      margin-top:6px;
-      font-size:.9rem;
-      color:#fff;
-      opacity:.92;
-      text-shadow: 0 0 12px rgba(230,57,70,.25);
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .show-card,
+      .about-box,
+      .listen-panel,
+      .contact-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 32px;
+      }
+
+      .hero-photo {
+        min-height: 360px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .cards-two {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .contact-actions {
+        justify-content: flex-start;
+      }
     }
 
-    .member:hover .info { opacity: 1; transform: translateY(0); }
+    @media (max-width: 520px) {
+      .nav,
+      .hero,
+      .section {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
 
-    footer {
-      background-color: #0d0d0d;
-      border-top: 3px solid #e63946;
-      padding: 40px 0;
-      color: #f5f5f5;
-      text-align: center;
-    }
+      .hero-actions,
+      .contact-actions {
+        flex-direction: column;
+      }
 
-    .social-icons img {
-      width: 35px;
-      margin: 0 10px;
-      filter: brightness(0) saturate(100%) invert(34%) sepia(93%) saturate(6822%) hue-rotate(346deg) brightness(92%) contrast(91%);
-      transition: transform 0.3s;
-    }
+      .btn {
+        width: 100%;
+      }
 
-    .social-icons img:hover { transform: scale(1.2); }
+      .hero-photo {
+        min-height: 290px;
+        border-radius: 24px;
+      }
 
-    .qr-code img { width: 100px; margin-top: 20px; }
-
-    /* scroll reveal (leve, sem pesar) */
-    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
-    .reveal.is-visible{ opacity:1; transform:none; }
-    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
-
-    /* portal modal (com scroll interno) */
-    .portal-modal{ position:fixed; inset:0; background: rgba(0,0,0,.82); display:none; align-items:center; justify-content:center; padding: 18px; z-index: 9999; }
-    .portal-modal.open{ display:flex; }
-
-    .portal-box{
-      width:min(1200px, 96vw);
-      max-height: 92vh;
-      background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%);
-      border:1px solid rgba(230,57,70,.35);
-      border-radius:22px;
-      box-shadow:0 0 42px rgba(230,57,70,.35);
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .portal-bar{ flex:0 0 auto; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 14px; flex-wrap:wrap; }
-    .portal-title{ color:#fff; font-weight:700; }
-    .portal-actions{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
-    .portal-input{ width:min(360px, 88vw); border-radius:16px; border:1px solid rgba(245,245,220,.28); background: rgba(0,0,0,.55); color:#fff; padding:10px 12px; font-family:inherit; outline:none; }
-    .portal-btn{ border:none; border-radius:999px; padding:10px 14px; cursor:pointer; font-weight:700; background: rgba(0,0,0,.55); border:1px solid rgba(230,57,70,.75); color:#fff; }
-    .portal-btn:hover{ background: rgba(230,57,70,.18); box-shadow:0 0 18px rgba(230,57,70,.25); }
-
-    .portal-view{ flex:0 0 auto; background: rgba(0,0,0,.45); border-top:1px solid rgba(230,57,70,.22); border-bottom:1px solid rgba(230,57,70,.22); }
-    .portal-view img{ width:100%; height:min(42vh, 420px); object-fit:contain; display:block; }
-
-    .portal-thumbs{ flex:1 1 auto; overflow:auto; -webkit-overflow-scrolling: touch; padding:14px; }
-    .thumb-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
-    .thumb{ border-radius:16px; overflow:hidden; border:1px solid rgba(230,57,70,.22); background: rgba(0,0,0,.35); box-shadow: 0 0 18px rgba(230,57,70,.12); cursor:pointer; transition: transform .25s ease, box-shadow .25s ease; }
-    .thumb:hover{ transform: translateY(-2px); box-shadow:0 0 26px rgba(230,57,70,.26); }
-    .thumb img{ width:100%; height: 150px; object-fit:cover; display:block; filter: brightness(.95); }
-    .thumb .cap{ padding:10px 10px 12px; color:#fff; font-weight:600; font-size:.95rem; }
-
-    .portal-empty{ display:none; opacity:.9; border:1px dashed rgba(245,245,220,.28); padding:16px; border-radius:18px; background: rgba(0,0,0,.35); text-align:center; margin: 0 14px 14px; }
-
-    @media (max-width: 720px){
-      .logo{ left: 18px; width: 170px; }
-      .hero-content{ bottom: 12px; }
-      .hero .slogan{ font-size: 1.12rem; }
-      .thumb img{ height: 130px; }
-      .portal-view img{ height:min(38vh, 360px); }
+      .show-card,
+      .about-box,
+      .contact-strip {
+        padding: 22px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <section class="hero">
-    <img src="logo_diva_pop.png" alt="Logo Diva Pop" class="logo">
-    <div class="hero-content">
-      <button class="btn" onclick="location.href='arquivo1.html'">OuÃ§a Agora</button>
-      <div class="slogan">"Entre a inocÃªncia que nasce e a experiÃªncia que pulsa"</div>
-    </div>
-  </section>
+  <header class="site-header">
+    <nav class="nav" aria-label="Menu principal">
+      <a class="brand" href="#inicio">
+        <strong>Diva Pop</strong>
+        <span>Pop rock autoral</span>
+      </a>
 
-  <nav>
-    <a href="index.html">InÃ­cio</a>
-    <a href="mural_fas.html">Mural dos FÃ£s</a>
-    <a href="discografia_completa.html">Discografia</a>
-    <a href="blog_noticias_diva_pop.html">Blog</a>
-    <a href="arquivo2.html">Nossa HistÃ³ria</a>
-    <a href="presskit_oficial.html">Press Kit</a>
-    <a href="contato_contrate_diva_pop.html">Contato</a>
-    <a href="area_restrita.html">Ãrea Restrita</a>
-  </nav>
+      <div class="menu">
+        <a href="#show">Show</a>
+        <a href="#banda">A Banda</a>
+        <a href="#musicas">Ouça</a>
+        <a href="presskit_oficial.html">Press Kit</a>
+        <a href="#contato">Contratar</a>
+      </div>
+    </nav>
+  </header>
 
-  <main>
-    <section class="reveal">
-      <h2>Quem Somos</h2>
-      <p>
-        A Diva Pop Ã© uma banda brasileira de pop rock autoral, nascida do encontro entre geraÃ§Ãµes, referÃªncias e emoÃ§Ãµes.
-        Nosso som mistura influÃªncias clÃ¡ssicas do pop e do rock com a linguagem, a estÃ©tica e a intensidade do presente,
-        criando uma identidade musical prÃ³pria, acessÃ­vel e ao mesmo tempo cheia de personalidade.
-      </p>
-      <p>
-        Mais do que seguir rÃ³tulos, buscamos contar histÃ³rias. Cada mÃºsica Ã© construÃ­da a partir de vivÃªncias reais,
-        sentimentos genuÃ­nos e da vontade de criar conexÃ£o â€” com quem escuta, com quem canta junto e com quem se reconhece nas letras.
-        Nossa proposta Ã© simples e poderosa: fazer mÃºsica que emociona, aproxima e permanece.
-      </p>
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Banda autoral de São Paulo
+          </div>
+
+                              <h1>
+            Diva Pop estreia<br>
+            <span class="red title-show-line">“Quanto Tempo Temos?”</span>
+          </h1>
+
+                              <p class="hero-subtitle">
+            Diva Pop estreia “Quanto Tempo Temos?”, show autoral de pop rock em português
+            que transforma o palco em um encontro direto entre música, memória e urgência.
+            Com guitarras marcantes, letras sobre tempo, desigualdade, liberdade e escolhas,
+            a banda apresenta um repertório intenso e acessível, pensado para conectar emoção,
+            reflexão e energia ao vivo.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Contratar show</a>
+            <a class="btn btn-secondary" href="presskit_oficial.html">Baixar press kit</a>
+            <a class="btn btn-outline" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouça agora</a>
+          </div>
+        </div>
+
+        <div class="hero-photo" role="img" aria-label="Foto oficial da banda Diva Pop"></div>
+      </div>
     </section>
 
-    <div class="band-members">
-      <div class="member reveal" role="button" tabindex="0" data-member="Karine" data-role="Vocal">
-        <img src="DSC_8379.jpg" alt="Karine Lisboa - Vocal">
-        <div class="overlay"></div>
-        <div class="info">Karine Lisboa â€” Vocal <span class="sub">Ver fotos</span></div>
-      </div>
-      <div class="member reveal" role="button" tabindex="0" data-member="Diogo" data-role="Guitarra e backing vocal">
-        <img src="DSC_8371.jpg" alt="Diogo Alves - Guitarra e backing vocal">
-        <div class="overlay"></div>
-        <div class="info">Diogo Alves â€” Guitarra e backing vocal <span class="sub">Ver fotos</span></div>
-      </div>
-      <div class="member reveal" role="button" tabindex="0" data-member="Dal" data-role="Bateria">
-        <img src="DSC_8448.jpg" alt="Dalmir Godinho - Bateria">
-        <div class="overlay"></div>
-        <div class="info">Dalmir Godinho â€” Bateria <span class="sub">Ver fotos</span></div>
-      </div>
-      <div class="member reveal" role="button" tabindex="0" data-member="Ramos" data-role="Guitarra">
-        <img src="DSC_8316.jpg" alt="Matheus Ramos - Guitarra">
-        <div class="overlay"></div>
-        <div class="info">Matheus Ramos â€” Guitarra <span class="sub">Ver fotos</span></div>
-      </div>
-    </div>
-  </main>
+    <section id="show" class="section compact">
+      <div class="show-card">
+        <div class="date-box">
+          <div class="day">31</div>
+          <div class="month">Julho · 20h</div>
+        </div>
 
-  <!-- MODAL PORTAL (galeria por integrante) -->
-  <div id="portalModal" class="portal-modal" aria-hidden="true">
-    <div class="portal-box">
-      <div class="portal-bar">
-        <div class="portal-title" id="portalTitle">Fotos</div>
-        <div class="portal-actions">
-          <input id="portalQ" class="portal-input" placeholder="Buscar (ex.: 8269)" />
-          <button class="portal-btn" id="portalClose" type="button">?</button>
+                <div class="show-info">
+          <h2>Estreia na Casa Lab</h2>
+          <p>
+            Uma noite de música autoral com a Diva Pop apresentando “Quanto Tempo Temos?”
+            e abertura da banda Veena.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Contratar a banda</a>
+            <a class="btn btn-outline" href="presskit_oficial.html">Ver material profissional</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="portal-view" id="portalView" style="display:none;">
-        <img id="portalImg" src="" alt="Foto" />
+    <section id="banda" class="section">
+      <h2 class="section-title">Uma banda pronta para criar conexão ao vivo</h2>
+      <p class="section-lead">
+        No palco, a Diva Pop transforma suas músicas em uma experiência próxima,
+        direta e humana. Com canções autorais em português e uma entrega marcada
+        por emoção, presença e verdade, o grupo se conecta ao público pela força
+        do repertório e pela intensidade do encontro ao vivo.
+      </p>
+
+                  <div class="cards cards-two">
+        <article class="card">
+          <h3>Repertório autoral em português</h3>
+          <p>A Diva Pop canta o que o coração grita — para quem tem urgência de viver.</p>
+        </article>
+
+        <article class="card">
+          <h3>Dentro da música</h3>
+          <p>Voz, guitarras, baixo e bateria traduzem sentimentos em som.</p>
+        </article>
       </div>
+    </section>
 
-      <div id="portalEmpty" class="portal-empty">Nenhuma foto encontrada com esse filtro.</div>
+    <section class="section">
+            <div class="about-box">
+        <div class="quote">
+          “Quanto tempo temos para cantar, lembrar, resistir e viver?”
+        </div>
 
-      <div class="portal-thumbs">
-        <div id="thumbGrid" class="thumb-grid"></div>
+        <div>
+          <p>
+            A apresentação parte de uma pergunta simples e urgente: como usamos o tempo
+            que ainda temos? A partir daí, a banda constrói um repertório sobre memória,
+            desigualdade, liberdade e escolhas.
+          </p>
+
+          <p>
+            A proposta combina guitarras, baixo, bateria, voz principal e backing vocal
+            em uma experiência de palco pensada para envolver o público desde a primeira música.
+          </p>
+
+          <a class="btn btn-outline" href="show_quanto_tempo_temos.html">Conheça o material do show</a>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <footer class="reveal">
-    <div class="social-icons">
-      <a href="https://www.instagram.com/divapopoficial?igsh=MXN2ZmdnODU4Y2RhdQ==" target="_blank" rel="noopener" aria-label="Instagram da Diva Pop">
-        <img src="icon_instagram.png" alt="Instagram">
-      </a>
-      <a href="https://www.tiktok.com/@divapopofc?_r=1&_t=ZS-93Lsp0Xk4q0" target="_blank" rel="noopener" aria-label="TikTok da Diva Pop">
-        <img src="icon_tiktok.png" alt="TikTok">
-      </a>
-      <a href="https://wa.me/5511947279393" target="_blank" rel="noopener" aria-label="WhatsApp da Diva Pop">
-        <img src="icon_whatsapp.png" alt="WhatsApp">
-      </a>
-    </div>
-    <div class="qr-code">
-      <img src="qr_instagram.png" alt="QR Code Instagram">
-    </div>
-    <p>Â© 2026 Diva Pop. Todos os direitos reservados.</p>
-  </footer>
+    <section id="musicas" class="section">
+            <h2 class="section-title">Ouça a Diva Pop</h2>
+      <p class="section-lead">
+        Conheça as músicas já lançadas da banda e veja registros que apresentam
+        a sonoridade, a formação e a identidade da Diva Pop.
+      </p>
 
-  <script>
-    // ===== Analytics local (para Ã¡rea_restrita.html) =====
-    const DP_STATS_KEY = 'divapop_stats_v1';
+      <div class="listen-panel">
+        <a class="listen-link" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">
+          <strong>Spotify</strong>
+          <span>Ouça as músicas oficiais da Diva Pop.</span>
+        </a>
 
-    function dpLoad(){
-      try{
-        const raw = localStorage.getItem(DP_STATS_KEY);
-        if(!raw) return { v:1, pages:{}, plays:{}, downloads:{}, updatedAt:null };
-        const s = JSON.parse(raw);
-        return { v:1, pages: s.pages||{}, plays: s.plays||{}, downloads: s.downloads||{}, updatedAt: s.updatedAt||null };
-      }catch(e){
-        return { v:1, pages:{}, plays:{}, downloads:{}, updatedAt:null };
-      }
-    }
+        <a class="listen-link" href="https://www.youtube.com/@BandaDivaPop" target="_blank" rel="noopener">
+          <strong>YouTube</strong>
+          <span>Veja vídeos, registros e conteúdos da banda.</span>
+        </a>
+                        
+      </div>
+    </section>
 
-    function dpSave(s){
-      try{ s.updatedAt = new Date().toISOString(); }catch(e){}
-      localStorage.setItem(DP_STATS_KEY, JSON.stringify(s));
-    }
+    <section id="contratar" class="section">
+      <h2 class="section-title">Por que contratar a Diva Pop?</h2>
+      <p class="section-lead">
+        A banda entrega uma proposta autoral clara, material de divulgação organizado
+        e um formato de show adequado para programações culturais, bares, casas de show e eventos.
+      </p>
 
-    function dpInc(kind, key){
-      if(!key) return;
-      const s = dpLoad();
-      const bucket = (kind === 'plays') ? s.plays : (kind === 'downloads') ? s.downloads : s.pages;
-      bucket[key] = (Number(bucket[key])||0) + 1;
-      dpSave(s);
-    }
+      <div class="cards">
+        <article class="card">
+          <h3>Show com identidade</h3>
+          <p>Não é uma apresentação genérica: a Diva Pop tem conceito, repertório próprio e narrativa artística.</p>
+        </article>
 
-    function dpPageName(){
-      const last = (location.pathname || '').split('/').pop();
-      return last || 'index.html';
-    }
+        <article class="card">
+          <h3>Formato adaptável</h3>
+          <p>Estrutura indicada para casas de cultura, bares, festivais, eventos autorais e programações musicais.</p>
+        </article>
 
-    // registra acesso
-    dpInc('pages', dpPageName());
+        <article class="card">
+          <h3>Divulgação facilitada</h3>
+          <p>Press kit, fotos, links oficiais e informações essenciais reunidas para agilizar a contratação.</p>
+        </article>
+      </div>
+    </section>
 
+    <section id="contato" class="section">
+      <div class="contact-strip">
+        <div>
+                    <h2>Leve a Diva Pop para a sua programação</h2>
+          <p>
+            Para shows, festivais, bares, casas de cultura, eventos e propostas de parceria,
+            fale diretamente com a banda pelos canais oficiais.
+          </p>
+        </div>
 
-    // scroll reveal (auto-aplica em blocos principais)
-    (function(){
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce){ document.querySelectorAll('.reveal').forEach(el=> el.classList.add('is-visible')); return; }
-      const targets = [];
-      document.querySelectorAll('main section, .band-members, .member, footer').forEach(el=>{
-        if(!el.classList.contains('reveal')) return;
-        targets.push(el);
-      });
-      const io = new IntersectionObserver((entries)=>{
-        for(const e of entries){
-          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        }
-      }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
-      targets.forEach(t=>io.observe(t));
-    })();
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://wa.me/5511947279393" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-secondary" href="mailto:umadivapop@gmail.com">E-mail</a>
+          <a class="btn btn-outline" href="https://www.instagram.com/divapopoficial" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    // PORTAIS â€” galerias hardcoded (site estÃ¡tico)
-    const GALLERIES = {
-      'Dal': [
-        'DSC_8140.jpg','DSC_8210.jpg','DSC_8220.jpg','DSC_8258.jpg','DSC_8269.jpg','DSC_8270.jpg','DSC_8301.jpg','DSC_8309.jpg',
-        'DSC_8313.jpg','DSC_8320.jpg','DSC_8448.jpg','DSC_8450.jpg','DSC_8455.jpg','DSC_8475.jpg','DSC_8478.jpg'
-      ],
-      'Diogo': [
-        'DSC_8261.jpg','DSC_8262.jpg','DSC_8274.jpg','DSC_8275.jpg','DSC_8276.jpg','DSC_8317.jpg','DSC_8353.jpg','DSC_8355.jpg','DSC_8359.jpg','DSC_8369.jpg','DSC_8371.jpg'
-      ],
-      'Karine': [
-        'DSC_8224.jpg','DSC_8235.jpg','DSC_8240.jpg','DSC_8248.jpg','DSC_8257.jpg','DSC_8310.jpg','DSC_8379.jpg','DSC_8392.jpg','DSC_8398.jpg'
-      ],
-      'Ramos': [
-        'DSC_8144.jpg','DSC_8145.jpg','DSC_8260.jpg','DSC_8286.jpg','DSC_8412.jpg','DSC_8416.jpg'
-      ]
-    };
-
-    const $ = (id)=>document.getElementById(id);
-    const modal = $('portalModal');
-    const titleEl = $('portalTitle');
-    const qEl = $('portalQ');
-    const gridEl = $('thumbGrid');
-    const emptyEl = $('portalEmpty');
-    const viewWrap = $('portalView');
-    const viewImg = $('portalImg');
-
-    let activeMember = null;
-    let activeItems = [];
-    let activeCurrent = null;
-
-    function buildItems(member){
-      const files = (GALLERIES[member] || []);
-      return files.map(f => ({
-        title: f.replace('.jpg',''),
-        file: `${member}/${f}`
-      }));
-    }
-
-    function openPortal(member, role){
-      activeMember = member;
-      activeItems = buildItems(member);
-      activeCurrent = null;
-
-      titleEl.textContent = `${member} — ${role || 'Fotos'}`;
-      qEl.value = '';
-
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden','false');
-      renderThumbs();
-
-      // foco acessível
-      setTimeout(()=> qEl.focus(), 20);
-    }
-
-    function closePortal(){
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden','true');
-      gridEl.innerHTML = '';
-      emptyEl.style.display = 'none';
-      viewWrap.style.display = 'none';
-      viewImg.src = '';
-      activeMember = null;
-      activeItems = [];
-      activeCurrent = null;
-    }
-
-    function setCurrent(item){
-      activeCurrent = item;
-      viewWrap.style.display = 'block';
-      viewImg.src = item.file;
-      viewImg.alt = item.title;
-    }
-
-    function renderThumbs(){
-      const q = (qEl.value || '').trim().toLowerCase();
-      gridEl.innerHTML = '';
-
-      const filtered = activeItems.filter(it => !q || (it.title || '').toLowerCase().includes(q));
-      if(!filtered.length){
-        emptyEl.style.display = 'block';
-        viewWrap.style.display = 'none';
-        return;
-      }
-      emptyEl.style.display = 'none';
-
-      for(const it of filtered){
-        const div = document.createElement('div');
-        div.className = 'thumb';
-        div.tabIndex = 0;
-        div.setAttribute('role','button');
-        div.innerHTML = `
-          <img src="${it.file}" alt="${it.title}" onerror="this.style.display='none'; this.parentElement.style.padding='14px'; this.parentElement.innerHTML = '<div style=\"color:#fff; font-weight:700;\">${it.title}</div><div style=\"opacity:.85; margin-top:6px;\">Arquivo não encontrado: <span style=\\\"color:var(--neon);\\\">${it.file}</span></div>';" />
-          <div class="cap">${it.title}</div>
-        `;
-        div.addEventListener('click', ()=> setCurrent(it));
-        div.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); setCurrent(it); } });
-        gridEl.appendChild(div);
-      }
-
-      // define uma foto inicial (primeira do filtro) se ainda não há
-      if(!activeCurrent) setCurrent(filtered[0]);
-    }
-
-    // bind nos cards
-    document.querySelectorAll('.member[data-member]').forEach(card => {
-      const member = card.getAttribute('data-member');
-      const role = card.getAttribute('data-role');
-      const go = ()=> openPortal(member, role);
-      card.addEventListener('click', go);
-      card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); go(); } });
-    });
-
-    // modal events
-    $('portalClose').addEventListener('click', closePortal);
-    qEl.addEventListener('input', renderThumbs);
-    window.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && modal.classList.contains('open')) closePortal(); });
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) closePortal(); });
-  </script>
+    <footer class="site-footer">     Diva Pop © 2026 · Site oficial · São Paulo/SP · Shows, parcerias e imprensa: umadivapop@gmail.com   </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 

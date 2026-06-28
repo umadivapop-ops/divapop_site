@@ -4,460 +4,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Quanto Tempo Temos? | Diva Pop</title>
-
-  <meta name="description" content="Conheça o show Quanto Tempo Temos?, da banda Diva Pop: proposta artística, repertório autoral e rider técnico para contratação.">
-
+  <title>Diva Pop | Show Quanto Tempo Temos?</title>
+  <meta name="description" content="Ficha técnica, rider técnico e repertório oficial do show Quanto Tempo Temos?.">
   <style>
-    :root {
-      --bg: #0A0A0A;
-      --text: #F3EBDD;
-      --muted: #D8D0C4;
-      --soft: #B9B0A3;
-      --red: #FF1F2D;
-      --red-strong: #FF3340;
-      --cream: #F3EBDD;
-      --line: rgba(243, 235, 221, 0.18);
-      --card: rgba(243, 235, 221, 0.065);
-      --card-strong: rgba(243, 235, 221, 0.10);
-      --max: 1120px;
-      --radius: 24px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255,31,45,0.20), transparent 34%),
-        radial-gradient(circle at top right, rgba(243,235,221,0.08), transparent 30%),
-        linear-gradient(180deg, #050505 0%, #0A0A0A 50%, #050505 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(10, 10, 10, 0.90);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 18px 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .brand strong {
-      font-size: 1.15rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .brand span {
-      color: var(--soft);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .menu {
-      display: flex;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .menu a:hover {
-      color: var(--red-strong);
-    }
-
-    .page {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 88px 28px 72px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 13px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(243,235,221,0.06);
-      color: var(--cream);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      margin-bottom: 22px;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--red);
-      box-shadow: 0 0 18px rgba(255,31,45,0.85);
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 900px;
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
-      line-height: 1;
-      letter-spacing: -0.055em;
-    }
-
-    .red {
-      color: var(--red);
-    }
-
-    .lead {
-      max-width: 880px;
-      margin: 24px 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.4vw, 1.18rem);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 42px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      min-height: 190px;
-    }
-
-    .card h2 {
-      margin: 0 0 12px;
-      font-size: 1.35rem;
-      line-height: 1.1;
-      color: var(--cream);
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-
-    .doc-card {
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .doc-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,31,45,0.65);
-      background: rgba(243, 235, 221, 0.095);
-    }
-
-    .card-kicker {
-      display: inline-flex;
-      margin-bottom: 14px;
-      color: var(--red);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .mini-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 38px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(243,235,221,0.04);
-      color: var(--cream);
-      font-size: 0.88rem;
-      font-weight: 800;
-    }
-
-    .mini-btn:hover {
-      background: var(--red);
-      border-color: var(--red);
-      color: var(--cream);
-    }
-    .action-box {
-      margin-top: 42px;
-      padding: 30px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, rgba(255,31,45,0.18), rgba(243,235,221,0.07));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .action-box p {
-      margin: 0;
-      max-width: 620px;
-      color: var(--muted);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, background 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--red);
-      color: var(--cream);
-      box-shadow: 0 14px 36px rgba(255,31,45,0.28);
-    }
-
-    .btn-primary:hover {
-      background: var(--red-strong);
-    }
-
-    .btn-outline {
-      border-color: var(--line);
-      background: rgba(243,235,221,0.04);
-      color: var(--cream);
-    }
-
-    .back-link {
-      display: inline-flex;
-      margin-top: 34px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .back-link:hover {
-      color: var(--red-strong);
-    }
-
-    .site-footer {
-      border-top: 1px solid var(--line);
-      padding: 28px;
-      color: var(--soft);
-      text-align: center;
-      font-size: 0.92rem;
-    }
-
-    @media (max-width: 900px) {
-      .menu {
-        display: none;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-  
-    .doc-card {
-      cursor: pointer;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .doc-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,31,45,0.65);
-      background: rgba(243, 235, 221, 0.095);
-    }
-
-    .card-kicker {
-      display: inline-flex;
-      margin-bottom: 14px;
-      color: var(--red);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .mini-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 38px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(243,235,221,0.04);
-      color: var(--cream);
-      font-size: 0.88rem;
-      font-weight: 800;
-    }
-
-    .mini-btn:hover {
-      background: var(--red);
-      border-color: var(--red);
-      color: var(--cream);
-    }
-    .action-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .nav,
-      .page {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
+:root{--bg:#0A0A0A;--text:#F3EBDD;--muted:#D8D0C4;--soft:#B9B0A3;--red:#FF1F2D;--cream:#F3EBDD;--line:rgba(243,235,221,.18);--card:rgba(243,235,221,.065);--max:1120px;--radius:24px}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top left,rgba(255,31,45,.20),transparent 34%),linear-gradient(180deg,#050505 0%,#0A0A0A 55%,#050505 100%);color:var(--text);line-height:1.6}a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.nav{max-width:var(--max);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;flex-direction:column;line-height:1.1}.brand strong{font-size:1.15rem;letter-spacing:.12em;text-transform:uppercase}.brand span{color:var(--soft);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.menu{display:flex;gap:16px;color:var(--muted);font-size:.92rem;flex-wrap:wrap;justify-content:flex-end}.menu a:hover{color:var(--red)}
+.hero{max-width:var(--max);margin:0 auto;padding:58px 28px 26px}.eyebrow{display:inline-flex;gap:10px;align-items:center;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(243,235,221,.06);font-size:.78rem;text-transform:uppercase;letter-spacing:.11em;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 18px rgba(255,31,45,.85)}
+h1{margin:0;font-size:clamp(2.25rem,5vw,4.7rem);line-height:.95;letter-spacing:-.06em}.red{color:var(--red)}.lead{max-width:860px;color:var(--muted);font-size:1.08rem;margin:24px 0 0}
+.section{max-width:var(--max);margin:0 auto;padding:42px 28px}.section-title{margin:0 0 16px;font-size:clamp(1.8rem,3vw,3rem);line-height:1;letter-spacing:-.04em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.24);margin-top:18px}.card h2,.card h3{margin:0 0 10px;line-height:1.12}.card h3{color:var(--red)}.card p,.card li,td,th{color:var(--muted);font-size:.98rem}ul{margin:10px 0 0 20px;padding:0}
+.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid-three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+table{width:100%;border-collapse:collapse;margin-top:16px;border:1px solid var(--line);overflow:hidden;border-radius:18px}th{text-align:left;background:rgba(255,31,45,.18);color:var(--cream);font-weight:800}th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px;border-radius:999px;font-weight:800;border:1px solid transparent}.primary{background:var(--red);color:var(--cream)}.secondary{background:var(--cream);color:var(--bg)}.outline{border-color:var(--line);background:rgba(243,235,221,.04)}
+.footer{border-top:1px solid var(--line);margin-top:40px;padding:28px;color:var(--soft);text-align:center;font-size:.92rem}
+@media(max-width:850px){.menu{display:none}.grid-two,.grid-three{grid-template-columns:1fr}.btnrow{flex-direction:column}.btn{width:100%}.nav,.hero,.section{padding-left:20px;padding-right:20px}.card{padding:22px}}
+</style>
 </head>
-
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Menu principal">
-      <a class="brand" href="index.html">
-        <strong>Diva Pop</strong>
-        <span>Pop rock autoral</span>
-      </a>
-
-      <div class="menu">
-        <a href="index.html#show">Show</a>
-        <a href="index.html#banda">A Banda</a>
-        <a href="index.html#musicas">Ouça</a>
-        <a href="presskit_oficial.html">Press Kit</a>
-        <a href="index.html#contato">Contratar</a>
-      </div>
-    </nav>
-  </header>
-
-  <main class="page">
-    <div class="eyebrow">
-      <span class="dot"></span>
-      Material do show
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><strong>Diva Pop</strong><span>Pop rock autoral</span></a>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="index.html#show">Agenda</a>
+      <a href="presskit_oficial.html">Press Kit</a>
+      <a href="show_quanto_tempo_temos.html">Show</a>
+      <a href="contato_contrate_diva_pop.html">Contato</a>
     </div>
+  </nav>
+</header>
 
-    <h1>Conheça o show <span class="red">“Quanto Tempo Temos?”</span></h1>
+<main>
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span>Material do show</div>
+  <h1>Quanto Tempo <span class="red">Temos?</span></h1>
+  <p class="lead">Ficha técnica, rider técnico e repertório oficial da Diva Pop em formação quarteto.</p>
+  <div class="btnrow"><a class="btn primary" href="contato_contrate_diva_pop.html">Contratar show</a><a class="btn outline" href="presskit_oficial.html">Ver press kit</a></div>
+</section>
+<section class="section">
+  <h2 class="section-title">Ficha Técnica</h2>
+  <article class="card"><table><tr><th>Item</th><th>Informação</th></tr><tr><td>Artista</td><td>Diva Pop</td></tr><tr><td>Show</td><td>Quanto Tempo Temos?</td></tr><tr><td>Formato</td><td>Show musical autoral</td></tr><tr><td>Duração</td><td>Aproximadamente 60 minutos</td></tr><tr><td>Gênero/Linguagem</td><td>Pop rock autoral em português</td></tr><tr><td>Cidade-base</td><td>São Paulo/SP</td></tr><tr><td>Classificação indicativa sugerida</td><td>Livre, conforme contexto do evento</td></tr></table></article>
+  <div class="grid-two"><article class="card"><h3>Integrantes</h3><ul><li>Karine Lisboa — voz</li><li>Diogo Alves — guitarra, backing vocal e letras</li><li>Ernani Barbosa — contrabaixo elétrico, produção, mixagem e masterização</li><li>Dalmir Ramiro — bateria</li></ul></article><article class="card"><h3>Sinopse curta</h3><p>“Quanto Tempo Temos?” é um show autoral da Diva Pop que transforma a urgência do tempo em canções de rock em português. A apresentação atravessa temas como país, memória, desigualdade, liberdade, corpo, afeto, apatia coletiva e resistência.</p></article></div>
+</section>
+<section class="section">
+  <h2 class="section-title">Rider Técnico</h2>
+  <div class="grid-two"><article class="card"><h3>Mapa de palco sugerido</h3><ul><li>Centro/frente: Karine Lisboa — vocal principal.</li><li>Lado esquerdo do palco: Diogo Alves — guitarra e backing vocal.</li><li>Centro/fundo: Dalmir Ramiro — bateria.</li><li>Lado direito do palco: Ernani Barbosa — contrabaixo elétrico.</li><li>Preferência por retorno individual para vocal, guitarra, baixo e bateria quando disponível.</li></ul></article><article class="card"><h3>Backline desejável</h3><ul><li>Bateria completa com ferragens, banco e estantes.</li><li>Amplificador de guitarra em bom estado.</li><li>Amplificador de baixo ou DI para contrabaixo.</li><li>Sistema de PA compatível com o espaço.</li><li>Mínimo de 2 retornos; ideal de 4 retornos.</li></ul></article></div>
+  <article class="card"><h3>Input list básico</h3><table><tr><th>Canal</th><th>Instrumento/Voz</th><th>Fonte</th><th>Microfone/DI</th><th>Observação</th></tr><tr><td>1</td><td>Bumbo</td><td>Bateria</td><td>Mic de bumbo</td><td></td></tr><tr><td>2</td><td>Caixa</td><td>Bateria</td><td>Mic de caixa</td><td></td></tr><tr><td>3</td><td>Over L</td><td>Bateria</td><td>Condensador</td><td></td></tr><tr><td>4</td><td>Over R</td><td>Bateria</td><td>Condensador</td><td></td></tr><tr><td>5</td><td>Contrabaixo</td><td>Baixo</td><td>DI</td><td>Saída balanceada ou amp micado</td></tr><tr><td>6</td><td>Guitarra</td><td>Amplificador</td><td>Mic SM57 ou similar</td><td></td></tr><tr><td>7</td><td>Voz principal</td><td>Karine</td><td>SM58 ou similar</td><td>Pedestal reto</td></tr><tr><td>8</td><td>Backing vocal</td><td>Diogo</td><td>SM58 ou similar</td><td>Pedestal boom</td></tr></table></article>
+</section>
+<section class="section">
+  <h2 class="section-title">Repertório Oficial</h2>
+  <article class="card"><table><tr><th>Ordem</th><th>Música</th></tr><tr><td>1</td><td>Abra Seus Olhos</td></tr><tr><td>2</td><td>Caminhando</td></tr><tr><td>3</td><td>Este País</td></tr><tr><td>4</td><td>Carnaval</td></tr><tr><td>5</td><td>O Preço de Ser Mulher</td></tr><tr><td>6</td><td>Sem Título</td></tr><tr><td>7</td><td>Batalhas</td></tr><tr><td>8</td><td>Quanto Tempo Temos</td></tr><tr><td>9</td><td>Ilha das Flores</td></tr><tr><td>10</td><td>Escândalo</td></tr><tr><td>11</td><td>Limite</td></tr><tr><td>12</td><td>Vício</td></tr><tr><td>13</td><td>Fim dos Tempos</td></tr><tr><td>14</td><td>Banalizados</td></tr></table></article>
+  <article class="card"><h3>Observações</h3><ul><li>O repertório pode ser ajustado conforme duração solicitada pela produção.</li><li>A duração média do show completo é de aproximadamente 60 minutos.</li><li>As canções compõem uma narrativa sobre tempo, memória, país, conflitos internos e resistência.</li><li>Quando necessário, a banda pode adaptar o set para formato mais curto de festival.</li></ul></article>
+</section>
+</main>
 
-    <p class="lead">
-      Reunimos aqui as principais informações sobre o show da Diva Pop: proposta artística,
-      repertório autoral e necessidades técnicas para alinhamento com casas, festivais,
-      produtores e eventos culturais.
-    </p>
-
-        <section class="cards" aria-label="Documentos do show">
-      <article class="card doc-card" role="link" tabindex="0" onclick="window.open('docs/ficha_tecnica_diva_pop.pdf', '_blank')" onkeydown="if(event.key==='Enter'){window.open('docs/ficha_tecnica_diva_pop.pdf', '_blank')}">
-        <span class="card-kicker">Documento PDF</span>
-        <h2>Ficha técnica</h2>
-        <p>
-          Formato, duração, formação da banda e proposta da apresentação.
-        </p>
-
-        <div class="card-actions" onclick="event.stopPropagation()">
-          <a class="mini-btn" href="docs/ficha_tecnica_diva_pop.pdf" target="_blank" rel="noopener">Visualizar PDF</a>
-          <a class="mini-btn" href="docs/ficha_tecnica_diva_pop.pdf" download>Download</a>
-        </div>
-      </article>
-
-      <article class="card doc-card" role="link" tabindex="0" onclick="window.open('docs/repertorio_diva_pop.pdf', '_blank')" onkeydown="if(event.key==='Enter'){window.open('docs/repertorio_diva_pop.pdf', '_blank')}">
-        <span class="card-kicker">Documento PDF</span>
-        <h2>Repertório</h2>
-        <p>
-          Ordem sugerida do show e descrição das músicas autorais.
-        </p>
-
-        <div class="card-actions" onclick="event.stopPropagation()">
-          <a class="mini-btn" href="docs/repertorio_diva_pop.pdf" target="_blank" rel="noopener">Visualizar PDF</a>
-          <a class="mini-btn" href="docs/repertorio_diva_pop.pdf" download>Download</a>
-        </div>
-      </article>
-
-      <article class="card doc-card" role="link" tabindex="0" onclick="window.open('docs/rider_tecnico_diva_pop.pdf', '_blank')" onkeydown="if(event.key==='Enter'){window.open('docs/rider_tecnico_diva_pop.pdf', '_blank')}">
-        <span class="card-kicker">Documento PDF</span>
-        <h2>Rider técnico</h2>
-        <p>
-          Informações de palco, som, microfones, monitoração e estrutura necessária.
-        </p>
-
-        <div class="card-actions" onclick="event.stopPropagation()">
-          <a class="mini-btn" href="docs/rider_tecnico_diva_pop.pdf" target="_blank" rel="noopener">Visualizar PDF</a>
-          <a class="mini-btn" href="docs/rider_tecnico_diva_pop.pdf" download>Download</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="action-box" aria-label="Solicitação de informações para contratação">
-      <p>
-        Esse bloco fecha a ponte entre o site e os documentos profissionais da banda,
-        facilitando o primeiro contato para contratação e alinhamento técnico.
-      </p>
-
-      <a class="btn btn-primary" href="https://wa.me/5511947279393?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Tenho%20interesse%20em%20informa%C3%A7%C3%B5es%20para%20contrata%C3%A7%C3%A3o%20da%20Diva%20Pop.%20Gostaria%20de%20saber%20disponibilidade%2C%20formato%20do%20show%20e%20condi%C3%A7%C3%B5es%20para%20apresenta%C3%A7%C3%A3o." target="_blank" rel="noopener">Solicitar informações para contratação</a>
-    </section>
-
-    <a class="back-link" href="index.html">← Voltar para a página inicial</a>
-  </main>
-
-  <footer class="site-footer">
-    Diva Pop © 2026 · Site oficial · São Paulo/SP · Shows, parcerias e imprensa: umadivapop@gmail.com
-  </footer>
+<footer class="footer">Diva Pop © 2026 · São Paulo/SP · umadivapop@gmail.com · @divapopoficial</footer>
 </body>
 </html>
-
-

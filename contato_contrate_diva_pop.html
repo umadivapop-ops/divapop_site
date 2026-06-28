@@ -1,371 +1,58 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato & Contrate | Diva Pop</title>
-  <meta name="description" content="Contato oficial da Diva Pop para shows, eventos e imprensa." />
-  <meta property="og:title" content="Contato & Contrate | Diva Pop" />
-  <meta property="og:description" content="Shows, eventos, imprensa e parcerias — fale com a Diva Pop." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:site_name" content="Diva Pop" />
-  <meta property="og:image" content="assets/og_divapop.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <meta name="theme-color" content="#000000">
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diva Pop | Contratar Show</title>
+  <meta name="description" content="Contato oficial para contratar show da Diva Pop.">
   <style>
-    :root{ --neon:#e63946; --cream:#f5f5dc; }
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      background:#000;
-      color:var(--cream);
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-    }
-    nav{
-      background:rgba(0,0,0,.85);
-      text-align:center;
-      padding:12px 0;
-      border-top:2px solid var(--neon);
-      border-bottom:2px solid var(--neon);
-      position:sticky;
-      top:0;
-      z-index:10;
-      backdrop-filter: blur(6px);
-    }
-    nav a{
-      color:#fff;
-      text-decoration:none;
-      margin:0 14px;
-      font-weight:600;
-      transition:color .3s;
-      display:inline-block;
-      padding:6px 2px;
-    }
-    nav a:hover{ color:var(--neon); }
-
-    header{
-      padding:54px 18px 10px;
-      text-align:center;
-    }
-    header h1{
-      margin:0;
-      font-size:2.2rem;
-      color:var(--neon);
-      text-shadow:0 0 16px rgba(230,57,70,.75);
-      letter-spacing:1px;
-    }
-    header p{ margin:12px auto 0; max-width:900px; line-height:1.7; }
-
-    .wrap{
-      width:min(980px, 92vw);
-      margin: 16px auto 44px;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .card{
-      background: radial-gradient(ellipse at top, rgba(230,57,70,.12) 0%, rgba(17,17,17,1) 60%);
-      border:1px solid rgba(230,57,70,.35);
-      border-radius:22px;
-      box-shadow:0 0 28px rgba(230,57,70,.25);
-      padding:18px;
-      overflow:hidden;
-    }
-
-    .card h2{ margin:0 0 10px; color:#fff; font-size:1.15rem; }
-
-    label{ display:block; font-size:.9rem; opacity:.95; margin: 10px 0 6px; }
-    input, textarea, select{
-      width:100%;
-      border-radius:16px;
-      border:1px solid rgba(245,245,220,.28);
-      background: rgba(0,0,0,.55);
-      color: #fff;
-      padding: 10px 12px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color .25s ease, box-shadow .25s ease;
-    }
-    input:focus, textarea:focus, select:focus{
-      border-color: rgba(230,57,70,.85);
-      box-shadow: 0 0 16px rgba(230,57,70,.25);
-    }
-    textarea{ min-height: 140px; resize: vertical; }
-
-    .btnrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
-    a.btn, button{
-      border:none;
-      border-radius:999px;
-      padding:10px 16px;
-      cursor:pointer;
-      font-weight:600;
-      background:var(--neon);
-      color:#fff;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      transition: transform .25s ease, box-shadow .35s, background-color .35s;
-      min-width: 170px;
-    }
-    a.btn:hover, button:hover{ background:#ff4757; box-shadow:0 0 22px var(--neon); transform: translateY(-1px); }
-    a.btn.secondary{
-      background: rgba(0,0,0,.55);
-      border: 1px solid rgba(230,57,70,.75);
-    }
-    a.btn.secondary:hover{ background: rgba(230,57,70,.18); }
-    button[disabled]{ opacity:.65; cursor:not-allowed; transform:none; box-shadow:none; }
-
-    .info{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      line-height:1.7;
-      font-size:.98rem;
-    }
-    .chip{
-      border:1px solid rgba(230,57,70,.35);
-      background: rgba(0,0,0,.35);
-      border-radius: 16px;
-      padding: 12px;
-      box-shadow: 0 0 16px rgba(230,57,70,.14);
-    }
-    .chip b{ color:#fff; }
-
-    .status{
-      margin:12px 0 0;
-      font-size:.92rem;
-      line-height:1.6;
-      padding:10px 12px;
-      border-radius:16px;
-      border:1px solid rgba(245,245,220,.18);
-      background: rgba(0,0,0,.35);
-      display:none;
-    }
-    .status.show{ display:block; }
-
-    footer{
-      margin-top:auto;
-      text-align:center;
-      padding:30px;
-      font-size:.9rem;
-      color:#aaa;
-      background:#111;
-      box-shadow:0 -5px 15px rgba(230,57,70,.2);
-    }
-
-    /* scroll reveal (leve, sem pesar) */
-    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .8s ease, transform .8s ease; will-change: opacity, transform; }
-    .reveal.is-visible{ opacity:1; transform:none; }
-    @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
-
-    @media (max-width: 980px){
-      .wrap{ grid-template-columns: 1fr; }
-      header{ padding-top: 34px; }
-      header h1{ font-size: 1.9rem; }
-      nav a{ margin: 0 10px; }
-    }
-  </style>
+:root{--bg:#0A0A0A;--text:#F3EBDD;--muted:#D8D0C4;--soft:#B9B0A3;--red:#FF1F2D;--cream:#F3EBDD;--line:rgba(243,235,221,.18);--card:rgba(243,235,221,.065);--max:1120px;--radius:24px}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at top left,rgba(255,31,45,.20),transparent 34%),linear-gradient(180deg,#050505 0%,#0A0A0A 55%,#050505 100%);color:var(--text);line-height:1.6}a{color:inherit;text-decoration:none}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.92);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.nav{max-width:var(--max);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;flex-direction:column;line-height:1.1}.brand strong{font-size:1.15rem;letter-spacing:.12em;text-transform:uppercase}.brand span{color:var(--soft);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.menu{display:flex;gap:16px;color:var(--muted);font-size:.92rem;flex-wrap:wrap;justify-content:flex-end}.menu a:hover{color:var(--red)}
+.hero{max-width:var(--max);margin:0 auto;padding:58px 28px 26px}.eyebrow{display:inline-flex;gap:10px;align-items:center;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(243,235,221,.06);font-size:.78rem;text-transform:uppercase;letter-spacing:.11em;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 18px rgba(255,31,45,.85)}
+h1{margin:0;font-size:clamp(2.25rem,5vw,4.7rem);line-height:.95;letter-spacing:-.06em}.red{color:var(--red)}.lead{max-width:860px;color:var(--muted);font-size:1.08rem;margin:24px 0 0}
+.section{max-width:var(--max);margin:0 auto;padding:42px 28px}.section-title{margin:0 0 16px;font-size:clamp(1.8rem,3vw,3rem);line-height:1;letter-spacing:-.04em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.24);margin-top:18px}.card h2,.card h3{margin:0 0 10px;line-height:1.12}.card h3{color:var(--red)}.card p,.card li,td,th{color:var(--muted);font-size:.98rem}ul{margin:10px 0 0 20px;padding:0}
+.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid-three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+table{width:100%;border-collapse:collapse;margin-top:16px;border:1px solid var(--line);overflow:hidden;border-radius:18px}th{text-align:left;background:rgba(255,31,45,.18);color:var(--cream);font-weight:800}th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 20px;border-radius:999px;font-weight:800;border:1px solid transparent}.primary{background:var(--red);color:var(--cream)}.secondary{background:var(--cream);color:var(--bg)}.outline{border-color:var(--line);background:rgba(243,235,221,.04)}
+.footer{border-top:1px solid var(--line);margin-top:40px;padding:28px;color:var(--soft);text-align:center;font-size:.92rem}
+@media(max-width:850px){.menu{display:none}.grid-two,.grid-three{grid-template-columns:1fr}.btnrow{flex-direction:column}.btn{width:100%}.nav,.hero,.section{padding-left:20px;padding-right:20px}.card{padding:22px}}
+</style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Início</a>
-
-    <a href="presskit_oficial.html">Press Kit</a>
-    <a href="pix_apoiar.html">Apoiar (PIX)</a>
-    <a href="contato_contrate_diva_pop.html">Contato</a>
-
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><strong>Diva Pop</strong><span>Pop rock autoral</span></a>
+    <div class="menu">
+      <a href="index.html">Início</a>
+      <a href="index.html#show">Agenda</a>
+      <a href="presskit_oficial.html">Press Kit</a>
+      <a href="show_quanto_tempo_temos.html">Show</a>
+      <a href="contato_contrate_diva_pop.html">Contato</a>
+    </div>
   </nav>
+</header>
 
-  <header>
-    <h1>Contato & Contrate</h1>
-    <p>Shows, eventos, imprensa e parcerias. Preencha e envie — o formulário pode disparar por um endpoint (recomendado) ou abrir seu e-mail como plano B.</p>
-  </header>
+<main>
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span>Contratação e contato</div>
+  <h1>Leve a <span class="red">Diva Pop</span><br>para sua programação</h1>
+  <p class="lead">Para shows, festivais, bares, casas de cultura, eventos e propostas de parceria, fale diretamente com Diogo Alves.</p>
+  <div class="btnrow"><a class="btn primary" href="https://wa.me/5511947279393" target="_blank" rel="noopener">WhatsApp</a><a class="btn secondary" href="mailto:umadivapop@gmail.com">E-mail</a><a class="btn outline" href="https://www.instagram.com/divapopoficial" target="_blank" rel="noopener">Instagram</a></div>
+</section>
+<section class="section">
+  <div class="grid-two">
+    <article class="card"><h3>Contato oficial</h3><p><strong>Diogo Alves</strong></p><p>WhatsApp: 11 94727-9393<br>E-mail: umadivapop@gmail.com<br>Instagram: @divapopoficial</p></article>
+    <article class="card"><h3>Formato do show</h3><p>Show autoral “Quanto Tempo Temos?”, em formação quarteto, com aproximadamente 60 minutos de duração.</p><ul><li>Karine Lisboa — voz</li><li>Diogo Alves — guitarra e backing vocal</li><li>Ernani Barbosa — contrabaixo elétrico</li><li>Dalmir Ramiro — bateria</li></ul></article>
+  </div>
+  <article class="card"><h3>Indicado para</h3><p>Casas de show, festivais, centros culturais, eventos públicos, projetos culturais, programações de música independente e ações formativas.</p></article>
+</section>
+</main>
 
-  <main class="wrap">
-    <section class="card">
-      <h2>Formulário</h2>
-      <form id="form" onsubmit="return handleSubmit(event)">
-        <label for="tipo">Assunto</label>
-        <select id="tipo" name="tipo">
-          <option value="Show">Show / Evento</option>
-          <option value="Imprensa">Imprensa / Entrevista</option>
-          <option value="Parceria">Parceria / Collab</option>
-          <option value="Outro">Outro</option>
-        </select>
-
-        <label for="nome">Nome</label>
-        <input id="nome" name="nome" required maxlength="60" placeholder="Seu nome" />
-
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email" required maxlength="80" placeholder="voce@email.com" />
-
-        <label for="msg">Mensagem</label>
-        <textarea id="msg" name="mensagem" required maxlength="800" placeholder="Conte a data, cidade, local, duração e estrutura desejada..."></textarea>
-
-        <div class="btnrow">
-          <button id="btnEnviar" type="submit">✉ Enviar</button>
-          <a class="btn secondary" href="presskit_oficial.html">📎 Ver Press Kit</a>
-        </div>
-
-        <p id="status" class="status" aria-live="polite"></p>
-
-        <p style="margin:12px 0 0; font-size:.9rem; opacity:.9; line-height:1.6;">
-          Dica: para enviar sem abrir o app de e-mail, configure um endpoint (ex.: Formspree/Netlify) em <b>localStorage</b> com a chave <code>divapop_form_endpoint</code>.
-        </p>
-      </form>
-    </section>
-
-    <aside class="card">
-      <h2>Canais oficiais</h2>
-      <div class="info">
-        <div class="chip"><b>E-mail:</b> <span id="chanEmail">umadivapop@gmail.com</span></div>
-        <div class="chip"><b>WhatsApp:</b> <span id="chanWhats">+55 11 94727-9393</span></div>
-        <div class="chip"><b>Instagram:</b> <span id="chanInsta">@divapopoficial</span></div>
-
-        <a class="btn secondary" href="pix_apoiar.html">💝 Apoiar via PIX</a>
-      </div>
-    </aside>
-  </main>
-
-  <footer>
-    <p>© 2026 Diva Pop. Todos os direitos reservados.</p>
-  </footer>
-
-  <script>
-    // Ajuste rápido (centralizado): edite aqui com os dados reais.
-    // Dica: também dá para testar sem editar HTML via localStorage:
-    // localStorage.setItem('divapop_email','umadivapop@gmail.com');
-    // localStorage.setItem('divapop_whats','+55 11 94727-9393');
-    // localStorage.setItem('divapop_insta','@divapopoficial');
-    // localStorage.setItem('divapop_form_endpoint','https://formspree.io/f/SEU_ID');
-    const CONTACT_DEFAULT = {
-      email: 'umadivapop@gmail.com',
-      whatsapp: '+55 11 94727-9393',
-      instagram: '@divapopoficial'
-    };
-    const CONTACT = {
-      email: (localStorage.getItem('divapop_email') || CONTACT_DEFAULT.email).trim(),
-      whatsapp: (localStorage.getItem('divapop_whats') || CONTACT_DEFAULT.whatsapp).trim(),
-      instagram: (localStorage.getItem('divapop_insta') || CONTACT_DEFAULT.instagram).trim(),
-    };
-    document.getElementById('chanEmail').textContent = CONTACT.email;
-    document.getElementById('chanWhats').textContent = CONTACT.whatsapp;
-    document.getElementById('chanInsta').textContent = CONTACT.instagram;
-
-    const FORM_ENDPOINT = (localStorage.getItem('divapop_form_endpoint') || '').trim();
-
-    function setStatus(text){
-      const el = document.getElementById('status');
-      el.textContent = text;
-      el.classList.add('show');
-    }
-
-    function clearStatus(){
-      const el = document.getElementById('status');
-      el.textContent = '';
-      el.classList.remove('show');
-    }
-
-    function openMailtoFallback(){
-      const to = CONTACT.email;
-      const tipo = document.getElementById('tipo').value;
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('msg').value.trim();
-
-      const subject = `[Diva Pop] ${tipo} — ${nome}`;
-      const body = `Nome: ${nome}\nE-mail: ${email}\nAssunto: ${tipo}\n\nMensagem:\n${msg}`;
-
-      window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }
-
-    async function handleSubmit(e){
-      e.preventDefault();
-      clearStatus();
-
-      const btn = document.getElementById('btnEnviar');
-      btn.disabled = true;
-      const btnLabel = btn.textContent;
-      btn.textContent = 'Enviando…';
-
-      const tipo = document.getElementById('tipo').value;
-      const nome = document.getElementById('nome').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const msg = document.getElementById('msg').value.trim();
-
-      // Se não houver endpoint configurado, abre o mailto como plano B.
-      if(!FORM_ENDPOINT){
-        setStatus('Endpoint não configurado — abrindo seu app de e-mail como alternativa.');
-        btn.disabled = false;
-        btn.textContent = btnLabel;
-        openMailtoFallback();
-        return false;
-      }
-
-      try{
-        const payload = {
-          assunto: tipo,
-          nome,
-          email,
-          mensagem: msg,
-          origem: 'site-diva-pop'
-        };
-
-        const res = await fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        });
-
-        if(res.ok){
-          setStatus('✅ Mensagem enviada com sucesso! Obrigada 💖');
-          document.getElementById('form').reset();
-        }else{
-          // Alguns serviços retornam 4xx se o endpoint estiver errado.
-          setStatus('⚠ Não foi possível enviar pelo formulário (endpoint recusou). Abrindo seu e-mail como alternativa.');
-          openMailtoFallback();
-        }
-      }catch(err){
-        setStatus('⚠ Falha de rede ao enviar. Abrindo seu e-mail como alternativa.');
-        openMailtoFallback();
-      }finally{
-        btn.disabled = false;
-        btn.textContent = btnLabel;
-      }
-      return false;
-    }
-
-    // scroll reveal (auto)
-    (function(){
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if(reduce) return;
-      const targets = [];
-      document.querySelectorAll('header, .card, footer').forEach(el=>{
-        if(!el.classList.contains('reveal')){ el.classList.add('reveal'); targets.push(el); }
-      });
-      const io = new IntersectionObserver((entries)=>{
-        for(const e of entries){
-          if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
-        }
-      }, {threshold:0.12, rootMargin:'0px 0px -10% 0px'});
-      targets.forEach(t=>io.observe(t));
-    })();
-  </script>
+<footer class="footer">Diva Pop © 2026 · São Paulo/SP · umadivapop@gmail.com · @divapopoficial</footer>
 </body>
 </html>
-

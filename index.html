@@ -1055,48 +1055,68 @@
     }
 
   
-    /* mobile-menu-diva-fix */
-    @media (max-width: 900px) {
-      .nav {
-        align-items: flex-start !important;
-        flex-direction: column !important;
-        gap: 12px !important;
-      }
-
-      .menu {
-        display: flex !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        flex-wrap: nowrap !important;
-        gap: 14px !important;
-        padding: 2px 0 8px 0 !important;
-        -webkit-overflow-scrolling: touch !important;
-      }
-
-      .menu a {
-        flex: 0 0 auto !important;
-        white-space: nowrap !important;
-        font-size: 0.88rem !important;
-      }
+    /* botões abaixo da matéria Divergent Beats */
+    .media-actions {
+      justify-content: center;
+      margin-top: 24px;
+      margin-bottom: 0;
     }
 
     @media (max-width: 520px) {
-      .nav {
-        padding-left: 18px !important;
-        padding-right: 18px !important;
-      }
-
-      .menu {
-        gap: 12px !important;
-      }
-
-      .menu a {
-        font-size: 0.84rem !important;
+      .media-actions {
+        align-items: stretch;
       }
     }
-  </style>
+
+    /* reorganização da abertura */
+    .hero-grid {
+      align-items: start !important;
+    }
+
+    .hero-grid > div:first-child {
+      min-height: 0 !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      justify-content: flex-start !important;
+    }
+
+    .hero-grid h1 {
+      margin-top: 0 !important;
+    }
+
+    .hero-subtitle {
+      margin-top: 22px !important;
+      margin-bottom: 22px !important;
+    }
+
+    .hero-press {
+      margin-top: 0 !important;
+      margin-bottom: 16px !important;
+    }
+
+    .hero-press-divergent {
+      margin-top: 0 !important;
+      margin-bottom: 22px !important;
+    }
+
+    .hero-actions {
+      margin-top: 4px !important;
+    }
+
+    .hero-photo {
+      align-self: start !important;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid > div:first-child {
+        padding-top: 0 !important;
+      }
+
+      .hero-press {
+        margin-bottom: 16px !important;
+      }
+    }
+</style>
 
   <!-- Google tag (gtag.js) - Google Analytics Diva Pop -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7YRZ3WSRBS"></script>
@@ -1133,23 +1153,18 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">
-            <span class="dot"></span>
-            Banda autoral de São Paulo
-          </div>
 
                               <h1>
-            Diva Pop estreia<br>
-            <span class="red title-show-line">“Quanto Tempo Temos?”</span>
-          </h1>
+  Diva Pop circula com<br>
+  <span class="red title-show-line">“Quanto Tempo Temos?”</span>
+</h1>
 
                               <p class="hero-subtitle">
-            Diva Pop estreia “Quanto Tempo Temos?”, show autoral de pop rock em português
-            que transforma o palco em um encontro direto entre música, memória e urgência.
-            Com guitarras marcantes, letras sobre tempo, desigualdade, liberdade e escolhas,
-            a banda apresenta um repertório intenso e acessível, pensado para conectar emoção,
-            reflexão e energia ao vivo.
-          </p>
+  “Quanto Tempo Temos?” é o nome do show que a Diva Pop tem levado a bares,
+  cafés, livrarias e casas de show de São Paulo e região metropolitana.
+  Questionando mais do que tentando responder, a banda apresenta as canções
+  do disco homônimo, que se conectam como capítulos de um mesmo livro.
+</p>
 
           
                     <div class="hero-press">
@@ -1162,131 +1177,45 @@
               Ler matéria completa
             </a>
           </div>
-<div class="hero-actions">
-            <a class="btn btn-primary" href="#contato">Contratar show</a>
-            <a class="btn btn-secondary" href="presskit_oficial.html">Baixar press kit</a>
-            <a class="btn btn-outline" href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM" target="_blank" rel="noopener">Ouça agora</a>
+          <div class="hero-press hero-press-divergent">
+            <span class="press-label">Divergent Beats · Crítica</span>
+
+            <strong>“A reflexão como maior força”</strong>
+
+            <p class="press-copy">
+              A Divergent Beats analisou “Quanto Tempo Temos?” como um disco em que
+              as canções dialogam entre si. A matéria destaca a forma como a Diva Pop
+              questiona mais do que tenta responder e constrói o álbum como capítulos
+              de uma mesma obra.
+            </p>
+
+            <a
+              href="https://divergentbeats.com/2026/07/20/quanto-tempo-temos-confirma-a-diva-pop-como-uma-banda-que-faz-da-reflexao-sua-maior-forca/"
+              target="_blank"
+              rel="noopener">
+              Ler matéria completa
+            </a>
           </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Contratar show</a>
+
+            <a class="btn btn-secondary" href="presskit_oficial.html">
+              Baixar press kit
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="https://open.spotify.com/artist/2aUCpjQdBI35RVTUQ8K8WM"
+              target="_blank"
+              rel="noopener">
+              Ouça agora
+            </a>
+          </div>
+
         </div>
 
         <div class="hero-photo" role="img" aria-label="Foto oficial da banda Diva Pop"></div>
-      </div>
-    </section>
-<section id="show" class="section compact">
-      <h2 class="section-title">Agenda</h2>
-
-      <div class="agenda-deck">
-        <button class="agenda-card-btn" type="button"
-          data-title="Livra Livros &amp; Cafés"
-          data-time="16h"
-          data-show="Diva Pop apresenta o álbum “Quanto Tempo Temos?”"
-          data-address="Rua da Matriz, 42 — Embu das Artes/SP">
-          <span>
-            <span class="agenda-card-date">20/06</span>
-            <span class="agenda-card-place">Livra Livros<br>&amp; Cafés</span>
-          </span>
-          <span class="agenda-card-more">ver detalhes</span>
-        </button>
-
-        <button class="agenda-card-btn" type="button"
-          data-title="YouPub"
-          data-time="23h"
-          data-show="Diva Pop ao vivo apresentando “Quanto Tempo Temos?”"
-          data-address="Rua Francisco Geminiani, 97 — próximo à estação Terminal Grajaú da CPTM.">
-          <span>
-            <span class="agenda-card-date">03/07</span>
-            <span class="agenda-card-place">YouPub</span>
-          </span>
-          <span class="agenda-card-more">ver detalhes</span>
-        </button>
-
-        <button class="agenda-card-btn" type="button"
-          data-title="Bar Vanderale"
-          data-time="20h"
-          data-show="Diva Pop ao vivo no Bar Vanderale."
-          data-address="Rua Lopes Chaves, 495 — Barra Funda.">
-          <span>
-            <span class="agenda-card-date">04/07</span>
-            <span class="agenda-card-place">Bar<br>Vanderale</span>
-          </span>
-          <span class="agenda-card-more">ver detalhes</span>
-        </button>
-
-        <button class="agenda-card-btn" type="button"
-          data-title="Casa Lab"
-          data-time="20h"
-          data-show="Noite de música autoral com Diva Pop apresentando “Quanto Tempo Temos?” e abertura da banda Veena."
-          data-address="Endereço a confirmar.">
-          <span>
-            <span class="agenda-card-date">31/07</span>
-            <span class="agenda-card-place">Casa Lab</span>
-          </span>
-          <span class="agenda-card-more">ver detalhes</span>
-        </button>
-
-        <button class="agenda-card-btn" type="button"
-          data-title="Kadillac Club"
-          data-time="23h"
-          data-show="Café Bistrô, Errante Andaluz e Diva Pop."
-          data-address="Avenida do Cursino, 1988, Jardim da Saúde — São Paulo/SP.">
-          <span>
-            <span class="agenda-card-date">01/08</span>
-            <span class="agenda-card-place">Kadillac<br>Club</span>
-          </span>
-          <span class="agenda-card-more">ver detalhes</span>
-        </button>
-      </div>
-
-      <div id="agenda-panel" class="agenda-panel">
-        <h3 id="agenda-panel-title"></h3>
-        <p><strong>Horário:</strong> <span id="agenda-panel-time"></span></p>
-        <p><strong>Show:</strong> <span id="agenda-panel-show"></span></p>
-        <p><strong>Endereço:</strong> <span id="agenda-panel-address"></span></p>
-      </div>
-    </section>
-
-    <section id="banda" class="section">
-      <h2 class="section-title">Uma banda pronta para criar conexão ao vivo</h2>
-      <p class="section-lead">
-        No palco, a Diva Pop transforma suas músicas em uma experiência próxima,
-        direta e humana. Com canções autorais em português e uma entrega marcada
-        por emoção, presença e verdade, o grupo se conecta ao público pela força
-        do repertório e pela intensidade do encontro ao vivo.
-      </p>
-
-                  <div class="cards cards-two">
-        <article class="card">
-          <h3>Repertório autoral em português</h3>
-          <p>A Diva Pop canta o que o coração grita — para quem tem urgência de viver.</p>
-        </article>
-
-        <article class="card">
-          <h3>Dentro da música</h3>
-          <p>Voz, guitarras, baixo e bateria traduzem sentimentos em som.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-            <div class="about-box">
-        <div class="quote">
-          “Quanto tempo temos para cantar, lembrar, resistir e viver?”
-        </div>
-
-        <div>
-          <p>
-            A apresentação parte de uma pergunta simples e urgente: como usamos o tempo
-            que ainda temos? A partir daí, a banda constrói um repertório sobre memória,
-            desigualdade, liberdade e escolhas.
-          </p>
-
-          <p>
-            A proposta combina guitarras, baixo, bateria, voz principal e backing vocal
-            em uma experiência de palco pensada para envolver o público desde a primeira música.
-          </p>
-
-          <a class="btn btn-outline" href="show_quanto_tempo_temos.html">Conheça o material do show</a>
-        </div>
       </div>
     </section>
 
@@ -1394,36 +1323,61 @@
 
     <footer class="site-footer">     Diva Pop © 2026 · Site oficial · São Paulo/SP · Shows, parcerias e imprensa: umadivapop@gmail.com   </footer>
 
-  <script>
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const cards = document.querySelectorAll(".agenda-card-btn");
+      const agenda = document.querySelector(".agenda-deck");
       const panel = document.getElementById("agenda-panel");
       const title = document.getElementById("agenda-panel-title");
       const time = document.getElementById("agenda-panel-time");
       const show = document.getElementById("agenda-panel-show");
       const address = document.getElementById("agenda-panel-address");
 
-      cards.forEach(function(card) {
-        card.addEventListener("click", function() {
-          cards.forEach(function(c) {
-            c.classList.remove("active");
-          });
+      if (!agenda || !panel || !title || !time || !show || !address) {
+        console.error("Elementos da agenda não encontrados.");
+        return;
+      }
 
-          card.classList.add("active");
+      agenda.addEventListener("click", function (event) {
+        const card = event.target.closest(".agenda-card-btn");
 
-          title.textContent = card.dataset.title;
-          time.textContent = card.dataset.time;
-          show.textContent = card.dataset.show;
-          address.textContent = card.dataset.address;
+        if (!card || !agenda.contains(card)) {
+          return;
+        }
 
-          panel.classList.add("show");
+        document.querySelectorAll(".agenda-card-btn").forEach(function (item) {
+          item.classList.remove("active");
         });
+
+        card.classList.add("active");
+
+        title.textContent = card.dataset.title || "";
+        time.textContent = card.dataset.time || "";
+        show.textContent = card.dataset.show || "";
+        address.textContent = card.dataset.address || "";
+
+        panel.classList.add("show");
+
+        if (window.innerWidth <= 720) {
+          panel.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
+        }
       });
     });
   </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 
 
